@@ -1,0 +1,35 @@
+Manifest-Version: 1.0
+Group-Id: de.bathesis2015.msand.postBuildAction
+Short-Name: jevidatacollector
+Long-Name: Version Analysis Of Integration Dependencies
+Url: https://wiki.jenkins-ci.org/display/JENKINS/TODO+Plugin
+Plugin-Version: 1.0
+Hudson-Version: 1.580.1
+Jenkins-Version: 1.580.1
+Plugin-Developers: 
+Libraries: /home/medieninf/workspace/Ba/Plugins/jevi-data-collector/ta
+ rget/classes,/home/medieninf/.m2/repository/cglib/cglib-nodep/3.1/cgl
+ ib-nodep-3.1.jar,/home/medieninf/.m2/repository/com/google/inject/ext
+ ensions/guice-assistedinject/4.0/guice-assistedinject-4.0.jar,/home/m
+ edieninf/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-
+ 1.3.jar,/home/medieninf/.m2/repository/org/codehaus/jackson/jackson-c
+ ore-asl/1.9.13/jackson-core-asl-1.9.13.jar,/home/medieninf/.m2/reposi
+ tory/com/google/inject/guice/3.0/guice-3.0.jar,/home/medieninf/.m2/re
+ pository/org/mockito/mockito-all/1.10.10/mockito-all-1.10.10.jar,/hom
+ e/medieninf/.m2/repository/org/jmock/jmock-junit4/2.8.1/jmock-junit4-
+ 2.8.1.jar,/home/medieninf/.m2/repository/commons-cli/commons-cli/1.2/
+ commons-cli-1.2.jar,/home/medieninf/.m2/repository/org/ow2/asm/asm/5.
+ 0.3/asm-5.0.3.jar,/home/medieninf/.m2/repository/org/hamcrest/hamcres
+ t-library/1.3/hamcrest-library-1.3.jar,/home/medieninf/.m2/repository
+ /org/beanshell/bsh/1.3.0/bsh-1.3.0.jar,/home/medieninf/.m2/repository
+ /org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.
+ 9.13.jar,/home/medieninf/.m2/repository/junit/junit/4.12/junit-4.12.j
+ ar,/home/medieninf/.m2/repository/org/jmock/jmock/2.8.1/jmock-2.8.1.j
+ ar,/home/medieninf/.m2/repository/aopalliance/aopalliance/1.0/aopalli
+ ance-1.0.jar,/home/medieninf/.m2/repository/javax/inject/javax.inject
+ /1/javax.inject-1.jar,/home/medieninf/.m2/repository/org/xerial/sqlit
+ e-jdbc/3.7.2/sqlite-jdbc-3.7.2.jar,/home/medieninf/.m2/repository/org
+ /jmock/jmock-testjar/2.8.1/jmock-testjar-2.8.1.jar
+Resource-Path: /home/medieninf/workspace/Ba/Plugins/jevi-data-collecto
+ r/src/main/webapp
+

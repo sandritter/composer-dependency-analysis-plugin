@@ -1,0 +1,5 @@
+/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/target/test-classes/jevi.db
+/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/target/test-classes/jevi.db
+/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/target/test-classes/jevi.db
+/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/target/test-classes/jevi.db
+/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/target/test-classes/jevi.db
