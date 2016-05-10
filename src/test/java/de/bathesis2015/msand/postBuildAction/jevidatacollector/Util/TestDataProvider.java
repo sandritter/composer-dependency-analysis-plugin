@@ -11,7 +11,7 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.Component;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.Dependency;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.Stand;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.TransferObject;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.Transport;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.Interface.Transferable;
 
 public class TestDataProvider {
@@ -30,7 +30,7 @@ public class TestDataProvider {
 	
 	
 	public Transferable getStorageData(String buildId, int index, int amount){
-		Transferable t = new TransferObject();
+		Transferable t = new Transport();
 		List<Component> lc = new ArrayList<Component>();
 		List<Stand> ls = new ArrayList<Stand>();
 		List<Dependency> ld = new ArrayList<Dependency>();

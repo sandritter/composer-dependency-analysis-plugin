@@ -12,16 +12,16 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Composer.JsonDataImage;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Composer.LockDataImage;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DependencyReflection.JsonDataImage;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DependencyReflection.DependencyReflectionCollection;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Exception.DataMappingFailedException;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.ComposerMapper;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.DependencyReflectionMapper;
 
 public class JsonMapperTest{
 	
 	private File composerJson;
 	private File composerLock;
-	private ComposerMapper mapper;
+	private DependencyReflectionMapper mapper;
 	private final int amountPackages = 23;
 	private final int amountDirectRequirements = 5;
 	
@@ -32,7 +32,7 @@ public class JsonMapperTest{
 		
 		classLoader = getClass().getClassLoader();
 		composerLock = new File(classLoader.getResource("composer.lock").getFile());
-		mapper = new ComposerMapper();
+		mapper = new DependencyReflectionMapper();
 	}
 	
 	@Test
@@ -76,13 +76,13 @@ public class JsonMapperTest{
 	
 	@Test
 	public void testComposerLockMapping() throws DataMappingFailedException{
-		LockDataImage lock = mapper.mapFileToLockDataImage(composerLock);
-		assertEquals(LockDataImage.class, lock.getClass());
+		DependencyReflectionCollection lock = mapper.mapFileToDependencyReflectionData(composerLock);
+		assertEquals(DependencyReflectionCollection.class, lock.getClass());
 	}
 	
 	@Test
 	public void testAmountPackages() throws DataMappingFailedException{
-		LockDataImage lock = mapper.mapFileToLockDataImage(composerLock);
+		DependencyReflectionCollection lock = mapper.mapFileToDependencyReflectionData(composerLock);
 		assertEquals(amountPackages, lock.getPackages().size());
 	}
 	
@@ -95,6 +95,6 @@ public class JsonMapperTest{
 	@Test(expected=DataMappingFailedException.class) 
 	public void testComposerLockMappingException()throws DataMappingFailedException{
 		File lock = new File("composer-fail.lock");
-		mapper.mapFileToLockDataImage(lock);
+		mapper.mapFileToDependencyReflectionData(lock);
 	}
 }

@@ -10,14 +10,14 @@ import org.junit.Test;
 import DataBuilder.Composer.JsonDataImageBuilder;
 import DataBuilder.Composer.LockDataImageBuilder;
 import DataBuilder.Transfer.BuildDataBuilder;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Composer.JsonDataImage;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Composer.LockDataImage;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.Build;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.Component;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.Dependency;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.Stand;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DependencyReflection.JsonDataImage;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DependencyReflection.DependencyReflectionCollection;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.BuildData;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.TransferObject;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.Transport;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.Interface.Transferable;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.DaoMapper;
 
@@ -25,7 +25,7 @@ public class DaoMapperTest{
 	
 	private BuildData buildData;
 	private JsonDataImage jsonImage;
-	private LockDataImage lockImage;
+	private DependencyReflectionCollection lockImage;
 	private DaoMapper mapper;
 	private Transferable transport;
 	private final int amountDepenencies = 30;
@@ -35,13 +35,13 @@ public class DaoMapperTest{
 		BuildDataBuilder buildDataBuilder = new BuildDataBuilder();
 		JsonDataImageBuilder jsonDataImageBuilder = new JsonDataImageBuilder();
 		LockDataImageBuilder lockDataImageBuilder = new LockDataImageBuilder();
-		this.mapper = new DaoMapper(new TransferObject());
+		this.mapper = new DaoMapper(new Transport());
 		this.buildData = buildDataBuilder.getMock(1);
 		this.jsonImage = jsonDataImageBuilder.getMock();
 		this.lockImage = lockDataImageBuilder.getMock(amountDepenencies);
-		this.transport = new TransferObject();
+		this.transport = new Transport();
 		this.transport.setObject(JsonDataImage.class, jsonImage);
-		this.transport.setObject(LockDataImage.class, lockImage);
+		this.transport.setObject(DependencyReflectionCollection.class, lockImage);
 	}
 	
 	@Test

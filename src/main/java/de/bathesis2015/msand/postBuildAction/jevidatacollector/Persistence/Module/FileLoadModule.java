@@ -3,7 +3,7 @@ package de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Modu
 import com.google.inject.AbstractModule;
 
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.IO.FileLoader;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.IO.IOAccess;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.IO.Interface.IOAccess;
 
 /**
  * FileLoadModule.java

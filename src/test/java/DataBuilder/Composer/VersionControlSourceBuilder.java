@@ -2,7 +2,7 @@ package DataBuilder.Composer;
 
 import static org.mockito.Mockito.*;
 
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Composer.VersionControlSource;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DependencyReflection.VersionControlSource;
 
 public class VersionControlSourceBuilder {
 

@@ -1,4 +1,4 @@
-package de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Composer;
+package de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DependencyReflection;
 
 import java.util.Map;
 
@@ -16,7 +16,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
  * 03.10.2015
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PackageDataImage {
+public class DependencyReflection {
 
 	/**
 	 * component name

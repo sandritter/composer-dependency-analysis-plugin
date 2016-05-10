@@ -33,8 +33,6 @@ public class IntegrationAnalyserTest {
 		Injector injector = Guice.createInjector(new PersistenceModule());
 		DataLoaderFactory dataLoaderFactory = injector.getInstance(DataLoaderFactory.class);
 		this.dataLoader = dataLoaderFactory.create(dbPath);
-		
-		
 	}
 	
 	@Test

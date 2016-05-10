@@ -30,7 +30,6 @@ public class DBLoaderTest {
 		// get path of database
 		ClassLoader loader = getClass().getClassLoader();
 		String dbPath = loader.getResource("jevi.db").getPath(); 
-		System.out.println(dbPath);
 		
 		Injector injector = Guice.createInjector(new PersistenceModule());
 		DataLoaderFactory dataLoaderFactory = injector.getInstance(DataLoaderFactory.class);

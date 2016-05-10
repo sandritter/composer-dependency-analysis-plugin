@@ -3,8 +3,9 @@ package DataBuilder.Composer;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DependencyReflection.JsonDataImage;
+
 import static org.mockito.Mockito.*;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Composer.JsonDataImage;
 
 public class JsonDataImageBuilder {
 	

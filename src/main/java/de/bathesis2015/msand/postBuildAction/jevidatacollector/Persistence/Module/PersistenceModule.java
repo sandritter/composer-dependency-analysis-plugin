@@ -24,11 +24,12 @@ public class PersistenceModule extends AbstractModule{
 	@Override
 	protected void configure() {
 		install(new FactoryModuleBuilder()
-			     .implement(DataLoader.class, DBLoader.class)
-			     .build(DataLoaderFactory.class));
-		bind(DatabaseMapper.class).to(SqliteDataMapper.class);
+			.implement(DataLoader.class, DBLoader.class)
+			.build(DataLoaderFactory.class));
+		bind(DatabaseMapper.class)
+			.to(SqliteDataMapper.class);
 		install(new FactoryModuleBuilder()
-			     .implement(DataStorage.class, DBStorage.class)
-			     .build(DataStorageFactory.class));
+			.implement(DataStorage.class, DBStorage.class)
+			.build(DataStorageFactory.class));
 	}
 }

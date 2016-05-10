@@ -2,8 +2,6 @@ package de.bathesis2015.msand.postBuildAction.jevidatacollector;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintStream;
-import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,6 +17,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.BuildData;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.Transport;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.Interface.Transferable;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Enum.BuildEnvVars;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Enum.FileType;
@@ -30,11 +29,11 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Datab
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Database.Factory.DataStorageFactory;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Database.Interface.DataLoader;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Database.Interface.DataStorage;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.IO.IOAccess;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.IO.Interface.IOAccess;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Module.FileLoadModule;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Module.PersistenceModule;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Util.DateFormatter;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Util.Logger;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Util.PathResolver;
 import hudson.EnvVars;
 import hudson.Extension;
 import hudson.FilePath;
@@ -87,13 +86,12 @@ public class BuildDependencyPublisher extends Recorder {
 	/**
 	 * logger that logs all warnings and errors to console output
 	 */
-	public static PrintStream logger;
+	public static Logger logger;
 
 	private IOAccess ioAccess;
 	private MappingFacade mappingFacade;
 	private DataLoader dataLoader;
 	private DataStorage dataStorage;
-	private int errorCount = 0;
 
 	/**
 	 * file name of the xml file where the information of the jevi data
@@ -118,98 +116,109 @@ public class BuildDependencyPublisher extends Recorder {
 	}
 
 	@Override
-	public boolean perform(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener) {
+	public boolean perform(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener)
+	{
 
-		logger = listener.getLogger();
-		logger.println();
-		logger.println("[VERSION ANALYSIS] : [va]");
-		long start = System.currentTimeMillis();
+		logger = Logger.getInstance(listener);
+		logger.logPluginStart();
 
-		// load database path from global configuration
-		String dbPath = getDescriptor().getDbPath();
+		PathResolver pathResolver = new PathResolver(logger, build);
 
-		// create services
-		createServices(dbPath);
+		createModules(getDescriptor().getDbPath());
 
-		// load version information files
-		String finalLockPath = getLockPath(build);
-		String finalJsonPath = getJsonPath(build);
+		Map<FileType, File> dependencyReflectionFiles = loadDependencyReflectionFiles(pathResolver);
+
+		BuildData buildData = collectBuildData(build, listener);
+
+		Transferable transport = mapData(buildData, dependencyReflectionFiles);
+
+		storeData(transport);
+
+		analyseBuild(build, buildData);
+
+		resolveDependencies(build, buildData);
+
+		logger.logFinalProcessStatus();
+		return true;
+	}
+
+	private Map<FileType, File> loadDependencyReflectionFiles(PathResolver pathResolver)
+	{
+		String finalLockPath = pathResolver.getLockPath(lockPath);
+		String finalJsonPath = pathResolver.getJsonPath(jsonPath);
 		Map<FileType, File> files = new HashMap<FileType, File>();
 		files.put(FileType.COMPOSER_JSON, loadFile(finalJsonPath));
 		files.put(FileType.COMPOSER_LOCK, loadFile(finalLockPath));
+		return files;
+	}
 
-		// collect all build specific data stored in the environment variables
-		// of this build
-		BuildData buildData = collectBuildData(build, listener);
-
-		// assemble Transferable object used to transfer all mapped dao objects
+	/**
+	 * TODO
+	 * 
+	 * @param buildData
+	 * @param files
+	 * @return
+	 */
+	private Transferable mapData(BuildData buildData, Map<FileType, File> files)
+	{
 		Transferable transport = null;
 		try {
 			transport = mappingFacade.mapRowData(buildData, files);
 			logger.println(Logger.LABEL + Logger.SUCCESS
 					+ "collected build- and version-information of this build has been successfully mapped to data access objects");
 		} catch (DataMappingFailedException e1) {
-			logFailure(e1, "DATA MAPPING FAILED");
+			logger.logFailure(e1, "DATA MAPPING FAILED");
 		}
+		return transport;
+	}
 
-		// store transport object to sqlite database
-		try {
-			dataStorage.storeData(transport);
-			logger.println(Logger.LABEL + Logger.SUCCESS + "data access objects have been successfully stored to database");
-		} catch (Exception e) {
-			logFailure(e, "STORAGE FAILED");
-		}
-
-		// start analysis
-		try {
-			build.addAction(new IntegrationAnalyser(buildData, dataLoader));
-			logger.println(Logger.LABEL + Logger.SUCCESS + "analysis of all installed components of this build have been successful");
-		} catch (Exception e) {
-			logFailure(e, "ANALYSIS FAILED");
-		}
-
-		// start dependency resolver
+	/**
+	 * TODO
+	 * 
+	 * @param build
+	 * @param buildData
+	 */
+	private void resolveDependencies(AbstractBuild<?, ?> build, BuildData buildData)
+	{
 		try {
 			build.addAction(new DependentComponentResolver(dataLoader, buildData));
 			logger.println(Logger.LABEL + Logger.SUCCESS + "dependent components have been sucessfully resolved");
 		} catch (Exception e) {
-			logFailure(e, "RESOLVING DEPENDENT COMPONENTS FAILED");
-		}
-
-		logFinalProcessStatus(start);
-		logger.println();
-
-		return true;
-	}
-	
-	public void manuallyDoStuff() throws Exception{
-		BuildData buildData = new BuildData();
-		buildData.setBuildId("b-k3-02");
-		createServices("/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db");
-		if (dataLoader != null){			
-			DependentComponentResolver r = new DependentComponentResolver(dataLoader, buildData);
+			logger.logFailure(e, "RESOLVING DEPENDENT COMPONENTS FAILED");
 		}
 	}
 
 	/**
-	 * logs the final process status of this plugin
+	 * TODO
 	 * 
-	 * @param start
-	 *            - timestamp of the time when the peform method was invoked
+	 * @param transport
 	 */
-	private void logFinalProcessStatus(long start) {
-		long ende = System.currentTimeMillis();
-		if (errorCount == 0) {
-			logger.println(Logger.LABEL + Logger.SUCCESS
-					+ "Integration Analysis Of Integration Dependencies ended successfully");
-		} else {
-			logger.println(Logger.LABEL + Logger.WARNING
-					+ "Integration Analysis Of Integration Dependencies DIDN'T end successful");
-			logger.println(Logger.LABEL + "warnings occured: " + errorCount);
+	private void storeData(Transferable transport)
+	{
+		try {
+			dataStorage.storeData(transport);
+			logger.println(
+					Logger.LABEL + Logger.SUCCESS + "data access objects have been successfully stored to database");
+		} catch (Exception e) {
+			logger.logFailure(e, "STORAGE FAILED");
 		}
-		logger.println(Logger.LABEL + "STARTED at: " + DateFormatter.getFormattedTime(start));
-		logger.println(Logger.LABEL + "ENDED at: " + DateFormatter.getFormattedTime(start));
-		logTimeElapsed(start, ende);
+	}
+
+	/**
+	 * TODO
+	 * 
+	 * @param build
+	 * @param buildData
+	 */
+	private void analyseBuild(AbstractBuild<?, ?> build, BuildData buildData)
+	{
+		try {
+			build.addAction(new IntegrationAnalyser(buildData, dataLoader));
+			logger.println(Logger.LABEL + Logger.SUCCESS
+					+ "analysis of all installed components of this build have been successful");
+		} catch (Exception e) {
+			logger.logFailure(e, "ANALYSIS FAILED");
+		}
 	}
 
 	/**
@@ -217,112 +226,39 @@ public class BuildDependencyPublisher extends Recorder {
 	 * 
 	 * @param path
 	 */
-	private void createServices(String path) {
+	private void createModules(String path)
+	{
 		Injector injector = Guice.createInjector(new FileLoadModule(), new MappingModule(), new PersistenceModule());
 		DataLoaderFactory dataLoaderFactory = injector.getInstance(DataLoaderFactory.class);
 		this.dataLoader = dataLoaderFactory.create(path);
+
 		DataStorageFactory dataStorageFactory = injector.getInstance(DataStorageFactory.class);
 		this.dataStorage = dataStorageFactory.create(path);
+
 		this.ioAccess = injector.getInstance(IOAccess.class);
+
 		this.mappingFacade = injector.getInstance(MappingFacade.class);
-	}
-
-	/**
-	 * is concatenating the composer.lock file path from the configuration with
-	 * the workspace path of a project (build-job)
-	 * 
-	 * @param build
-	 *            {@link AbstractBuild}
-	 * @return absolute path of the composer.lock path
-	 */
-	private String getLockPath(AbstractBuild<?, ?> build) {
-		String workspacePath = loadWorkspacePath(build);
-		if (lockPath.equals("default")) {
-			return getPath("source/composer.lock", workspacePath);
-		}
-		return getPath(lockPath, workspacePath);
-	}
-
-	/**
-	 * is concatenating the composer.json file path from the configuration with
-	 * the workspace path of a project (build-job)
-	 * 
-	 * @param build
-	 *            {@link AbstractBuild}
-	 * @return absolute path to the composer.json file
-	 */
-	private String getJsonPath(AbstractBuild<?, ?> build) {
-		String workspacePath = loadWorkspacePath(build);
-		if (jsonPath.equals("default")) {
-			return getPath("source/composer.json", workspacePath);
-		}
-		return getPath(jsonPath, workspacePath);
-	}
-
-	private void logFailure(Exception e, String title) {
-		logger.println(Logger.LABEL + Logger.WARNING + "-> " + title + ": ");
-		logger.println(Logger.LABEL + Logger.WARNING + "error message: " + e.getMessage());
-		logger.println();
-		errorCount++;
-	}
-
-	/**
-	 * calculates the time the plugin needed to process all his work and logs it
-	 * in the console output of a build
-	 * 
-	 * @param start
-	 *            - start time
-	 * @param nde
-	 *            - end time
-	 */
-	private void logTimeElapsed(long start, long end) {
-		long diff = end - start;
-		long diffSeconds = diff / 1000 % 60;
-		long diffMinutes = diff / (60 * 1000) % 60;
-		if (diff < 1000){			
-			logger.println(Logger.LABEL + "TOTEL TIME ELAPSED: " + diff + " milliseconds.");
-		} else {
-			logger.println(Logger.LABEL + "TOTEL TIME ELAPSED: " + diffMinutes + " minutes " + diffSeconds + " seconds.");			
-		}
-	}
-
-	/**
-	 * is loading the workspace path of a build instance
-	 * 
-	 * @param build
-	 *            {@link AbstractBuild}
-	 * @return workspace path
-	 */
-	private String loadWorkspacePath(AbstractBuild<?, ?> build) {
-		String workspace = "";
-		try {
-			workspace = build.getWorkspace().toURI().toURL().getPath();
-		} catch (MalformedURLException e) {
-			logFailure(e, "LOADING WORKSPACE FAILED");
-		} catch (IOException e) {
-			logFailure(e, "LOADING WORKSPACE FAILED");
-		} catch (InterruptedException e) {
-			logFailure(e, "LOADING WORKSPACE FAILED");
-		}
-		return workspace;
 	}
 
 	/**
 	 * collects build specific data
 	 * 
-	 * @param build {@link AbstractBuild}
-	 * @param l {@link BuildListener}
+	 * @param build
+	 *            {@link AbstractBuild}
+	 * @param l
+	 *            {@link BuildListener}
 	 * @return BuildData object that holds all relevant build-specific data
 	 */
-	private BuildData collectBuildData(AbstractBuild<?, ?> build, BuildListener l) {
+	private BuildData collectBuildData(AbstractBuild<?, ?> build, BuildListener l)
+	{
 		BuildData data = new BuildData();
 		EnvVars env = null;
 		try {
 			env = build.getEnvironment(l);
 		} catch (IOException e) {
-			logFailure(e, "LOADING ENVIRONMENT OF BUILD FAILED");
+			logger.logFailure(e, "LOADING ENVIRONMENT OF BUILD FAILED");
 		} catch (InterruptedException e) {
-			logFailure(e, "LOADING ENVIRONMENT OF BUILD STOPPED");
+			logger.logFailure(e, "LOADING ENVIRONMENT OF BUILD STOPPED");
 		}
 		data.setJobName(env.get(BuildEnvVars.JOB_NAME.toString()));
 		data.setJenkinsUrl(env.get(BuildEnvVars.JENKINS_URL.toString()));
@@ -343,7 +279,8 @@ public class BuildDependencyPublisher extends Recorder {
 	 * @param env
 	 *            environment variables of {@link AbstractBuild}
 	 */
-	private void injectVersionControlInfo(BuildData data, EnvVars env) {
+	private void injectVersionControlInfo(BuildData data, EnvVars env)
+	{
 		String svnRevision = env.get(BuildEnvVars.SVN_REVISION.toString());
 		String gitRevision = env.get(BuildEnvVars.GIT_COMMIT.toString());
 		if (gitRevision != null) {
@@ -360,82 +297,25 @@ public class BuildDependencyPublisher extends Recorder {
 	}
 
 	/**
-	 * this method is only used to test the application locally
-	 * 
-	 * @throws Exception
-	 */
-	@Deprecated
-	public void manuallyExecuteBuildActions() throws Exception {
-
-		createServices("/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db");
-		Map<FileType, File> files = new HashMap<FileType, File>();
-
-		files.put(FileType.COMPOSER_LOCK, loadFile("/home/medieninf/workspace/json-mapper/composer.lock"));
-		files.put(FileType.COMPOSER_JSON, loadFile("/home/medieninf/workspace/json-mapper/composer.json"));
-		BuildData data = new BuildData();
-		data.setBuildId(Double.toString(Math.random()));
-		data.setNumber((int) Math.random());
-		data.setTimestamp((long) Math.random());
-		data.setSourceType(SourceType.GIT.toString());
-		data.setSourceUrl("https://source/" + "test-url");
-		data.setRevision(Double.toString(Math.random()));
-		data.setVersion(Double.toString(Math.random()));
-
-		Transferable transport = null;
-		try {
-			transport = mappingFacade.mapRowData(data, files);
-		} catch (DataMappingFailedException e1) {
-			e1.printStackTrace();
-		}
-
-		try {
-			dataStorage.storeData(transport);
-		} catch (Exception e) {
-			System.out.println("there is no database reachable");
-			e.printStackTrace();
-		}
-		@SuppressWarnings("unused")
-		IntegrationAnalyser analyse = new IntegrationAnalyser(data, dataLoader);
-	}
-
-	/**
-	 * concatenates a file name and directory and returns a absolute path of
-	 * that file
-	 * 
-	 * @param value
-	 *            relative path
-	 * @param workspace
-	 *            workspace path
-	 * @return absolute path
-	 */
-	private String getPath(String value, String workspace) {
-		File f = new File(value);
-		File workspacePath = new File(workspace);
-		File absolutePath = new File(workspacePath, value);
-		if (f.isFile() && f.isAbsolute()) {
-			return f.getAbsolutePath();
-		}
-		return absolutePath.getAbsolutePath();
-	}
-
-	/**
 	 * is laoding a file by given path
 	 * 
 	 * @param path
 	 * @return loaded {@link File}
 	 */
-	private File loadFile(String path) {
+	private File loadFile(String path)
+	{
 		File file = null;
 		try {
 			file = ioAccess.load(path);
 		} catch (IOException e) {
-			logFailure(e, "FILE LOADING FAILED");
+			logger.logFailure(e, "FILE LOADING FAILED");
 		}
 		return file;
 	}
 
 	@Override
-	public DescriptorImpl getDescriptor() {
+	public DescriptorImpl getDescriptor()
+	{
 		return (DescriptorImpl) super.getDescriptor();
 	}
 
@@ -451,7 +331,8 @@ public class BuildDependencyPublisher extends Recorder {
 		 */
 		private String dbPath;
 
-		public String getDbPath() {
+		public String getDbPath()
+		{
 			return dbPath;
 		}
 
@@ -471,7 +352,8 @@ public class BuildDependencyPublisher extends Recorder {
 		 *            {@link AbstractProject}
 		 * @return {@link ListBoxModel}
 		 */
-		public ListBoxModel doFillLockPathItems(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project) {
+		public ListBoxModel doFillLockPathItems(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project)
+		{
 			ListBoxModel items = new ListBoxModel();
 			List<Path> matches = getPathItems(project, "composer.lock");
 			if (matches != null) {
@@ -494,7 +376,8 @@ public class BuildDependencyPublisher extends Recorder {
 		 *            {@link AbstractProject}
 		 * @return {@link ListBoxModel}
 		 */
-		public ListBoxModel doFillJsonPathItems(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project) {
+		public ListBoxModel doFillJsonPathItems(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project)
+		{
 			ListBoxModel items = new ListBoxModel();
 			List<Path> matches = getPathItems(project, "composer.json");
 			if (matches != null) {
@@ -520,7 +403,8 @@ public class BuildDependencyPublisher extends Recorder {
 		 * @return list of {@link Path} of found files by compare value
 		 */
 		private List<Path> getPathItems(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project,
-				String compare) {
+				String compare)
+		{
 			List<Path> matches = new ArrayList<Path>();
 			Path root = getWorkspace(project);
 			if (root != null) {
@@ -536,7 +420,8 @@ public class BuildDependencyPublisher extends Recorder {
 		 *            {@link AbstractProject}
 		 * @return workspace path
 		 */
-		private Path getWorkspace(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project) {
+		private Path getWorkspace(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project)
+		{
 			AbstractBuild<?, ?> build = project.getLastBuild();
 			FilePath path = build.getWorkspace();
 			File root = null;
@@ -562,7 +447,8 @@ public class BuildDependencyPublisher extends Recorder {
 		 *            - list to store {@link Path} found values
 		 * @return list of {@link Path}
 		 */
-		public List<Path> findFiles(Path root, String compare, List<Path> lst) {
+		public List<Path> findFiles(Path root, String compare, List<Path> lst)
+		{
 			File dir = new File(root.toString());
 			File[] files = dir.listFiles();
 			for (File file : files) {
@@ -589,7 +475,8 @@ public class BuildDependencyPublisher extends Recorder {
 		 * @return {@link FormValidation}
 		 */
 		public FormValidation doCheckDbPath(@QueryParameter String value,
-				@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project) {
+				@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project)
+		{
 			File f = new File(value);
 			if (f.isFile()) {
 				if (isDbFile(f)) {
@@ -614,7 +501,8 @@ public class BuildDependencyPublisher extends Recorder {
 		 *            {@link File}
 		 * @return
 		 */
-		private boolean isDbFile(File file) {
+		private boolean isDbFile(File file)
+		{
 			if (file.getName().endsWith(".db"))
 				return true;
 			return false;
@@ -622,7 +510,8 @@ public class BuildDependencyPublisher extends Recorder {
 
 		@Override
 		@SuppressWarnings("rawtypes")
-		public boolean isApplicable(Class<? extends AbstractProject> aClass) {
+		public boolean isApplicable(Class<? extends AbstractProject> aClass)
+		{
 			// Indicates that this builder can be used with all kinds of project
 			// types
 			return true;
@@ -632,12 +521,14 @@ public class BuildDependencyPublisher extends Recorder {
 		 * This human readable name is used in the configuration screen.
 		 */
 		@Override
-		public String getDisplayName() {
+		public String getDisplayName()
+		{
 			return "Version Analysis Of Integration Dependencies";
 		}
 
 		@Override
-		public boolean configure(StaplerRequest req, JSONObject formData) throws FormException {
+		public boolean configure(StaplerRequest req, JSONObject formData) throws FormException
+		{
 			// To persist global configuration information,
 			// set that to properties and call save().
 			// ^Can also use req.bindJSON(this, formData);
@@ -649,15 +540,18 @@ public class BuildDependencyPublisher extends Recorder {
 	}
 
 	@Override
-	public BuildStepMonitor getRequiredMonitorService() {
+	public BuildStepMonitor getRequiredMonitorService()
+	{
 		return BuildStepMonitor.STEP;
 	}
 
-	public String getLockPath() {
+	public String getLockPath()
+	{
 		return lockPath;
 	}
 
-	public String getJsonPath() {
+	public String getJsonPath()
+	{
 		return lockPath;
 	}
 }

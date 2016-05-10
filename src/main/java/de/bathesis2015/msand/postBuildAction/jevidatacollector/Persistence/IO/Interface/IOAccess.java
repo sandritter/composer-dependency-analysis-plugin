@@ -1,4 +1,4 @@
-package de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.IO;
+package de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.IO.Interface;
 
 import java.io.File;
 import java.io.IOException;

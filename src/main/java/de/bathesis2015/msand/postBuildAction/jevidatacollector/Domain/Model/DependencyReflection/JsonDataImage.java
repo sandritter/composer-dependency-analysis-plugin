@@ -1,4 +1,4 @@
-package de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Composer;
+package de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DependencyReflection;
 import java.util.Map;
 
 import javax.xml.bind.annotation.XmlElement;

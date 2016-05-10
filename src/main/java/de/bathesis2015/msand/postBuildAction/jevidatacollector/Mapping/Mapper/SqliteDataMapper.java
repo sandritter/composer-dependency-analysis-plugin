@@ -9,7 +9,7 @@ import java.util.Map;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Result.Database.BuildSummary;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Result.Database.ComponentSummary;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Result.Database.DependentComponent;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.TransferObject;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.Transport;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.Interface.Transferable;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.Interface.DatabaseMapper;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.Interface.FutureImplementation;
@@ -28,7 +28,7 @@ public class SqliteDataMapper implements DatabaseMapper{
 	
 	@Override
 	public Transferable mapComponentResults(ResultSet result) throws SQLException {
-		Transferable transport = new TransferObject();	
+		Transferable transport = new Transport();	
 		Map<String, ComponentSummary> map = saveComponentSummary(result);
 		transport.setMap(ComponentSummary.class, map);
 		return transport;
@@ -36,7 +36,7 @@ public class SqliteDataMapper implements DatabaseMapper{
 	
 	@Override
 	public Transferable mapResult(ResultSet result, Class<?> cls) throws SQLException{
-		Transferable transport = new TransferObject();
+		Transferable transport = new Transport();
 		BuildSummary buildSum = null;
 		if (cls == BuildSummary.class){			
 			buildSum = saveBuildSummary(result);

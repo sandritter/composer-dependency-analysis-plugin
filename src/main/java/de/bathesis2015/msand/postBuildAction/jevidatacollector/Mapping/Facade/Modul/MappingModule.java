@@ -2,10 +2,10 @@ package de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Facade.M
 
 import com.google.inject.AbstractModule;
 
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.TransferObject;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.Transport;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.Interface.Transferable;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Facade.MappingFacade;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.ComposerMapper;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.DependencyReflectionMapper;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.DaoMapper;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.Interface.ComposerMapable;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.Interface.RowDataMapper;
@@ -21,8 +21,8 @@ public class MappingModule extends AbstractModule{
 
 	@Override
 	protected void configure() {
-		bind(ComposerMapable.class).to(ComposerMapper.class);
+		bind(ComposerMapable.class).to(DependencyReflectionMapper.class);
 		bind(RowDataMapper.class).to(DaoMapper.class);
-		bind(Transferable.class).to(TransferObject.class);
+		bind(Transferable.class).to(Transport.class);
 	}
 }

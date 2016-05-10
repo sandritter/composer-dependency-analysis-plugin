@@ -7,10 +7,10 @@ import java.util.*;
 public class InjectedTest extends junit.framework.TestCase {
   public static junit.framework.Test suite() throws Exception {
     Map parameters = new HashMap();
-    parameters.put("basedir","/home/medieninf/workspace/Ba/Plugins/jevi-data-collector");
+    parameters.put("basedir","/Users/michael.sandritter/jenkins-plugins/build-depedency-version-analysis");
     parameters.put("artifactId","jevidatacollector");
-    parameters.put("outputDirectory","/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/target/classes");
-    parameters.put("testOutputDirectory","/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/target/test-classes");
+    parameters.put("outputDirectory","/Users/michael.sandritter/jenkins-plugins/build-depedency-version-analysis/target/classes");
+    parameters.put("testOutputDirectory","/Users/michael.sandritter/jenkins-plugins/build-depedency-version-analysis/target/test-classes");
     parameters.put("requirePI","false");
     return new org.jvnet.hudson.test.PluginAutomaticTestBuilder().build(parameters);
   }

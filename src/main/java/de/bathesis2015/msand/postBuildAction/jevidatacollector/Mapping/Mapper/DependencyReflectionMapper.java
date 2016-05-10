@@ -4,8 +4,8 @@ import java.io.File;
 
 import org.codehaus.jackson.map.ObjectMapper;
 
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Composer.JsonDataImage;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Composer.LockDataImage;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DependencyReflection.JsonDataImage;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DependencyReflection.DependencyReflectionCollection;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Exception.DataMappingFailedException;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.Interface.ComposerMapable;
 /**
@@ -15,20 +15,20 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.In
  * @author Michael Sandritter
  * 22.09.2015
  */
-public class ComposerMapper implements ComposerMapable{
+public class DependencyReflectionMapper implements ComposerMapable{
 	
 	/**
 	 * {@link ObjectMapper}
 	 */
 	private ObjectMapper mapper;
 
-	public ComposerMapper(){
+	public DependencyReflectionMapper(){
 		this.mapper = new ObjectMapper();
 	}
 	
 	@Override
-	public LockDataImage mapFileToLockDataImage(File f) throws DataMappingFailedException{
-		return (LockDataImage) mapData(f, LockDataImage.class);
+	public DependencyReflectionCollection mapFileToDependencyReflectionData(File f) throws DataMappingFailedException{
+		return (DependencyReflectionCollection) mapData(f, DependencyReflectionCollection.class);
 	}
 	
 	@Override

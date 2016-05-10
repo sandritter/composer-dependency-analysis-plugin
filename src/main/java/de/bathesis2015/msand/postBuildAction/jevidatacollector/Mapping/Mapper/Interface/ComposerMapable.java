@@ -2,8 +2,8 @@ package de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.I
 
 import java.io.File;
 
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Composer.JsonDataImage;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Composer.LockDataImage;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DependencyReflection.JsonDataImage;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DependencyReflection.DependencyReflectionCollection;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Exception.DataMappingFailedException;
 
 /**
@@ -18,10 +18,10 @@ public interface ComposerMapable {
 	/**
 	 * maps a composer.lock file to a LockDataImage
 	 * @param f {@link File}
-	 * @return {@link LockDataImage}
+	 * @return {@link DependencyReflectionCollection}
 	 * @throws DataMappingFailedException
 	 */
-	public LockDataImage mapFileToLockDataImage(File f) throws DataMappingFailedException;
+	public DependencyReflectionCollection mapFileToDependencyReflectionData(File f) throws DataMappingFailedException;
 	
 	/**
 	 * maps a composer.json file to a JsonDataImage

@@ -5,13 +5,13 @@ import java.util.List;
 
 import com.google.inject.Inject;
 
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Composer.JsonDataImage;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Composer.LockDataImage;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Composer.PackageDataImage;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.Build;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.Component;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.Dependency;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.Stand;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DependencyReflection.JsonDataImage;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DependencyReflection.DependencyReflectionCollection;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DependencyReflection.DependencyReflection;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.BuildData;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.Interface.Transferable;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Enum.DependencyType;
@@ -43,7 +43,7 @@ public class DaoMapper implements RowDataMapper {
 
 	@Override
 	public Transferable mapData(BuildData buildData, Transferable transport) {
-		LockDataImage lockDataImage = (LockDataImage) transport.getObject(LockDataImage.class);
+		DependencyReflectionCollection lockDataImage = (DependencyReflectionCollection) transport.getObject(DependencyReflectionCollection.class);
 		JsonDataImage jsonDataImage = (JsonDataImage) transport.getObject(JsonDataImage.class);
 		generateORLists(buildData, jsonDataImage, lockDataImage);
 		generateORObjects(buildData, jsonDataImage, lockDataImage);
@@ -55,11 +55,11 @@ public class DaoMapper implements RowDataMapper {
 	 * 
 	 * @param buildData {@link BuildData}
 	 * @param jsonDataImage {@link JsonDataImage}
-	 * @param lockDataImage {@link LockDataImage}
+	 * @param lockDataImage {@link DependencyReflectionCollection}
 	 */
-	private void generateORLists(BuildData buildData, JsonDataImage jsonDataImage, LockDataImage lockDataImage) {
+	private void generateORLists(BuildData buildData, JsonDataImage jsonDataImage, DependencyReflectionCollection lockDataImage) {
 		
-		List<PackageDataImage> packages = lockDataImage.getPackages();
+		List<DependencyReflection> packages = lockDataImage.getPackages();
 		generateDependencies(packages, buildData.getBuildId(), DependencyType.DIRECT);
 	
 		componentList.add(new Component(jsonDataImage.getName(), buildData.getSourceType(), buildData.getSourceUrl()));
@@ -73,12 +73,12 @@ public class DaoMapper implements RowDataMapper {
 	
 	/**
 	 * generates list of data access objects
-	 * @param lst - list of {@link PackageDataImage}
+	 * @param lst - list of {@link DependencyReflection}
 	 * @param buildId - build identifier
 	 * @param type {@link DependencyType}
 	 */
-	private void generateDependencies(List<PackageDataImage> lst, String buildId, DependencyType type){
-		for (PackageDataImage pkg : lst){
+	private void generateDependencies(List<DependencyReflection> lst, String buildId, DependencyType type){
+		for (DependencyReflection pkg : lst){
 			String reference = pkg.getSource().getReference().replace("/trunk/@", "");
 			dependencyList.add(new Dependency(reference, buildId, type.toString()));
 			componentList.add(new Component(pkg.getName(), pkg.getSource().getType(), pkg.getSource().getUrl()));
@@ -94,7 +94,7 @@ public class DaoMapper implements RowDataMapper {
 	 * @param jsonDataImage
 	 * @param lockDataImage
 	 */
-	private void generateORObjects(BuildData buildData, JsonDataImage jsonDataImage, LockDataImage lockDataImage) {
+	private void generateORObjects(BuildData buildData, JsonDataImage jsonDataImage, DependencyReflectionCollection lockDataImage) {
 		transport.setObject(Build.class, new Build(buildData.getBuildId(), buildData.getTimestamp(),
 				buildData.getNumber(), buildData.getJobName()));
 	}

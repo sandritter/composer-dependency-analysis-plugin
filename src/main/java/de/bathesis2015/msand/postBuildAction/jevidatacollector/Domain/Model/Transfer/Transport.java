@@ -13,13 +13,13 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Tran
  *
  * @author Michael Sandritter
  */
-public class TransferObject implements Transferable{
+public class Transport implements Transferable{
 	
 	private Map<Class<?>, List<?>> listMap;
 	private Map<Class<?>, Object> objectMap;
 	private Map<Class<?>, Map<?,?>> mapMap;
 	
-	public TransferObject() {
+	public Transport() {
 		this.listMap = new HashMap<Class<?>, List<?>>();
 		this.objectMap = new HashMap<Class<?>, Object>();
 		this.mapMap = new HashMap<Class<?>, Map<?,?>>();

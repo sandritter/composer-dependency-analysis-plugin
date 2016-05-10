@@ -3,6 +3,8 @@ package de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.IO;
 import java.io.File;
 import java.io.IOException;
 
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.IO.Interface.IOAccess;
+
 /**
  * ComposerFileRepository.java
  * is responsible to load files by given path
