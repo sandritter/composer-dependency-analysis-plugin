@@ -3,14 +3,14 @@ package de.bathesis2015.msand.postBuildAction.jevidatacollector.Util;
 import java.util.ArrayList;
 import java.util.List;
 
-import DataBuilder.DAO.BuildBuilder;
-import DataBuilder.DAO.ComponentBuilder;
-import DataBuilder.DAO.DependencyBuilder;
-import DataBuilder.DAO.StandBuilder;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.Build;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.BuildBuilder;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.Component;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.ComponentBuilder;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.Dependency;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.DependencyBuilder;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.Stand;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO.StandBuilder;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.Transport;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.Interface.Transferable;
 

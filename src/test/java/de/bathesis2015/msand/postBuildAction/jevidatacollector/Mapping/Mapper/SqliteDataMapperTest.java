@@ -8,7 +8,7 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import DataBuilder.Result.ResultSetBuilder;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Result.ResultSetBuilder;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Result.Database.BuildSummary;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Result.Database.ComponentSummary;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Result.Database.DependentComponent;

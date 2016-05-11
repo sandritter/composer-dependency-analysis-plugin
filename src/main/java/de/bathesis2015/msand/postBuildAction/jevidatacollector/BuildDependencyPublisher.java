@@ -24,7 +24,7 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Enum.File
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Enum.SourceType;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Exception.DataMappingFailedException;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Facade.MappingFacade;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Facade.Modul.MappingModule;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Module.MappingModule;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Database.Factory.DataLoaderFactory;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Database.Factory.DataStorageFactory;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Database.Interface.DataLoader;
@@ -34,6 +34,7 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Modul
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Module.PersistenceModule;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Util.Logger;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Util.PathResolver;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Util.Interface.Resolver;
 import hudson.EnvVars;
 import hudson.Extension;
 import hudson.FilePath;
@@ -110,7 +111,8 @@ public class BuildDependencyPublisher extends Recorder {
 	 *            - file path of a composer.lock file
 	 */
 	@DataBoundConstructor
-	public BuildDependencyPublisher(String jsonPath, String lockPath) {
+	public BuildDependencyPublisher(String jsonPath, String lockPath)
+	{
 		this.lockPath = lockPath;
 		this.jsonPath = jsonPath;
 	}
@@ -122,7 +124,7 @@ public class BuildDependencyPublisher extends Recorder {
 		logger = Logger.getInstance(listener);
 		logger.logPluginStart();
 
-		PathResolver pathResolver = new PathResolver(logger, build);
+		Resolver pathResolver = new PathResolver(logger, build);
 
 		createModules(getDescriptor().getDbPath());
 
@@ -142,10 +144,10 @@ public class BuildDependencyPublisher extends Recorder {
 		return true;
 	}
 
-	private Map<FileType, File> loadDependencyReflectionFiles(PathResolver pathResolver)
+	private Map<FileType, File> loadDependencyReflectionFiles(Resolver pathResolver)
 	{
-		String finalLockPath = pathResolver.getLockPath(lockPath);
-		String finalJsonPath = pathResolver.getJsonPath(jsonPath);
+		String finalLockPath = pathResolver.getAbsolutePath(FileType.COMPOSER_LOCK, lockPath);
+		String finalJsonPath = pathResolver.getAbsolutePath(FileType.COMPOSER_JSON, jsonPath);
 		Map<FileType, File> files = new HashMap<FileType, File>();
 		files.put(FileType.COMPOSER_JSON, loadFile(finalJsonPath));
 		files.put(FileType.COMPOSER_LOCK, loadFile(finalLockPath));
@@ -164,8 +166,10 @@ public class BuildDependencyPublisher extends Recorder {
 		Transferable transport = null;
 		try {
 			transport = mappingFacade.mapRowData(buildData, files);
-			logger.println(Logger.LABEL + Logger.SUCCESS
-					+ "collected build- and version-information of this build has been successfully mapped to data access objects");
+			logger.println(
+				Logger.LABEL + Logger.SUCCESS
+				+ "collected build- and version-information of this build has been successfully mapped to data access objects"
+			);
 		} catch (DataMappingFailedException e1) {
 			logger.logFailure(e1, "DATA MAPPING FAILED");
 		}
@@ -214,8 +218,10 @@ public class BuildDependencyPublisher extends Recorder {
 	{
 		try {
 			build.addAction(new IntegrationAnalyser(buildData, dataLoader));
-			logger.println(Logger.LABEL + Logger.SUCCESS
-					+ "analysis of all installed components of this build have been successful");
+			logger.println(
+				Logger.LABEL + Logger.SUCCESS
+				+ "analysis of all installed components of this build have been successful"
+			);
 		} catch (Exception e) {
 			logger.logFailure(e, "ANALYSIS FAILED");
 		}
@@ -340,7 +346,8 @@ public class BuildDependencyPublisher extends Recorder {
 		 * In order to load the persisted global configuration, you have to call
 		 * load() in the constructor.
 		 */
-		public DescriptorImpl() {
+		public DescriptorImpl()
+		{
 			load();
 		}
 

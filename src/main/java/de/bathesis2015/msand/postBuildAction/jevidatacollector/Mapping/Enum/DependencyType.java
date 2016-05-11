@@ -10,8 +10,8 @@ package de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Enum;
  */
 public enum DependencyType {
 	MAIN ("main"), 
-	DIRECT ("direct"),
-	INDIRECT ("indirect"),
+	HIGH_LEVEL ("direct"),
+	LOW_LEVEL ("indirect"),
 	ALL ("all");
 	
 	private final String name;       

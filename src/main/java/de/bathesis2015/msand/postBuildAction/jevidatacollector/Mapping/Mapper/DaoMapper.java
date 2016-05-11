@@ -60,7 +60,7 @@ public class DaoMapper implements RowDataMapper {
 	private void generateORLists(BuildData buildData, JsonDataImage jsonDataImage, DependencyReflectionCollection lockDataImage) {
 		
 		List<DependencyReflection> packages = lockDataImage.getPackages();
-		generateDependencies(packages, buildData.getBuildId(), DependencyType.DIRECT);
+		generateDependencies(packages, buildData.getBuildId(), DependencyType.HIGH_LEVEL);
 	
 		componentList.add(new Component(jsonDataImage.getName(), buildData.getSourceType(), buildData.getSourceUrl()));
 		standList.add(new Stand(buildData.getVersion(), buildData.getRevision(), jsonDataImage.getName()));

@@ -6,19 +6,17 @@ import java.io.IOException;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.IO.Interface.IOAccess;
 
 /**
- * ComposerFileRepository.java
- * is responsible to load files by given path
+ * ComposerFileRepository.java is responsible to load files by given path
  *
- * @author Michael Sandritter
- * 10.09.2015
+ * @author Michael Sandritter 10.09.2015
  */
-public class FileLoader implements IOAccess{
-	
+public class FileLoader implements IOAccess {
+
 	@Override
-	public File load(String path) throws IOException{
-		
+	public File load(String path) throws IOException
+	{
 		File f = new File(path);
-		if (f.exists()){			
+		if (f.exists()) {
 			return f;
 		} else {
 			throw new IOException("The requested file: " + path + " does not exist");

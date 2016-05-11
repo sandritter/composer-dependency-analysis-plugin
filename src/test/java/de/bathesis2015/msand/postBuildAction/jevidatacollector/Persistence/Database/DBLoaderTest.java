@@ -27,7 +27,7 @@ public class DBLoaderTest {
 	@Before
 	public void setUp() throws IOException, InterruptedException {
 		
-		// get path of database
+		// get path of database placed in src/test/resources
 		ClassLoader loader = getClass().getClassLoader();
 		String dbPath = loader.getResource("jevi.db").getPath(); 
 		
@@ -38,7 +38,7 @@ public class DBLoaderTest {
 	
 	
 	@Test
-	public void testLoadBuild() throws Exception{
+	public void shouldLoadBuild() throws Exception{
 		Transferable t = dataLoader.loadBuild("ref-k3-01");
 		BuildSummary build = (BuildSummary) t.getObject(BuildSummary.class);
 		assertNotNull(build);
@@ -49,7 +49,7 @@ public class DBLoaderTest {
 	}
 	
 	@Test
-	public void testLoadMainComponent() throws Exception{
+	public void shouldLoadMainComponent() throws Exception{
 		Transferable t = dataLoader.loadMainComponent("b-k3-01");
 		ComponentSummary component = (ComponentSummary) t.getObject(ComponentSummary.class);
 		assertNotNull(component);
@@ -64,7 +64,7 @@ public class DBLoaderTest {
 	}
 	
 	@Test
-	public void testLoadAllDependencies() throws Exception{
+	public void shouldLoadAllDependencies() throws Exception{
 		Transferable t = dataLoader.loadDependencies("b-k3-01", DependencyType.ALL);
 		@SuppressWarnings("unchecked")
 		Map<String, ComponentSummary> totalSet = (Map<String, ComponentSummary>) t.getMap(ComponentSummary.class);
@@ -72,7 +72,7 @@ public class DBLoaderTest {
 	}
 	
 	@Test
-	public void testLoadDependentComponents() throws Exception{
+	public void shouldLoadDependentComponents() throws Exception{
 		Transferable t = dataLoader.loadDependentComponents("Kunde");
 		@SuppressWarnings("unchecked")
 		Map<String, DependentComponent> totalSet = (Map<String, DependentComponent>) t.getMap(DependentComponent.class);
@@ -80,8 +80,8 @@ public class DBLoaderTest {
 	}
 	
 	@Test
-	public void testLoadDirectDependencies() throws Exception{
-		Transferable t = dataLoader.loadDependencies("b-k3-01", DependencyType.DIRECT);
+	public void shouldLoadHighLevelDependencies() throws Exception{
+		Transferable t = dataLoader.loadDependencies("b-k3-01", DependencyType.HIGH_LEVEL);
 		@SuppressWarnings("unchecked")
 		Map<String, ComponentSummary> subSet = (Map<String, ComponentSummary>) t.getMap(ComponentSummary.class);
 		assertEquals(2, subSet.size());

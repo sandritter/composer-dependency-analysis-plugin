@@ -4,18 +4,22 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Enum.FileType;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Util.Interface.Resolver;
+import hudson.FilePath;
 import hudson.model.AbstractBuild;
 
-public class PathResolver {
-	
+public class PathResolver implements Resolver{
+
 	private Logger logger;
 	private AbstractBuild<?, ?> build;
-	
-	public PathResolver(Logger logger, AbstractBuild<?, ?> build) {
+
+	public PathResolver(Logger logger, AbstractBuild<?, ?> build)
+	{
 		this.logger = logger;
 		this.build = build;
 	}
-	
+
 	/**
 	 * is concatenating the composer.lock file path from the configuration with
 	 * the workspace path of a project (build-job)
@@ -24,12 +28,33 @@ public class PathResolver {
 	 *            {@link AbstractBuild}
 	 * @return absolute path of the composer.lock path
 	 */
-	public String getLockPath(String lockPath) {
+	public String getLockPath(String lockPath)
+	{
 		String workspacePath = loadWorkspacePath(build);
 		if (lockPath.equals("default")) {
-			return getAbsolutePath("source/composer.lock", workspacePath);
+			return getAbsolute("source/composer.lock", workspacePath);
 		}
-		return getAbsolutePath(lockPath, workspacePath);
+		return getAbsolute(lockPath, workspacePath);
+	}
+
+	/**
+	 * 
+	 * @param fileType
+	 * @param relativePath
+	 * @return
+	 */
+	public String getAbsolutePath(FileType fileType, String relativePath)
+	{
+		String workspacePath = loadWorkspacePath(build);
+		for (FileType type : FileType.values()) {
+			if (type == fileType && relativePath.equals("default")) {
+				return getAbsolute(
+						"source/" + fileType.toString(), 
+						workspacePath
+						);
+			} 
+		}
+		return getAbsolute(relativePath, workspacePath);
 	}
 
 	/**
@@ -40,14 +65,15 @@ public class PathResolver {
 	 *            {@link AbstractBuild}
 	 * @return absolute path to the composer.json file
 	 */
-	public String getJsonPath(String jsonPath) {
+	public String getJsonPath(String jsonPath)
+	{
 		String workspacePath = loadWorkspacePath(build);
 		if (jsonPath.equals("default")) {
-			return getAbsolutePath("source/composer.json", workspacePath);
+			return getAbsolute("source/composer.json", workspacePath);
 		}
-		return getAbsolutePath(jsonPath, workspacePath);
+		return getAbsolute(jsonPath, workspacePath);
 	}
-	
+
 	/**
 	 * is loading the workspace path of a build instance
 	 * 
@@ -55,10 +81,12 @@ public class PathResolver {
 	 *            {@link AbstractBuild}
 	 * @return workspace path
 	 */
-	private String loadWorkspacePath(AbstractBuild<?, ?> build) {
-		String workspace = "";
+	private String loadWorkspacePath(AbstractBuild<?, ?> build)
+	{
+		String path = "";
 		try {
-			workspace = build.getWorkspace().toURI().toURL().getPath();
+			FilePath workspace = build.getWorkspace();
+			path = workspace.toURI().toURL().getPath();
 		} catch (MalformedURLException e) {
 			logger.logFailure(e, "LOADING WORKSPACE FAILED");
 		} catch (IOException e) {
@@ -66,9 +94,9 @@ public class PathResolver {
 		} catch (InterruptedException e) {
 			logger.logFailure(e, "LOADING WORKSPACE FAILED");
 		}
-		return workspace;
+		return path;
 	}
-	
+
 	/**
 	 * concatenates a file name and directory and returns a absolute path of
 	 * that file
@@ -79,7 +107,8 @@ public class PathResolver {
 	 *            workspace path
 	 * @return absolute path
 	 */
-	private String getAbsolutePath(String value, String workspace) {
+	private String getAbsolute(String value, String workspace)
+	{
 		File f = new File(value);
 		File workspacePath = new File(workspace);
 		File absolutePath = new File(workspacePath, value);

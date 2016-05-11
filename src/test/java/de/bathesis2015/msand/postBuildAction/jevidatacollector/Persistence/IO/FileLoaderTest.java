@@ -23,7 +23,7 @@ public class FileLoaderTest {
 	}
 	
 	@Test
-	public void testFileLoading(){
+	public void shouldLoadFile(){
 		try {
 			File file = fileLoader.load(filePath);
 			assertEquals(filePath, file.getAbsolutePath());

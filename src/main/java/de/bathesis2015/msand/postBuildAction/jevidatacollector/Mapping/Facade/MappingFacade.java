@@ -11,6 +11,7 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Tran
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.Interface.Transferable;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Enum.FileType;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Exception.DataMappingFailedException;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Facade.Interface.Mapping;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.Interface.ComposerMapable;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.Interface.RowDataMapper;
 
@@ -22,7 +23,7 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.In
  * @author Michael Sandritter
  *
  */
-public class MappingFacade {
+public class MappingFacade implements Mapping{
 	
 	private ComposerMapable composerMapper;
 	private RowDataMapper rowDataMapper;

@@ -64,7 +64,7 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 	private AnalyseResult analyse(BuildData buildData) throws Exception {
 
 		AnalyseResult result = new AnalyseResult(buildData);
-		Map<String, ComponentSummary> totalSet = loadDependencies(buildData.getBuildId(), DependencyType.DIRECT);
+		Map<String, ComponentSummary> totalSet = loadDependencies(buildData.getBuildId(), DependencyType.HIGH_LEVEL);
 		
 		// add information about this build
 		ComponentSummary mainComponent = loadMainComponent(buildData.getBuildId());
@@ -105,7 +105,7 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 			String url = buildData.getJenkinsUrl()+ "job/" + build.getJobName() +"/"+ Integer.toString(build.getBuildNumber()) + "/"+ SUB_URL;
 			depResult.setLink(url);
 			depResult.setAnalyseTarget(c);
-			Map<String, ComponentSummary> subSet = loadDependencies(build.getBuildId(), DependencyType.DIRECT);
+			Map<String, ComponentSummary> subSet = loadDependencies(build.getBuildId(), DependencyType.HIGH_LEVEL);
 			if(subSet != null){				
 				compareReferences(totalSet, subSet, depResult, result);
 			}
@@ -200,8 +200,8 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 		Transferable t = null;
 		if (type == DependencyType.ALL) {
 			t = dataLoader.loadDependencies(buildId, DependencyType.ALL);
-		} else if (type == DependencyType.DIRECT) {
-			t = dataLoader.loadDependencies(buildId, DependencyType.DIRECT);
+		} else if (type == DependencyType.HIGH_LEVEL) {
+			t = dataLoader.loadDependencies(buildId, DependencyType.HIGH_LEVEL);
 		}
 		Map<String, ComponentSummary> map = (Map<String, ComponentSummary>) t.getMap(ComponentSummary.class);
 		return map;

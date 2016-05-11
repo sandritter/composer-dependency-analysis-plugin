@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
-Built-By: medieninf
+Built-By: michael.sandritter
 Created-By: Apache Maven
-Build-Jdk: 1.8.0_45-internal
+Build-Jdk: 1.8.0_77
 Extension-Name: jevidatacollector
 Specification-Title: This plugin is looking for dependencies stored in
   a composer.lock file and storing them into a sqlite database
