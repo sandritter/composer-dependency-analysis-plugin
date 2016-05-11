@@ -14,7 +14,7 @@ public class SelectQueries {
 	 * select query for loading all dependencies of a specific build by it's
 	 * buildId
 	 */
-	public static String directDepsQuery = "SELECT z.component_name as component, z.reference "
+	public static String highLevelDependencies = "SELECT z.component_name as component, z.reference "
 			+ "AS reference, z.version AS version, z.build_id AS build_id, "
 			+ "z.type AS type, x.source_url AS source_url, x.source_type AS source_type "
 			+ "FROM component AS x INNER JOIN "
@@ -26,7 +26,7 @@ public class SelectQueries {
 	 * select query for loading all dependencies (including the main component)
 	 * of a specific build by it's buildId
 	 */
-	public static String allDepsQuery = "SELECT ds.component_name AS component, ds.reference AS reference, "
+	public static String allDependencies = "SELECT ds.component_name AS component, ds.reference AS reference, "
 			+ "ds.version AS version, ds.build_id AS build_id, ds.type AS type, "
 			+ "c.source_url as source_url, c.source_type AS source_type FROM component AS c INNER JOIN "
 			+ "(SELECT * FROM stand AS s INNER JOIN " + "(SELECT * FROM dependency WHERE build_id=?) AS d "
@@ -36,7 +36,7 @@ public class SelectQueries {
 	 * select query for loading the main component of a specific build by it's
 	 * buildId
 	 */
-	public static String mainComponentQuery = "SELECT ds.component_name AS component, ds.reference AS reference, "
+	public static String mainComponent = "SELECT ds.component_name AS component, ds.reference AS reference, "
 			+ "ds.version AS version, ds.build_id AS build_id, ds.type AS type, "
 			+ "c.source_url as source_url, c.source_type AS source_type FROM component AS c INNER JOIN "
 			+ "(SELECT d.reference, s.version, s.component_name, s.reference, d.build_id, d.type FROM stand AS s INNER JOIN "
@@ -47,7 +47,7 @@ public class SelectQueries {
 	 * select query for loading build-specific information of a build by the
 	 * reference of it's main component
 	 */
-	public static String buildOfMainDependencyQuery = "SELECT  build_id, time_stamp, build_number, job_name FROM build AS b "
+	public static String buildOfMainDependency = "SELECT  build_id, time_stamp, build_number, job_name FROM build AS b "
 			+ "INNER JOIN (" + "SELECT build_id FROM dependency WHERE reference=? AND type='main') AS d "
 			+ "ON b.id = d.build_id";
 

@@ -45,13 +45,13 @@ public class DaoMapperTest{
 	}
 	
 	@Test
-	public void testTransferableIsNotNull(){
+	public void shouldMapData(){
 		Transferable tranport = mapper.mapData(buildData, transport);
 		assertNotNull(tranport);
 	}
 	
 	@Test
-	public void testDependencyMapping(){
+	public void shouldMapDependency(){
 		Transferable t = mapper.mapData(buildData, transport);
 		@SuppressWarnings("unchecked")
 		List<Dependency> lst = (List<Dependency>) t.getList(Dependency.class);
@@ -64,7 +64,7 @@ public class DaoMapperTest{
 	}
 	
 	@Test
-	public void testStandMapping(){
+	public void shouldMapStand(){
 		Transferable t = mapper.mapData(buildData, transport);
 		@SuppressWarnings("unchecked")
 		List<Stand> lst = (List<Stand>) t.getList(Stand.class);
@@ -77,7 +77,7 @@ public class DaoMapperTest{
 	}
 	
 	@Test
-	public void testBuildMapping(){
+	public void shouldMapBuild(){
 		Transferable tranport = mapper.mapData(buildData, transport);
 		Build build = (Build) tranport.getObject(Build.class);
 		assertEquals(buildData.getBuildId(), build.getBuildId());
@@ -87,7 +87,7 @@ public class DaoMapperTest{
 	}
 	
 	@Test
-	public void testComponentMapping(){
+	public void shouldMapComponent(){
 		Transferable t = mapper.mapData(buildData, transport);
 		@SuppressWarnings("unchecked")
 		List<Component> lst = (List<Component>) t.getList(Component.class);

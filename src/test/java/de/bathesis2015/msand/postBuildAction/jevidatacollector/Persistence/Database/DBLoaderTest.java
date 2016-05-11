@@ -23,33 +23,35 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Modul
 public class DBLoaderTest {
 
 	private DataLoader dataLoader;
-	
+
 	@Before
-	public void setUp() throws IOException, InterruptedException {
-		
+	public void setUp() throws IOException, InterruptedException
+	{
+
 		// get path of database placed in src/test/resources
 		ClassLoader loader = getClass().getClassLoader();
-		String dbPath = loader.getResource("jevi.db").getPath(); 
-		
+		String dbPath = loader.getResource("jevi.db").getPath();
+
 		Injector injector = Guice.createInjector(new PersistenceModule());
 		DataLoaderFactory dataLoaderFactory = injector.getInstance(DataLoaderFactory.class);
 		this.dataLoader = dataLoaderFactory.create(dbPath);
 	}
-	
-	
+
 	@Test
-	public void shouldLoadBuild() throws Exception{
+	public void shouldLoadBuild() throws Exception
+	{
 		Transferable t = dataLoader.loadBuild("ref-k3-01");
 		BuildSummary build = (BuildSummary) t.getObject(BuildSummary.class);
 		assertNotNull(build);
 		assertEquals("b-k3-01", build.getBuildId());
-		assertEquals((long)144936, build.getTime_stamp());
+		assertEquals((long) 144936, build.getTime_stamp());
 		assertEquals(1, build.getBuildNumber());
 		assertEquals("Job3", build.getJobName());
 	}
-	
+
 	@Test
-	public void shouldLoadMainComponent() throws Exception{
+	public void shouldLoadMainComponent() throws Exception
+	{
 		Transferable t = dataLoader.loadMainComponent("b-k3-01");
 		ComponentSummary component = (ComponentSummary) t.getObject(ComponentSummary.class);
 		assertNotNull(component);
@@ -62,25 +64,28 @@ public class DBLoaderTest {
 		assertEquals("ref-k3-01", component.getReference());
 		assertEquals("3.0", component.getVersion());
 	}
-	
+
 	@Test
-	public void shouldLoadAllDependencies() throws Exception{
+	public void shouldLoadAllDependencies() throws Exception
+	{
 		Transferable t = dataLoader.loadDependencies("b-k3-01", DependencyType.ALL);
 		@SuppressWarnings("unchecked")
 		Map<String, ComponentSummary> totalSet = (Map<String, ComponentSummary>) t.getMap(ComponentSummary.class);
 		assertEquals(3, totalSet.size());
 	}
-	
+
 	@Test
-	public void shouldLoadDependentComponents() throws Exception{
+	public void shouldLoadDependentComponents() throws Exception
+	{
 		Transferable t = dataLoader.loadDependentComponents("Kunde");
 		@SuppressWarnings("unchecked")
 		Map<String, DependentComponent> totalSet = (Map<String, DependentComponent>) t.getMap(DependentComponent.class);
 		assertEquals(4, totalSet.size());
 	}
-	
+
 	@Test
-	public void shouldLoadHighLevelDependencies() throws Exception{
+	public void shouldLoadHighLevelDependencies() throws Exception
+	{
 		Transferable t = dataLoader.loadDependencies("b-k3-01", DependencyType.HIGH_LEVEL);
 		@SuppressWarnings("unchecked")
 		Map<String, ComponentSummary> subSet = (Map<String, ComponentSummary>) t.getMap(ComponentSummary.class);

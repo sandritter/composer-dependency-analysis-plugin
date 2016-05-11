@@ -80,9 +80,9 @@ public class SQliteLoader implements DataLoader {
 			c = establishConnection();
 			String sql = "";
 			if (type == DependencyType.HIGH_LEVEL) {
-				sql = SelectQueries.directDepsQuery;
+				sql = SelectQueries.highLevelDependencies;
 			} else if (type == DependencyType.ALL) {
-				sql = SelectQueries.allDepsQuery;
+				sql = SelectQueries.allDependencies;
 			}
 			stmt = c.prepareStatement(sql);
 			stmt.setString(1, value);
@@ -103,7 +103,7 @@ public class SQliteLoader implements DataLoader {
 		PreparedStatement stmt = null;
 		try {
 			c = establishConnection();
-			String sql = SelectQueries.buildOfMainDependencyQuery;
+			String sql = SelectQueries.buildOfMainDependency;
 			stmt = c.prepareStatement(sql);
 			stmt.setString(1, reference);
 
@@ -123,7 +123,7 @@ public class SQliteLoader implements DataLoader {
 		PreparedStatement stmt = null;
 		try {
 			c = establishConnection();
-			String sql = SelectQueries.mainComponentQuery;
+			String sql = SelectQueries.mainComponent;
 			stmt = c.prepareStatement(sql);
 			stmt.setString(1, buildId);
 			ResultSet rs = stmt.executeQuery();

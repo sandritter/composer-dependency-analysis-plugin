@@ -11,8 +11,8 @@
 		<version>1.580.1</version>
 		<relativePath />
 	</parent>
-	<groupId>de.bathesis2015.msand.postBuildAction</groupId>
-	<artifactId>jevidatacollector</artifactId>
+	<groupId>de.sandritter.michael.jenkins.plugin.vaid</groupId>
+	<artifactId>version-analysis-of-integration-dependencies</artifactId>
 	<version>1.0</version>
 	<packaging>hpi</packaging>
 
