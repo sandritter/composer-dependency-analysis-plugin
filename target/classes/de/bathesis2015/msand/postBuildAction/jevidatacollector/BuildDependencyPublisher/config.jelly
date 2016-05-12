@@ -1,9 +1,0 @@
-<?jelly escape-by-default='true'?>
-<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
-  <f:entry field="lockPath" title="path to the dependency information file">
-    <f:select />
-  </f:entry>
-  <f:entry field="jsonPath" title="path to composer.json file">
-    <f:select />
-  </f:entry>
-</j:jelly>

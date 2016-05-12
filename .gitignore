@@ -1,4 +1,14 @@
-target/*
-/target/*
-/target/
-/bin/
+#Eclipse
+.classpath
+.project
+.settings/
+
+# Mac
+.DS_Store
+
+# Maven
+logs/
+target/
+work/
+bin/
+log/
