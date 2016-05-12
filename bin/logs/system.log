@@ -1,0 +1,624 @@
+2015-10-23 14:03:18,558 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 14:03:18,566 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 14:03:18,572 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 14:03:18,872 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 14:03:19,509 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 14:03:19,635 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 14:03:19,638 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 14:03:19,639 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 14:03:19,639 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 14:03:19,645 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 14:03:19,900 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 14:03:19,979 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 14:03:20,212 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 14:06:10,545 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 14:06:10,553 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 14:06:10,563 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 14:06:10,761 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 14:06:11,432 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 14:06:11,576 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 14:06:11,583 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 14:06:11,587 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 14:06:11,588 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 14:06:11,590 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 14:06:11,775 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 14:06:11,867 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 14:06:12,134 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 14:17:44,565 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 14:17:44,569 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 14:17:44,592 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 14:17:44,760 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 14:17:45,405 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 14:17:45,522 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 14:17:45,525 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 14:17:45,526 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 14:17:45,526 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 14:17:45,531 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 14:17:45,776 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 14:17:45,855 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 14:17:46,071 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 14:19:44,767 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 14:19:44,773 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 14:19:44,780 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 14:19:45,005 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 14:19:45,606 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 14:19:45,729 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 14:19:45,732 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 14:19:45,733 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 14:19:45,733 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 14:19:45,739 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 14:19:46,014 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 14:19:46,086 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 14:19:46,314 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 14:20:24,998 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 14:20:25,017 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 14:20:25,026 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 14:20:25,211 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 14:20:25,992 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 14:20:26,128 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 14:20:26,132 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 14:20:26,133 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 14:20:26,133 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 14:20:26,135 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 14:20:26,332 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 14:20:26,405 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 14:20:26,621 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 14:41:09,403 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 14:41:09,424 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 14:41:09,433 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 14:41:09,691 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 14:41:10,351 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 14:41:10,481 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 14:41:10,487 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 14:41:10,488 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 14:41:10,488 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 14:41:10,494 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 14:41:10,699 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 14:41:10,758 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 14:41:10,989 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 14:43:56,751 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 14:43:56,762 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 14:43:56,770 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 14:43:56,988 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 14:43:57,621 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 14:43:57,747 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 14:43:57,751 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 14:43:57,752 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 14:43:57,752 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 14:43:57,753 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 14:43:57,972 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 14:43:58,039 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 14:43:58,261 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 14:58:16,795 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 14:58:16,812 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 14:58:16,816 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 14:58:17,029 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 14:58:17,710 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 14:58:17,844 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 14:58:17,848 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 14:58:17,848 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 14:58:17,848 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 14:58:17,850 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 14:58:18,082 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 14:58:18,156 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 14:58:18,382 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 14:58:42,612 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 14:58:42,627 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 14:58:42,640 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 14:58:42,921 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 14:58:43,561 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 14:58:43,674 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 14:58:43,677 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 14:58:43,678 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 14:58:43,678 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 14:58:43,684 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 14:58:44,050 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 14:58:44,257 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 14:58:44,751 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 15:00:04,093 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 15:00:04,112 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 15:00:04,123 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 15:00:04,379 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 15:00:05,288 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 15:00:05,436 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 15:00:05,439 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 15:00:05,440 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 15:00:05,440 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 15:00:05,442 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 15:00:05,675 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 15:00:05,779 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 15:00:05,983 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 15:00:48,563 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 15:00:48,570 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 15:00:48,577 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 15:00:48,839 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 15:00:49,779 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 15:00:49,894 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 15:00:49,898 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 15:00:49,899 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 15:00:49,899 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 15:00:49,904 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 15:00:50,174 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 15:00:50,248 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 15:00:50,527 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 15:07:09,402 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 15:07:09,413 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 15:07:09,420 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 15:07:09,659 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 15:07:10,597 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 15:07:10,914 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 15:07:10,921 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 15:07:10,921 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 15:07:10,922 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 15:07:10,925 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 15:07:11,165 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 15:07:11,270 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 15:07:11,523 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 15:07:46,434 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 15:07:46,461 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 15:07:46,471 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 15:07:46,723 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 15:07:47,651 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 15:07:47,952 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 15:07:47,957 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 15:07:47,958 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 15:07:47,958 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 15:07:47,966 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 15:07:48,242 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 15:07:48,323 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 15:07:48,577 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 15:27:20,490 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 15:27:20,506 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 15:27:20,528 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 15:27:20,877 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 15:27:21,764 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 15:27:21,870 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 15:27:21,877 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 15:27:21,877 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 15:27:21,878 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 15:27:21,879 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 15:27:22,084 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 15:27:22,169 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 15:27:22,487 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 15:27:42,293 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 15:27:42,304 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 15:27:42,324 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 15:27:42,532 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 15:27:43,137 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 15:27:43,247 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 15:27:43,262 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 15:27:43,263 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 15:27:43,263 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 15:27:43,265 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 15:27:43,459 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 15:27:43,530 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 15:27:43,818 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 15:31:00,507 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 15:31:00,538 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 15:31:00,556 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 15:31:00,730 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 15:34:09,571 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 15:34:09,592 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 15:34:09,599 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 15:34:09,819 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 15:34:24,394 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 15:34:24,412 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 15:34:24,427 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 15:34:24,732 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 15:34:25,566 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 15:34:25,781 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 15:34:25,785 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 15:34:25,785 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 15:34:25,786 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 15:34:25,788 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 15:34:26,033 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 15:34:26,132 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 15:34:26,389 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 15:34:40,282 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 15:34:40,293 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 15:34:40,300 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 15:34:50,859 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 15:34:50,878 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 15:34:50,880 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 15:34:51,157 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 15:34:52,367 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 15:34:52,611 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 15:34:52,615 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 15:34:52,618 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 15:34:52,618 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 15:34:52,625 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 15:34:52,897 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 15:34:52,985 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 15:34:53,407 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 15:58:27,873 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 15:58:27,906 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 15:58:27,930 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 15:58:28,232 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 15:58:28,931 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 15:58:29,127 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 15:58:29,131 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 15:58:29,132 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 15:58:29,132 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 15:58:29,133 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 15:58:29,347 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 15:58:29,432 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 15:58:29,635 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 16:00:22,946 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 16:00:22,953 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 16:00:22,956 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 16:00:23,060 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 16:00:26,383 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 16:00:26,569 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 16:00:26,583 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 16:00:26,583 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 16:00:26,584 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 16:00:26,587 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 16:00:26,840 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 16:00:26,911 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 16:01:09,320 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 16:01:09,344 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 16:01:09,358 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 16:01:09,594 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 16:01:13,626 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 16:01:13,783 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 16:01:13,786 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 16:01:13,787 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 16:01:13,787 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 16:01:13,799 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 16:01:14,022 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 16:01:14,119 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 16:03:27,443 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 16:03:27,464 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 16:03:27,472 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 16:03:27,596 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 16:03:52,169 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 16:03:52,174 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 16:03:52,186 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 16:03:52,295 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 16:03:53,077 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 16:03:53,224 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 16:03:53,227 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 16:03:53,228 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 16:03:53,228 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 16:03:53,234 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 16:03:53,458 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 16:03:53,520 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 16:03:53,753 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 16:05:57,103 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 16:05:57,115 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 16:05:57,118 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 16:05:57,229 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 16:05:57,827 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 16:05:58,014 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 16:05:58,017 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 16:05:58,018 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 16:05:58,018 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 16:05:58,020 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 16:05:58,243 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 16:05:58,336 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 16:05:58,527 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 16:11:49,096 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 16:11:49,114 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 16:11:49,118 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 16:11:49,295 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 16:12:26,749 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 16:12:26,760 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 16:12:26,770 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 16:12:26,954 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 16:12:27,750 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 16:12:28,005 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 16:12:28,010 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 16:12:28,010 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 16:12:28,017 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 16:12:28,019 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 16:12:28,240 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 16:12:28,309 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 16:12:28,583 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 16:13:14,186 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 16:13:14,200 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 16:13:14,205 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 16:13:14,362 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 16:13:15,082 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 16:13:15,358 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 16:13:15,366 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 16:13:15,367 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 16:13:15,375 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 16:13:15,377 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 16:13:15,602 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 16:13:15,674 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 16:13:15,950 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 16:14:06,283 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 16:14:06,322 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 16:14:06,356 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 16:14:06,697 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 16:14:07,462 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 16:14:07,722 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 16:14:07,727 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 16:14:07,728 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 16:14:07,728 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 16:14:07,730 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 16:14:07,965 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 16:14:08,044 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 16:14:08,323 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 16:15:12,777 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 16:15:12,790 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 16:15:12,800 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 16:15:13,005 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 16:15:13,734 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 16:15:13,831 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 16:15:13,836 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 16:15:13,837 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 16:15:13,837 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 16:15:13,839 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 16:15:14,051 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 16:15:14,132 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 16:15:14,397 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 16:15:57,040 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 16:15:57,059 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 16:15:57,069 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 16:15:57,241 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 16:15:57,872 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 16:15:57,965 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 16:15:57,970 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 16:15:57,970 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 16:15:57,971 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 16:15:57,972 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 16:15:58,188 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 16:15:58,260 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 16:15:58,505 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 16:16:36,648 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 16:16:36,652 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 16:16:36,654 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 16:16:36,750 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 16:16:37,418 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 16:16:37,577 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 16:16:37,580 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 16:16:37,581 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 16:16:37,581 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 16:16:37,582 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 16:16:37,789 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 16:16:37,875 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 16:16:38,186 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 16:44:22,750 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 16:44:22,754 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 16:44:22,757 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 16:44:22,855 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 16:44:23,597 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 16:44:23,769 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 16:44:23,772 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 16:44:23,773 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 16:44:23,773 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 16:44:23,775 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 16:44:24,011 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 16:44:24,115 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 16:44:24,417 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 16:44:58,862 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 16:44:58,883 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 16:44:58,889 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 16:44:59,006 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 16:44:59,671 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 16:44:59,810 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 16:44:59,821 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 16:44:59,822 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 16:44:59,822 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 16:44:59,828 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 16:45:00,061 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 16:45:00,151 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 16:45:00,503 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 16:48:36,779 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 16:48:36,792 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 16:48:36,799 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 16:48:36,911 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 16:48:37,516 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 16:48:37,668 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 16:48:37,671 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 16:48:37,672 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 16:48:37,672 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 16:48:37,682 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 16:48:37,892 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 16:48:37,972 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 16:48:38,194 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 16:50:15,912 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 16:50:15,918 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 16:50:15,926 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 16:50:16,075 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 16:50:16,754 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 16:50:16,914 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 16:50:16,917 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 16:50:16,919 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 16:50:16,919 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 16:50:16,926 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 16:50:17,149 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 16:50:17,235 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 16:50:17,462 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 16:50:54,056 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 16:50:54,070 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 16:50:54,077 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 16:50:54,225 +0200 [main] WARN  (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2015-10-23 16:50:54,933 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 16:50:55,079 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 16:50:55,089 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 16:50:55,090 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 16:50:55,090 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 16:50:55,096 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 16:50:55,306 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 16:50:55,371 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 16:50:55,598 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 17:01:06,923 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 17:01:06,947 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 17:01:06,961 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 17:01:07,728 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 17:01:07,942 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 17:01:07,946 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 17:01:07,946 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 17:01:07,947 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 17:01:07,948 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 17:01:08,156 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 17:01:08,259 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 17:01:08,518 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 17:05:23,975 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 17:05:23,981 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 17:05:23,984 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 17:05:24,927 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 17:05:25,118 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 17:05:25,122 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 17:05:25,123 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 17:05:25,123 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 17:05:25,125 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 17:05:25,335 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 17:05:25,459 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 17:05:25,780 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 17:23:52,665 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 17:23:52,679 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 17:23:52,683 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 17:23:53,869 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 17:23:54,179 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 17:23:54,189 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 17:23:54,189 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 17:23:54,198 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 17:23:54,200 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 17:23:54,536 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 17:23:54,615 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 17:23:54,982 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 17:26:44,556 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 17:26:44,563 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 17:26:44,566 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 17:26:45,717 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 17:26:45,980 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 17:26:45,984 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 17:26:45,984 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 17:26:45,988 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 17:26:45,990 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 17:26:46,257 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 17:26:46,382 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 17:26:46,694 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 17:26:55,488 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 17:26:55,501 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 17:26:55,505 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 17:26:56,316 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 17:26:56,438 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 17:26:56,444 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 17:26:56,445 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 17:26:56,445 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 17:26:56,447 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 17:26:56,660 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 17:26:56,757 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 17:27:21,732 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 17:27:21,768 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 17:27:21,775 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 17:27:22,711 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 17:27:22,834 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 17:27:22,838 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 17:27:22,839 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 17:27:22,839 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 17:27:22,840 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 17:27:23,058 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 17:27:23,133 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 17:27:23,697 +0200 [main] INFO  (PojoInstantiator.java:66) - HHH000182: No default (no-argument) constructor for class: de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Storage.ORComponent (class must be instantiated by Interceptor)
+2015-10-23 17:27:24,251 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 17:27:24,271 +0200 [main] INFO  (InformationExtractorJdbcDatabaseMetaDataImpl.java:334) - HHH000262: Table not found: ORComponent
+2015-10-23 17:28:07,807 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 17:28:07,821 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 17:28:07,825 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 17:28:08,553 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 17:28:08,675 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 17:28:08,678 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 17:28:08,679 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 17:28:08,679 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 17:28:08,681 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 17:28:08,882 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 17:28:08,958 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 17:28:09,396 +0200 [main] INFO  (PojoInstantiator.java:66) - HHH000182: No default (no-argument) constructor for class: de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Storage.ORComponent (class must be instantiated by Interceptor)
+2015-10-23 17:28:09,814 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-23 17:29:10,990 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-23 17:29:11,006 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-23 17:29:11,018 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-23 17:29:11,777 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-23 17:29:11,893 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-23 17:29:11,897 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-23 17:29:11,904 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-23 17:29:11,905 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-23 17:29:11,906 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-23 17:29:12,123 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-23 17:29:12,206 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-23 17:29:12,622 +0200 [main] INFO  (PojoInstantiator.java:66) - HHH000182: No default (no-argument) constructor for class: de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Storage.ORComponent (class must be instantiated by Interceptor)
+2015-10-23 17:29:13,044 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-24 09:57:53,323 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-24 09:57:53,344 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-24 09:57:53,358 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-24 09:57:54,921 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-24 09:57:55,089 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-24 09:57:55,093 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-24 09:57:55,093 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-24 09:57:55,094 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-24 09:57:55,100 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-24 09:57:55,373 +0200 [main] WARN  (JdbcEnvironmentInitiator.java:132) - HHH000342: Could not obtain connection to query metadata : Unable to resolve name [com.applerao.hibernatesqlite.dialect.SQLiteDialect] as strategy [org.hibernate.dialect.Dialect]
+2015-10-24 09:58:33,361 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-24 09:58:33,375 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-24 09:58:33,388 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-24 09:58:34,573 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-24 09:58:34,719 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-24 09:58:34,732 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-24 09:58:34,732 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-24 09:58:34,733 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-24 09:58:34,735 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-24 09:58:34,981 +0200 [main] WARN  (JdbcEnvironmentInitiator.java:132) - HHH000342: Could not obtain connection to query metadata : Unable to resolve name [com.applerao.hibernatesqlite.dialect.SQLiteDialect] as strategy [org.hibernate.dialect.Dialect]
+2015-10-24 09:59:54,533 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-24 09:59:54,553 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-24 09:59:54,560 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-24 09:59:55,393 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-24 09:59:55,547 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-24 09:59:55,551 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-24 09:59:55,552 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-24 09:59:55,552 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-24 09:59:55,554 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-24 09:59:55,802 +0200 [main] WARN  (JdbcEnvironmentInitiator.java:132) - HHH000342: Could not obtain connection to query metadata : Unable to resolve name [com.applerao.hibernatesqlite.dialect.SQLiteDialect] as strategy [org.hibernate.dialect.Dialect]
+2015-10-24 10:00:50,565 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-24 10:00:50,581 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-24 10:00:50,590 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-24 10:00:51,620 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-24 10:00:51,781 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-24 10:00:51,785 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-24 10:00:51,790 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-24 10:00:51,790 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-24 10:00:51,793 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-24 10:00:52,070 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-24 10:00:52,193 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-24 10:00:52,461 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-24 10:02:56,265 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-24 10:02:56,275 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-24 10:02:56,280 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-24 10:02:57,301 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-24 10:02:57,471 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-24 10:02:57,475 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-24 10:02:57,475 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-24 10:02:57,475 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-24 10:02:57,478 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-24 10:02:57,777 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-24 10:02:57,928 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-24 10:02:58,410 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-24 10:07:22,550 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-24 10:07:22,560 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-24 10:07:22,563 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-24 10:07:23,522 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-24 10:07:23,678 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-24 10:07:23,683 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-24 10:07:23,684 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-24 10:07:23,684 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-24 10:07:23,687 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-24 10:07:23,963 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-24 10:07:24,077 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-24 10:07:24,438 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
+2015-10-24 10:08:00,992 +0200 [main] INFO  (Version.java:37) - HHH000412: Hibernate Core {5.0.2.Final}
+2015-10-24 10:08:01,001 +0200 [main] INFO  (Environment.java:213) - HHH000206: hibernate.properties not found
+2015-10-24 10:08:01,004 +0200 [main] INFO  (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+2015-10-24 10:08:01,979 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+2015-10-24 10:08:02,142 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:76) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-10-24 10:08:02,147 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:149) - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:/home/medieninf/workspace/Ba/Plugins/jevi-data-collector/jevi.db]
+2015-10-24 10:08:02,147 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:158) - HHH000046: Connection properties: {user=, password=****}
+2015-10-24 10:08:02,148 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:163) - HHH000006: Autocommit mode: false
+2015-10-24 10:08:02,149 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:85) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-10-24 10:08:02,426 +0200 [main] INFO  (Dialect.java:154) - HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2015-10-24 10:08:02,555 +0200 [main] INFO  (LobCreatorBuilderImpl.java:98) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2015-10-24 10:08:03,065 +0200 [main] INFO  (PojoInstantiator.java:66) - HHH000182: No default (no-argument) constructor for class: de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Storage.ORComponent (class must be instantiated by Interceptor)
+2015-10-24 10:08:03,554 +0200 [main] INFO  (SchemaUpdate.java:101) - HHH000228: Running hbm2ddl schema update
