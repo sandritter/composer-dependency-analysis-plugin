@@ -5,8 +5,8 @@ import java.io.File;
 public class Starter { 
 	
 	public static void main(String[] args) {
-		String test = new File("").getAbsolutePath();
-		System.out.println(test);
+		BuildDependencyPublisher build = new BuildDependencyPublisher("", "");
+		build.loadProperties();
 	}
 	
 }

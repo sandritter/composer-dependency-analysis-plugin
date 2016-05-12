@@ -2,11 +2,9 @@ package de.bathesis2015.msand.postBuildAction.jevidatacollector;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import org.kohsuke.stapler.AncestorInPath;
 import org.kohsuke.stapler.DataBoundConstructor;
@@ -31,12 +29,13 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Datab
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.IO.Interface.IOAccess;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Module.FileLoadModule;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Module.PersistenceModule;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Util.ListItemProvider;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Util.Logger;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Util.PathResolver;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Util.Interface.Resolver;
+
 import hudson.EnvVars;
 import hudson.Extension;
-import hudson.FilePath;
 import hudson.Launcher;
 import hudson.model.AbstractBuild;
 import hudson.model.AbstractProject;
@@ -86,19 +85,14 @@ public class BuildDependencyPublisher extends Recorder {
 	/**
 	 * logger that logs all warnings and errors to console output
 	 */
-	public static Logger logger;
+	private static Logger logger;
+	public static java.util.logging.Logger jenkinsLogger;
 
 	private IOAccess ioAccess;
 	private MappingFacade mappingFacade;
 	private DataLoader dataLoader;
 	private DataStorage dataStorage;
-
-	/**
-	 * file name of the xml file where the information of the jevi data
-	 * collector is saved
-	 */
-	@SuppressWarnings("unused")
-	private final String XML_FILE_NAME = "dependencies.xml";
+	private Properties config;
 
 	/**
 	 * constructor retrieving the paths to the composer.lock an composer.json
@@ -115,30 +109,37 @@ public class BuildDependencyPublisher extends Recorder {
 	}
 
 	@Override
-	public boolean perform(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener)
+	public boolean perform(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener) throws IOException
 	{
-
+		loadProperties(); 
 		logger = Logger.getInstance(listener);
 		logger.logPluginStart();
 
 		Resolver pathResolver = new PathResolver(logger, build);
-
 		createModules(getDescriptor().getDbPath());
 
 		Map<FileType, File> dependencyReflectionFiles = loadDependencyReflectionFiles(pathResolver);
-
 		BuildData buildData = collectBuildData(build, listener);
-
 		Transferable transport = mapData(buildData, dependencyReflectionFiles);
 
 		storeData(transport);
 
 		analyseBuild(build, buildData);
-
 		resolveDependencies(build, buildData);
-
 		logger.logFinalProcessStatus();
+		
 		return true;
+	}
+	
+	public void loadProperties()
+	{
+		this.config = new Properties();
+		try {
+		    config.load(getClass().getResourceAsStream("/config.properties")); 
+		    System.out.println(config.getProperty("jenkins-log"));
+		} catch (IOException ex) {
+		    ex.printStackTrace();
+		}
 	}
 
 	/**
@@ -354,18 +355,7 @@ public class BuildDependencyPublisher extends Recorder {
 		 */
 		public ListBoxModel doFillLockPathItems(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project)
 		{
-			ListBoxModel items = new ListBoxModel();
-			List<Path> matches = getPathItems(project, "composer.lock");
-			if (matches != null) {
-				for (Path path : matches) {
-					Path base = getWorkspace(project);
-					Path relative = base.relativize(path);
-					items.add(relative.toString());
-				}
-			} else {
-				items.add("default");
-			}
-			return items;
+			return ListItemProvider.fillPathItems(project, FileType.COMPOSER_LOCK);
 		}
 
 		/**
@@ -377,85 +367,7 @@ public class BuildDependencyPublisher extends Recorder {
 		 */
 		public ListBoxModel doFillJsonPathItems(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project)
 		{
-			ListBoxModel items = new ListBoxModel();
-			List<Path> matches = getPathItems(project, "composer.json");
-			if (matches != null) {
-				for (Path path : matches) {
-					Path base = getWorkspace(project);
-					Path relative = base.relativize(path);
-					items.add(relative.toString());
-				}
-			} else {
-				items.add("default");
-			}
-			return items;
-		}
-
-		/**
-		 * is looking for all files underneath the workspace directory of a
-		 * build-job by given file name
-		 * 
-		 * @param project {@link AbstractProject}
-		 * @param compare file name to look for
-		 * @return list of {@link Path} of found files by compare value
-		 */
-		private List<Path> getPathItems(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project,
-				String compare)
-		{
-			List<Path> matches = new ArrayList<Path>();
-			Path root = getWorkspace(project);
-			if (root != null) {
-				return findFiles(root, compare, matches);
-			}
-			return matches;
-		}
-
-		/**
-		 * extracting workspace path of last build
-		 * 
-		 * @param project {@link AbstractProject}
-		 * @return workspace path
-		 */
-		private Path getWorkspace(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project)
-		{
-			AbstractBuild<?, ?> build = project.getLastBuild();
-			FilePath path = build.getWorkspace();
-			File root = null;
-			try {
-				root = new File(path.toURI().toURL().getPath());
-			} catch (IOException e) {
-
-			} catch (InterruptedException e) {
-
-			}
-			return root.toPath();
-		}
-
-		/**
-		 * is searching recursively for file names by given directory and name
-		 * to compare with
-		 * 
-		 * @param root root directory from where to start the search from
-		 * @param compare value to look for
-		 * @param lst list to store {@link Path} found values
-		 * @return list of {@link Path}
-		 */
-		public List<Path> findFiles(Path root, String compare, List<Path> lst)
-		{
-			File dir = new File(root.toString());
-			File[] files = dir.listFiles();
-			for (File file : files) {
-				if (file.isFile()) {
-					if (file.getName().equals(compare)) {
-						lst.add(file.toPath());
-					}
-				} else if (file.isDirectory()) {
-					if (!file.getName().equals("vendor")) {
-						findFiles(file.toPath(), compare, lst);
-					}
-				}
-			}
-			return lst;
+			return ListItemProvider.fillPathItems(project, FileType.COMPOSER_JSON);
 		}
 
 		/**
@@ -492,8 +404,7 @@ public class BuildDependencyPublisher extends Recorder {
 		 */
 		private boolean isDbFile(File file)
 		{
-			if (file.getName().endsWith(".db"))
-				return true;
+			if (file.getName().endsWith(".db")) return true;
 			return false;
 		}
 
@@ -501,8 +412,7 @@ public class BuildDependencyPublisher extends Recorder {
 		@SuppressWarnings("rawtypes")
 		public boolean isApplicable(Class<? extends AbstractProject> aClass)
 		{
-			// Indicates that this builder can be used with all kinds of project
-			// types
+			// Indicates that this builder can be used with all kinds of project types
 			return true;
 		}
 
