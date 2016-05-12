@@ -6,9 +6,10 @@ import java.io.IOException;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.IO.Interface.IOAccess;
 
 /**
- * ComposerFileRepository.java is responsible to load files by given path
+ * ComposerFileRepository.java 
+ * is responsible to load files by given path
  *
- * @author Michael Sandritter 10.09.2015
+ * @author Michael Sandritter
  */
 public class FileLoader implements IOAccess {
 

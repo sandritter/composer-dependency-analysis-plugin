@@ -18,19 +18,32 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Enum.Depe
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.Interface.RowDataMapper;
 
 /**
- * 
  * DaoMapper.java
  * This object maps all collected data to data access objects.
  * The created data access objects are the relational image of the database schema
  *
  * @author Michael Sandritter
- *
  */
 public class DaoMapper implements RowDataMapper {
 
+	/**
+	 * {@link Transferable}
+	 */
 	private Transferable transport;
+	
+	/**
+	 * List<{@link Dependency}>
+	 */
 	private List<Dependency> dependencyList;
+	
+	/**
+	 * List<{@link Stand}>
+	 */
 	private List<Stand> standList;
+	
+	/**
+	 * List<{@link Component}>
+	 */
 	private List<Component> componentList;
 
 	@Inject
@@ -95,7 +108,14 @@ public class DaoMapper implements RowDataMapper {
 	 * @param lockDataImage
 	 */
 	private void generateORObjects(BuildData buildData, JsonDataImage jsonDataImage, DependencyReflectionCollection lockDataImage) {
-		transport.setObject(Build.class, new Build(buildData.getBuildId(), buildData.getTimestamp(),
-				buildData.getNumber(), buildData.getJobName()));
+		transport.setObject(
+			Build.class,
+			new Build(
+				buildData.getBuildId(), 
+				buildData.getTimestamp(),
+				buildData.getNumber(), 
+				buildData.getJobName()
+			)
+		);
 	}
 }

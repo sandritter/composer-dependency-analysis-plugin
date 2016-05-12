@@ -3,8 +3,8 @@ package de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Res
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Util.DateFormatter;
 
 /**
- * 
- * ComponentSummary.java The ComponentSummary-Object is used to hold component-
+ * ComponentSummary.java 
+ * The ComponentSummary-Object is used to hold component-
  * and version-specific information, that has been loaded from the database
  *
  * @author Michael Sandritter

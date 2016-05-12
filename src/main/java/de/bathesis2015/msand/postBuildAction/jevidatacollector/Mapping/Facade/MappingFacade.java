@@ -12,7 +12,7 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Tran
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Enum.FileType;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Exception.DataMappingFailedException;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Facade.Interface.Mapping;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.Interface.ComposerMapable;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.Interface.DependencyReflectionMapable;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.Interface.RowDataMapper;
 
 /**
@@ -25,18 +25,18 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.In
  */
 public class MappingFacade implements Mapping{
 	
-	private ComposerMapable composerMapper;
+	private DependencyReflectionMapable composerMapper;
 	private RowDataMapper rowDataMapper;
 	private Transferable transport;
 	
 	/**
 	 * constructor
-	 * @param mapper {@link ComposerMapable}
+	 * @param mapper {@link DependencyReflectionMapable}
 	 * @param orMapper {@link RowDataMapper}
 	 * @param transport {@link Transferable}
 	 */
 	@Inject
-	MappingFacade(ComposerMapable mapper, RowDataMapper orMapper, Transferable transport){
+	MappingFacade(DependencyReflectionMapable mapper, RowDataMapper orMapper, Transferable transport){
 		this.composerMapper = mapper;
 		this.rowDataMapper = orMapper;
 		this.transport = transport;
@@ -44,8 +44,9 @@ public class MappingFacade implements Mapping{
 	
 	/**
 	 * is mapping row data to data access objects
+	 * 
 	 * @param buildData {@link BuildData}
-	 * @param files - list of {@link File}
+	 * @param files - map of dependency reflection files
 	 * @return {@link Transferable}
 	 * @throws DataMappingFailedException
 	 */

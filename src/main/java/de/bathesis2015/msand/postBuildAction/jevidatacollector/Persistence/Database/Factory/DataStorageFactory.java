@@ -3,13 +3,11 @@ package de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Data
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Database.Interface.DataStorage;
 
 /**
- * 
  * DataStorageFactory.java
- * A Factory that is used to create a DataLoader via dependency injection
+ * A factory that is used to create a DataLoader via dependency injection
  * with assisted injection
  * 
  * @author Michael Sandritter
- *
  */
 public interface DataStorageFactory {
 	

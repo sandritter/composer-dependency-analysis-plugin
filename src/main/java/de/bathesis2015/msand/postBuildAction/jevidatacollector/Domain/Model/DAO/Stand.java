@@ -1,13 +1,11 @@
 package de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.DAO;
 
 /**
- * 
  * Stand.java
  * the stand class is a data-access-object
  * that holds stand specific information
  *
  * @author Michael Sandritter
- *
  */
 public class Stand {
 	
@@ -28,9 +26,9 @@ public class Stand {
 	
 	/**
 	 * 
-	 * @param version - component version
-	 * @param reference - reference of a unique stand of a component
-	 * @param name - component name
+	 * @param version  component version
+	 * @param reference  reference of a unique stand of a component
+	 * @param name  component name
 	 */
 	public Stand(String version, String reference, String name){
 		this.version = version;

@@ -5,7 +5,6 @@ package de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Data
  * This object is used as helper to provide all insert queries for the database
  *
  * @author Michael Sandritter
- * 03.10.2015
  */
 public class InsertQueries {
 	

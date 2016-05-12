@@ -5,6 +5,12 @@ import java.sql.SQLException;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.Interface.Transferable;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Enum.DependencyType;
 
+/**
+ * DataLoader.java
+ * interface that defines the methods to load data from database
+ * 
+ * @author Michael Sandritter
+ */
 public interface DataLoader {
 	
 	/**

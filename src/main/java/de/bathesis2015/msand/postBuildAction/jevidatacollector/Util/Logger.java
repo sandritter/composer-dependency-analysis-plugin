@@ -5,12 +5,10 @@ import java.io.PrintStream;
 import hudson.model.BuildListener;
 
 /**
- * 
  * Logger.java
  * This class is a singleton helper to log all relevant messages including warnings and error to console output
  *
  * @author Michael Sandritter
- *
  */
 public class Logger {
 
@@ -26,6 +24,10 @@ public class Logger {
 		this.out = logger;
 	}
 	
+	/**
+	 * @param listener {@link BuildListener}
+	 * @return
+	 */
 	public static Logger getInstance(BuildListener listener){
 		if (logger == null) {
 			logger = new Logger(listener.getLogger());
@@ -63,10 +65,8 @@ public class Logger {
 	 * calculates the time the plugin needed to process all his work and logs it
 	 * in the console output of a build
 	 * 
-	 * @param start
-	 *            - start time
-	 * @param nde
-	 *            - end time
+	 * @param start start time
+	 * @param end end time
 	 */
 	private void logElapsedTime(long end) {
 		long diff = end - startTime;
@@ -89,8 +89,7 @@ public class Logger {
 	/**
 	 * logs the final process status of this plugin
 	 * 
-	 * @param start
-	 *            - timestamp of the time when the peform method was invoked
+	 * @param start timestamp of the time when the peform method was invoked
 	 */
 	public void logFinalProcessStatus() {
 		long end = System.currentTimeMillis();

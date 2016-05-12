@@ -17,7 +17,6 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.BuildData;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.Transport;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Transfer.Interface.Transferable;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Enum.BuildEnvVars;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Enum.FileType;
@@ -105,10 +104,8 @@ public class BuildDependencyPublisher extends Recorder {
 	 * constructor retrieving the paths to the composer.lock an composer.json
 	 * file from the project configuration
 	 * 
-	 * @param jsonPath
-	 *            - file path of a composer.json file
-	 * @param lockPath
-	 *            - file path of a composer.lock file
+	 * @param jsonPath file path of a composer.json file
+	 * @param lockPath file path of a composer.lock file
 	 */
 	@DataBoundConstructor
 	public BuildDependencyPublisher(String jsonPath, String lockPath)
@@ -144,6 +141,12 @@ public class BuildDependencyPublisher extends Recorder {
 		return true;
 	}
 
+	/**
+	 * collects all dependency reflection files
+	 * 
+	 * @param pathResolver {@link Resolver}
+	 * @return Map<{@link FileType},{@link File}>
+	 */
 	private Map<FileType, File> loadDependencyReflectionFiles(Resolver pathResolver)
 	{
 		String finalLockPath = pathResolver.getAbsolutePath(FileType.COMPOSER_LOCK, lockPath);
@@ -155,8 +158,6 @@ public class BuildDependencyPublisher extends Recorder {
 	}
 
 	/**
-	 * TODO
-	 * 
 	 * @param buildData
 	 * @param files
 	 * @return
@@ -167,8 +168,9 @@ public class BuildDependencyPublisher extends Recorder {
 		try {
 			transport = mappingFacade.mapRowData(buildData, files);
 			logger.println(
-				Logger.LABEL + Logger.SUCCESS
-				+ "collected build- and version-information of this build has been successfully mapped to data access objects"
+				Logger.LABEL + 
+				Logger.SUCCESS + 
+				"collected build- and version-information of this build has been successfully mapped to data access objects"
 			);
 		} catch (DataMappingFailedException e1) {
 			logger.logFailure(e1, "DATA MAPPING FAILED");
@@ -177,8 +179,6 @@ public class BuildDependencyPublisher extends Recorder {
 	}
 
 	/**
-	 * TODO
-	 * 
 	 * @param build
 	 * @param buildData
 	 */
@@ -193,7 +193,7 @@ public class BuildDependencyPublisher extends Recorder {
 	}
 
 	/**
-	 * TODO
+	 * stores all data access objects to database
 	 * 
 	 * @param transport
 	 */
@@ -209,7 +209,7 @@ public class BuildDependencyPublisher extends Recorder {
 	}
 
 	/**
-	 * TODO
+	 * starts the analysis of the current build
 	 * 
 	 * @param build
 	 * @param buildData
@@ -218,10 +218,8 @@ public class BuildDependencyPublisher extends Recorder {
 	{
 		try {
 			build.addAction(new IntegrationAnalyser(buildData, dataLoader));
-			logger.println(
-				Logger.LABEL + Logger.SUCCESS
-				+ "analysis of all installed components of this build have been successful"
-			);
+			logger.println(Logger.LABEL + Logger.SUCCESS
+					+ "analysis of all installed components of this build have been successful");
 		} catch (Exception e) {
 			logger.logFailure(e, "ANALYSIS FAILED");
 		}
@@ -249,10 +247,8 @@ public class BuildDependencyPublisher extends Recorder {
 	/**
 	 * collects build specific data
 	 * 
-	 * @param build
-	 *            {@link AbstractBuild}
-	 * @param l
-	 *            {@link BuildListener}
+	 * @param build {@link AbstractBuild}
+	 * @param l {@link BuildListener}
 	 * @return BuildData object that holds all relevant build-specific data
 	 */
 	private BuildData collectBuildData(AbstractBuild<?, ?> build, BuildListener l)
@@ -280,10 +276,8 @@ public class BuildDependencyPublisher extends Recorder {
 	 * checks if main component is stored in svn or git and adds the relevant
 	 * data to {@link BuildData}
 	 * 
-	 * @param data
-	 *            {@link BuildData}
-	 * @param env
-	 *            environment variables of {@link AbstractBuild}
+	 * @param data {@link BuildData}
+	 * @param env environment variables of {@link AbstractBuild}
 	 */
 	private void injectVersionControlInfo(BuildData data, EnvVars env)
 	{
@@ -355,8 +349,7 @@ public class BuildDependencyPublisher extends Recorder {
 		 * is filling the selectItems of the dropdown list of the composer.lock
 		 * configuration
 		 * 
-		 * @param project
-		 *            {@link AbstractProject}
+		 * @param project {@link AbstractProject}
 		 * @return {@link ListBoxModel}
 		 */
 		public ListBoxModel doFillLockPathItems(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project)
@@ -379,8 +372,7 @@ public class BuildDependencyPublisher extends Recorder {
 		 * is filling the selectItems of the dropdown list of the composer.json
 		 * configuration
 		 * 
-		 * @param project
-		 *            {@link AbstractProject}
+		 * @param project {@link AbstractProject}
 		 * @return {@link ListBoxModel}
 		 */
 		public ListBoxModel doFillJsonPathItems(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project)
@@ -403,10 +395,8 @@ public class BuildDependencyPublisher extends Recorder {
 		 * is looking for all files underneath the workspace directory of a
 		 * build-job by given file name
 		 * 
-		 * @param project
-		 *            {@link AbstractProject}
-		 * @param compare
-		 *            - file name to look for
+		 * @param project {@link AbstractProject}
+		 * @param compare file name to look for
 		 * @return list of {@link Path} of found files by compare value
 		 */
 		private List<Path> getPathItems(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project,
@@ -423,8 +413,7 @@ public class BuildDependencyPublisher extends Recorder {
 		/**
 		 * extracting workspace path of last build
 		 * 
-		 * @param project
-		 *            {@link AbstractProject}
+		 * @param project {@link AbstractProject}
 		 * @return workspace path
 		 */
 		private Path getWorkspace(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project)
@@ -446,12 +435,9 @@ public class BuildDependencyPublisher extends Recorder {
 		 * is searching recursively for file names by given directory and name
 		 * to compare with
 		 * 
-		 * @param root
-		 *            - root directory from where to start the search from
-		 * @param compare
-		 *            - value to look for
-		 * @param lst
-		 *            - list to store {@link Path} found values
+		 * @param root root directory from where to start the search from
+		 * @param compare value to look for
+		 * @param lst list to store {@link Path} found values
 		 * @return list of {@link Path}
 		 */
 		public List<Path> findFiles(Path root, String compare, List<Path> lst)
@@ -475,10 +461,8 @@ public class BuildDependencyPublisher extends Recorder {
 		/**
 		 * is validating the database path entered via the global configration
 		 * 
-		 * @param value
-		 *            - entered database path
-		 * @param project
-		 *            {@link AbstractProject}
+		 * @param value entered database path
+		 * @param project {@link AbstractProject}
 		 * @return {@link FormValidation}
 		 */
 		public FormValidation doCheckDbPath(@QueryParameter String value,
@@ -501,11 +485,9 @@ public class BuildDependencyPublisher extends Recorder {
 		}
 
 		/**
-		 * checks if a file is a sqlite database file by looking at it's suffix
-		 * *.db
+		 * checks if a file is a sqlite database file by looking at it's suffix  *.db
 		 * 
-		 * @param file
-		 *            {@link File}
+		 * @param file {@link File}
 		 * @return
 		 */
 		private boolean isDbFile(File file)

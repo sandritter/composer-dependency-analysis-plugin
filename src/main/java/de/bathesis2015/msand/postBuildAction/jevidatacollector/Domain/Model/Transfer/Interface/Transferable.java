@@ -4,12 +4,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 
  * Transferable.java
  * interface defining a transfer object
  *
  * @author Michael Sandritter
- * 
  */
 public interface Transferable {
 	

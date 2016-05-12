@@ -21,57 +21,55 @@ import hudson.model.Action;
 import jenkins.model.Jenkins;
 
 /**
+ * IntegrationAnalyser.java
  * 
- * IntegrationAnalyser.java 
- * 
- * This class is analyzing the installed components of a build.
- * The installed components (total set) are compared with the subset of component which are tested
- * against each other. 
- * The {@link IntegrationAnalyser} is looking for version stand disparities between the subsets and the total set.
+ * This class is analyzing the installed components of a build. The installed
+ * components (total set) are compared with the subset of component which are
+ * tested against each other. The {@link IntegrationAnalyser} is looking for
+ * version stand disparities between the subsets and the total set.
  * 
  * implements {@link Action} and {@link StaplerProxy}
  *
  * @author Michael Sandritter
- *
  */
-public class IntegrationAnalyser implements Action, StaplerProxy { 
+public class IntegrationAnalyser implements Action, StaplerProxy {
 
-	private DataLoader dataLoader;  
+	private DataLoader dataLoader;
 	private AnalyseResult analyseResult;
 	private BuildData buildData;
 	public static final String SUB_URL = "intregration-analysis";
-	
-	/**
-	 * constructor
+
+	/** 
 	 * @param buildData {@link BuildData}
 	 * @param dataLoader {@link DataLoader}
-	 * @throws Exception 
+	 * @throws Exception
 	 */
-	public IntegrationAnalyser(BuildData buildData, DataLoader dataLoader) throws Exception {
-
+	public IntegrationAnalyser(BuildData buildData, DataLoader dataLoader) throws Exception
+	{
 		this.dataLoader = dataLoader;
 		this.buildData = buildData;
 		this.analyseResult = analyse(buildData);
 	}
 
 	/**
-	 * is loading all installed dependencies (totalSet) of this build from database
-	 * and analysis all of them
+	 * is loading all installed dependencies (totalSet) of this build from
+	 * database and analysis all of them
+	 * 
 	 * @param buildData
 	 * @return {@link AnalyseResult}
 	 * @throws SQLException
 	 */
-	private AnalyseResult analyse(BuildData buildData) throws Exception {
-
+	private AnalyseResult analyse(BuildData buildData) throws Exception
+	{
 		AnalyseResult result = new AnalyseResult(buildData);
 		Map<String, ComponentSummary> totalSet = loadDependencies(buildData.getBuildId(), DependencyType.HIGH_LEVEL);
-		
+
 		// add information about this build
 		ComponentSummary mainComponent = loadMainComponent(buildData.getBuildId());
-		
+
 		result.setMainComponent(mainComponent);
 		result.setBuildData(buildData);
-		
+
 		// add analysis results about dependencies of this build
 		for (ComponentSummary c : totalSet.values()) {
 			BuildSummary build = loadBuildByReference(c.getReference());
@@ -80,66 +78,64 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 		}
 		return result;
 	}
-	
+
 	/**
 	 * loads all dependencies of installed dependencies (subSets).
+	 * 
 	 * @param build {@link BuildSummary}
 	 * @param c {@link ComponentSummary}
-	 * @param totalSet Map<String, {@link ComponentSummary}> 
+	 * @param totalSet  Map<String, {@link ComponentSummary}>
 	 * @param result {@link AnalyseResult}
 	 * @return {@link DependencyResult}
-	 * @throws Exception 
+	 * @throws Exception
 	 * @throws LoadingFailedException
 	 */
-	private DependencyResult analyseDependency(
-			BuildSummary build, 
-			ComponentSummary c, 
-			Map<String, ComponentSummary> totalSet, 
-			AnalyseResult result) throws Exception
+	private DependencyResult analyseDependency(BuildSummary build, ComponentSummary c,
+			Map<String, ComponentSummary> totalSet, AnalyseResult result) throws Exception
 	{
 		DependencyResult depResult = new DependencyResult();
 		if (build != null) {
 			c.setTimestamp(build.getTime_stamp());
 			depResult.setRelatedBuild(build);
 			depResult.setLinked(true);
-			String url = buildData.getJenkinsUrl()+ "job/" + build.getJobName() +"/"+ Integer.toString(build.getBuildNumber()) + "/"+ SUB_URL;
+			String url = buildData.getJenkinsUrl() + "job/" + build.getJobName() + "/"
+					+ Integer.toString(build.getBuildNumber()) + "/" + SUB_URL;
 			depResult.setLink(url);
 			depResult.setAnalyseTarget(c);
 			Map<String, ComponentSummary> subSet = loadDependencies(build.getBuildId(), DependencyType.HIGH_LEVEL);
-			if(subSet != null){				
+			if (subSet != null) {
 				compareReferences(totalSet, subSet, depResult, result);
 			}
 		}
 		return depResult;
 	}
-	
+
 	/**
-	 * compares two references of the same component
-	 * if references are different: a Disparity is added to the {@link DependencyResult}
-	 * and the amount of warnings of the {@link AnalyseResult} is increased by 1
-	 * by every {@link DependencyResult} that has Disparities
-	 *  
+	 * compares two references of the same component if references are
+	 * different: a Disparity is added to the {@link DependencyResult} and the
+	 * amount of warnings of the {@link AnalyseResult} is increased by 1 by
+	 * every {@link DependencyResult} that has Disparities
+	 * 
 	 * @param totalSet Map<String, {@link ComponentSummary}>
-	 * @param subSet Map<String, {@link ComponentSummary}>
+	 * @param subSet  Map<String, {@link ComponentSummary}>
 	 * @param depResult {@link DependencyResult}
 	 * @param result {@link AnalyseResult}
 	 */
-	private void compareReferences(
-			Map<String, ComponentSummary> totalSet, 
-			Map<String, ComponentSummary> subSet, 
-			DependencyResult depResult, 
-			AnalyseResult result)
+	private void compareReferences(Map<String, ComponentSummary> totalSet, Map<String, ComponentSummary> subSet,
+			DependencyResult depResult, AnalyseResult result)
 	{
 		boolean warningOccured = false;
-		for (ComponentSummary latestVersionTested : subSet.values()){
-			if (!totalSet.containsKey(latestVersionTested.getReference())){
-				ComponentSummary versionInstalled = getComponentSummaryByName(totalSet.values(), latestVersionTested.getComponentName());
+		for (ComponentSummary latestVersionTested : subSet.values()) {
+			if (!totalSet.containsKey(latestVersionTested.getReference())) {
+				ComponentSummary versionInstalled = getComponentSummaryByName(totalSet.values(),
+						latestVersionTested.getComponentName());
 				Disparity disparity = new Disparity(latestVersionTested, versionInstalled);
 				depResult.addDisparity(disparity);
 				warningOccured = true;
 			}
 		}
-		if (warningOccured) result.increaseWarningCount();
+		if (warningOccured)
+			result.increaseWarningCount();
 	};
 
 	/**
@@ -147,22 +143,25 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 	 * 
 	 * @param buildId
 	 * @return {@link ComponentSummary}
-	 * @throws SQLException 
+	 * @throws SQLException
 	 * @throws LoadingFailedException
 	 */
-	private ComponentSummary loadMainComponent(String buildId) throws Exception {
+	private ComponentSummary loadMainComponent(String buildId) throws Exception
+	{
 		Transferable t = dataLoader.loadMainComponent(buildId);
 		ComponentSummary c = (ComponentSummary) t.getObject(ComponentSummary.class);
 		return c;
 	}
-	
+
 	/**
 	 * is loading a build by reference
+	 * 
 	 * @param reference
 	 * @return {@link BuildSummary}
 	 * @throws LoadingFailedException
 	 */
-	private BuildSummary loadBuildByReference(String reference) throws Exception {
+	private BuildSummary loadBuildByReference(String reference) throws Exception
+	{
 		Transferable t = dataLoader.loadBuild(reference);
 		BuildSummary build = (BuildSummary) t.getObject(BuildSummary.class);
 		if (build != null) {
@@ -170,16 +169,18 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * is searching for a component by its name
-	 * @param lst - {@link Collection}<{@link ComponentSummary}>
-	 * @param name - component name
+	 * 
+	 * @param lst {@link Collection}<{@link ComponentSummary}>
+	 * @param name component name
 	 * @return {@link ComponentSummary}
 	 */
-	private ComponentSummary getComponentSummaryByName(Collection<ComponentSummary> lst, String name){
-		for (ComponentSummary c : lst){
-			if (c.getComponentName().equals(name)){
+	private ComponentSummary getComponentSummaryByName(Collection<ComponentSummary> lst, String name)
+	{
+		for (ComponentSummary c : lst) {
+			if (c.getComponentName().equals(name)) {
 				return c;
 			}
 		}
@@ -188,14 +189,16 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 
 	@SuppressWarnings("unchecked")
 	/**
-	 * is loading direct oder all dependencies of a build
-	 * according to its buildId 
-	 * @param buildId - build identifier
+	 * is loading direct oder all dependencies of a build according to its
+	 * buildId
+	 * 
+	 * @param buildId  build identifier
 	 * @param type {@link DependencyType}
 	 * @return Map<String, {@link ComponentSummary}
 	 * @throws LoadingFailedException
 	 */
-	private Map<String, ComponentSummary> loadDependencies(String buildId, DependencyType type) throws Exception {
+	private Map<String, ComponentSummary> loadDependencies(String buildId, DependencyType type) throws Exception
+	{
 
 		Transferable t = null;
 		if (type == DependencyType.ALL) {
@@ -208,26 +211,32 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 	}
 
 	@Override
-	public Object getTarget() {
+	public Object getTarget()
+	{
 		return null;
-	}
-	@Override
-	public String getIconFileName() {
-		PluginWrapper wrapper = Jenkins.getInstance().getPluginManager().whichPlugin(BuildDependencyPublisher.class);
-		return "plugin/"+ wrapper.getShortName()+"/images/logo.png";
 	}
 
 	@Override
-	public String getDisplayName() {
+	public String getIconFileName()
+	{
+		PluginWrapper wrapper = Jenkins.getInstance().getPluginManager().whichPlugin(BuildDependencyPublisher.class);
+		return "plugin/" + wrapper.getShortName() + "/images/logo.png";
+	}
+
+	@Override
+	public String getDisplayName()
+	{
 		return "Integration Analysis";
 	}
 
 	@Override
-	public String getUrlName() {
+	public String getUrlName()
+	{
 		return "intregration-analysis";
 	}
-	
-	public AnalyseResult getResults(){
+
+	public AnalyseResult getResults()
+	{
 		return analyseResult;
 	}
 }

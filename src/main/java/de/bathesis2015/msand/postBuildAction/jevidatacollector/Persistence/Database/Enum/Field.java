@@ -1,11 +1,10 @@
 package de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Database.Enum;
 
 /**
- * StorageFields defines the column names of the database tables
  * StorageFields.java
+ * StorageFields defines the column names of the database tables
  *
  * @author Michael Sandritter
- * 03.10.2015
  */
 public enum Field {
 	BUILD_ID ("build_id"),
@@ -28,16 +27,19 @@ public enum Field {
 	
     private final String name;       
 
-    private Field(String s) {
+    private Field(String s) 
+    {
         name = s;
     }
 
-    public boolean equalsName(String otherName) {
+    public boolean equalsName(String otherName) 
+    {
         return (otherName == null) ? false : name.equals(otherName);
     }
 
     @Override
-	public String toString() {
+	public String toString() 
+    {
        return this.name;
     }
 }

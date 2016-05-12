@@ -9,7 +9,6 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Tran
  * interface that needs to be implemented from objects that wants to persist data
  *
  * @author Michael Sandritter
- * 03.10.2015
  */
 public interface DataStorage {
 	

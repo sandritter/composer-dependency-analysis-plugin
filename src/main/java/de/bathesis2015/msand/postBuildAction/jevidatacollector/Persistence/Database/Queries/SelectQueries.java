@@ -1,12 +1,10 @@
 package de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Database.Queries;
 
 /**
- * 
  * SelectQueries.java This object is used as helper to provide all select
  * queries of the database
  *
  * @author Michael Sandritter
- *
  */
 public class SelectQueries {
 

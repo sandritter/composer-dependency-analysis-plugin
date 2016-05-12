@@ -2,8 +2,8 @@ package de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Exceptio
 
 /**
  * thrown when the mapping from File to Image failed 
+ * 
  * @author Michael Sandritter
- *
  */
 public class DataMappingFailedException extends Exception{
 
@@ -12,7 +12,8 @@ public class DataMappingFailedException extends Exception{
 	 */
 	private static final long serialVersionUID = 2978951825503089876L;
 
-	public DataMappingFailedException(String message){
+	public DataMappingFailedException(String message)
+	{
 		super(message);
 	}
 }

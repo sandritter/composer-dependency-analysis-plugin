@@ -9,11 +9,21 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Util.Interface.Re
 import hudson.FilePath;
 import hudson.model.AbstractBuild;
 
-public class PathResolver implements Resolver{
+/**
+ * PathResolver.java
+ * resolves the absolute paths of files by given file and build
+ * 
+ * @author Michael Sandritter
+ */
+public class PathResolver implements Resolver {
 
 	private Logger logger;
 	private AbstractBuild<?, ?> build;
 
+	/**
+	 * @param logger {@link Logger}
+	 * @param build {@link AbstractBuild}
+	 */
 	public PathResolver(Logger logger, AbstractBuild<?, ?> build)
 	{
 		this.logger = logger;
@@ -24,8 +34,7 @@ public class PathResolver implements Resolver{
 	 * is concatenating the composer.lock file path from the configuration with
 	 * the workspace path of a project (build-job)
 	 * 
-	 * @param build
-	 *            {@link AbstractBuild}
+	 * @param build {@link AbstractBuild}
 	 * @return absolute path of the composer.lock path
 	 */
 	public String getLockPath(String lockPath)
@@ -48,11 +57,8 @@ public class PathResolver implements Resolver{
 		String workspacePath = loadWorkspacePath(build);
 		for (FileType type : FileType.values()) {
 			if (type == fileType && relativePath.equals("default")) {
-				return getAbsolute(
-						"source/" + fileType.toString(), 
-						workspacePath
-						);
-			} 
+				return getAbsolute("source/" + fileType.toString(), workspacePath);
+			}
 		}
 		return getAbsolute(relativePath, workspacePath);
 	}
@@ -61,8 +67,7 @@ public class PathResolver implements Resolver{
 	 * is concatenating the composer.json file path from the configuration with
 	 * the workspace path of a project (build-job)
 	 * 
-	 * @param build
-	 *            {@link AbstractBuild}
+	 * @param build {@link AbstractBuild}
 	 * @return absolute path to the composer.json file
 	 */
 	public String getJsonPath(String jsonPath)
@@ -77,8 +82,7 @@ public class PathResolver implements Resolver{
 	/**
 	 * is loading the workspace path of a build instance
 	 * 
-	 * @param build
-	 *            {@link AbstractBuild}
+	 * @param build {@link AbstractBuild}
 	 * @return workspace path
 	 */
 	private String loadWorkspacePath(AbstractBuild<?, ?> build)
@@ -101,10 +105,8 @@ public class PathResolver implements Resolver{
 	 * concatenates a file name and directory and returns a absolute path of
 	 * that file
 	 * 
-	 * @param value
-	 *            relative path
-	 * @param workspace
-	 *            workspace path
+	 * @param value relative path
+	 * @param workspace workspace path
 	 * @return absolute path
 	 */
 	private String getAbsolute(String value, String workspace)

@@ -8,7 +8,7 @@ public class InjectedTest extends junit.framework.TestCase {
   public static junit.framework.Test suite() throws Exception {
     Map parameters = new HashMap();
     parameters.put("basedir","/Users/michael.sandritter/jenkins-plugins/build-depedency-version-analysis");
-    parameters.put("artifactId","jevidatacollector");
+    parameters.put("artifactId","version-analysis-of-integration-dependencies");
     parameters.put("outputDirectory","/Users/michael.sandritter/jenkins-plugins/build-depedency-version-analysis/target/classes");
     parameters.put("testOutputDirectory","/Users/michael.sandritter/jenkins-plugins/build-depedency-version-analysis/target/test-classes");
     parameters.put("requirePI","false");

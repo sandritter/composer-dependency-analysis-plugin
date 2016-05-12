@@ -1,12 +1,10 @@
 package de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Result.Database;
 
 /**
- * 
  * BuildSummary.java The BuildSummary-Object is used to hold build-specific
  * information, that has been loaded from the database
  *
  * @author Michael Sandritter
- *
  */
 public class BuildSummary {
 

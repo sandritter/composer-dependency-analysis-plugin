@@ -8,7 +8,6 @@ import java.io.Serializable;
  * that holds component specific information
  *
  * @author Michael Sandritter
- *
  */
 public class Component implements Serializable{
 	

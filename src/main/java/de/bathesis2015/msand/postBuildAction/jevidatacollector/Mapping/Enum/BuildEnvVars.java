@@ -7,7 +7,6 @@ import hudson.model.AbstractBuild;
  * defines the keys of the environment variables of a build-job {@link AbstractBuild}
  *
  * @author Michael Sandritter
- * 03.10.2015
  */
 public enum BuildEnvVars {
 
@@ -22,16 +21,19 @@ public enum BuildEnvVars {
 	
     private final String name;       
 
-    private BuildEnvVars(String s) {
+    private BuildEnvVars(String s) 
+    {
         name = s;
     }
 
-    public boolean equalsName(String otherName) {
+    public boolean equalsName(String otherName) 
+    {
         return (otherName == null) ? false : name.equals(otherName);
     }
 
     @Override
-	public String toString() {
+	public String toString() 
+    {
        return this.name;
     }
 }

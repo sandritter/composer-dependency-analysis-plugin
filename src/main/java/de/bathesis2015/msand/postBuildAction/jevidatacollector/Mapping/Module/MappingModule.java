@@ -7,7 +7,7 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Tran
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Facade.MappingFacade;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.DependencyReflectionMapper;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.DaoMapper;
-import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.Interface.ComposerMapable;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.Interface.DependencyReflectionMapable;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.Interface.RowDataMapper;
 
 /**
@@ -15,13 +15,13 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Mapper.In
  * dependency configuration of the {@link MappingFacade}
  *
  * @author Michael Sandritter
- * 10.09.2015
  */
 public class MappingModule extends AbstractModule{
 
 	@Override
-	protected void configure() {
-		bind(ComposerMapable.class).to(DependencyReflectionMapper.class);
+	protected void configure() 
+	{
+		bind(DependencyReflectionMapable.class).to(DependencyReflectionMapper.class);
 		bind(RowDataMapper.class).to(DaoMapper.class);
 		bind(Transferable.class).to(Transport.class);
 	}

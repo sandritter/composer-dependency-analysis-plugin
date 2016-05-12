@@ -73,6 +73,7 @@ public class IntegrationAnalyserTest {
 	@Test
 	public void testIntegrationAnalysisFailure() throws Exception
 	{
+		@SuppressWarnings("unused")
 		IntegrationAnalyser analyzer = new IntegrationAnalyser(buildDataBuilder.getDefectMock(), dataLoader);
 	}
 }

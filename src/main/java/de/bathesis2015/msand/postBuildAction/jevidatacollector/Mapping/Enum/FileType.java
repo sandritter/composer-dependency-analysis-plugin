@@ -1,11 +1,10 @@
 package de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Enum;
 
 /**
- * enum describing defining differnt file types
  * JsonFileType.java
+ * enum describing defining differnt file types
  *
  * @author Michael Sandritter
- * 03.10.2015
  */
 public enum FileType {
 	COMPOSER_LOCK ("composer.lock"), 
@@ -13,16 +12,19 @@ public enum FileType {
 	
 	private final String name;       
 
-    private FileType(String s) {
+    private FileType(String s) 
+    {
         name = s;
     }
 
-    public boolean equalsName(String otherName) {
+    public boolean equalsName(String otherName) 
+    {
         return (otherName == null) ? false : name.equals(otherName);
     }
 
     @Override
-	public String toString() {
+	public String toString() 
+    {
        return this.name;
     }
 }

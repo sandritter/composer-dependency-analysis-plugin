@@ -2,13 +2,43 @@ package de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Res
 
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Util.DateFormatter;
 
+/**
+ * DependentComponent
+ * this class represents a highlevel component A of a lowlevel depedency B.
+ * component B is a depedency of component A.
+ *  
+ * @author Michael Sandritter
+ */
 public class DependentComponent {
 
+	/**
+	 * component name
+	 */
 	private String componentName;
+	
+	/**
+	 * job name of the assosiated build job
+	 */
 	private String jobName;
+	
+	/**
+	 * unique version identifier
+	 */
 	private String reference;
+	
+	/**
+	 * human readable version
+	 */
 	private String version;
+	
+	/**
+	 * executed build identifier
+	 */
 	private String buildId;
+	
+	/**
+	 * timestamp of build execution
+	 */
 	private long timeStamp = -1;
 	private int buildNumber;
 	private String link;

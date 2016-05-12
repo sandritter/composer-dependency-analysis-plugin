@@ -1,4 +1,4 @@
- package de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Database;
+package de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,12 +19,10 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Datab
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Database.Queries.SelectQueries;
 
 /**
- * 
- * DBLoader.java This class handles all requests that are send to database to
- * select data
+ * DBLoader.java 
+ * This class handles all requests that are send to database to select data
  *
  * @author Michael Sandritter
- *
  */
 public class SQliteLoader implements DataLoader {
 
@@ -39,8 +37,6 @@ public class SQliteLoader implements DataLoader {
 	private DatabaseMapper mapper;
 
 	/**
-	 * constructor
-	 * 
 	 * @param dbPath database path
 	 * @param mapper {@link DatabaseMapper}
 	 */
@@ -153,7 +149,7 @@ public class SQliteLoader implements DataLoader {
 			closeStatementAndConnection(stmt, c);
 		}
 	}
-	
+
 	private void closeStatementAndConnection(PreparedStatement stmt, Connection c) throws SQLException
 	{
 		if (stmt != null)

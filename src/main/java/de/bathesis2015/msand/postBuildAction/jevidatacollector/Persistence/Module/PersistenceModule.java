@@ -13,25 +13,22 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Datab
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Database.Interface.DataStorage;
 
 /**
- * FileLoadModule.java
+ * FileLoadModule.java 
  * dependency configuration of persistence objects
  *
  * @author Michael Sandritter
- * 10.09.2015
  */
-public class PersistenceModule extends AbstractModule{
+public class PersistenceModule extends AbstractModule {
 
 	@Override
-	protected void configure() {
-		install(new FactoryModuleBuilder()
-			.implement(DataLoader.class, SQliteLoader.class)
-			.build(DataLoaderFactory.class));
-		
-		bind(DatabaseMapper.class)
-			.to(SqliteDataMapper.class);
-		
-		install(new FactoryModuleBuilder()
-			.implement(DataStorage.class, SQliteStorer.class)
-			.build(DataStorageFactory.class));
+	protected void configure()
+	{
+		install(new FactoryModuleBuilder().implement(DataLoader.class, SQliteLoader.class)
+				.build(DataLoaderFactory.class));
+
+		bind(DatabaseMapper.class).to(SqliteDataMapper.class);
+
+		install(new FactoryModuleBuilder().implement(DataStorage.class, SQliteStorer.class)
+				.build(DataStorageFactory.class));
 	}
 }

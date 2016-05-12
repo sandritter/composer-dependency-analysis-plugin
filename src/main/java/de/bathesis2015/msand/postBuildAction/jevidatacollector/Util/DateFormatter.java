@@ -5,12 +5,10 @@ import java.util.Date;
 import java.util.TimeZone;
 
 /**
- * 
  * DateFormatter.java
  * util object that formats timestamp to readable time
  *
  * @author Michael Sandritter
- *
  */
 public class DateFormatter {
 	

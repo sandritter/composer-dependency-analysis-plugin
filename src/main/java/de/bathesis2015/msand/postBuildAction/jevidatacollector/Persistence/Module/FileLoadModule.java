@@ -6,16 +6,16 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.IO.Fi
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.IO.Interface.IOAccess;
 
 /**
- * FileLoadModule.java
+ * FileLoadModule.java 
  * dependency configuration of the IOAccess
  *
  * @author Michael Sandritter
- * 10.09.2015
  */
-public class FileLoadModule extends AbstractModule{
+public class FileLoadModule extends AbstractModule {
 
 	@Override
-	protected void configure() {
+	protected void configure()
+	{
 		bind(IOAccess.class).to(FileLoader.class);
 	}
 
