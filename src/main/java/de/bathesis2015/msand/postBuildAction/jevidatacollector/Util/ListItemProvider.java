@@ -75,10 +75,10 @@ public class ListItemProvider {
 	private static List<Path> getPathItems(Path workspace, String compare)
 	{
 		List<Path> matches = new ArrayList<Path>();
-//		Path root = workspace;
-//		if (root != null) {
-//			return findFiles(root, compare, matches);
-//		}  
+		Path root = workspace;
+		if (root != null) {
+			return findFiles(root, compare, matches);
+		}  
 		return matches;
 	}
 
