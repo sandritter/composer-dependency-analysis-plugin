@@ -16,6 +16,7 @@ import de.bathesis2015.msand.postBuildAction.jevidatacollector.Domain.Model.Tran
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Mapping.Enum.DependencyType;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Database.Exception.LoadingFailedException;
 import de.bathesis2015.msand.postBuildAction.jevidatacollector.Persistence.Database.Interface.DataLoader;
+import de.bathesis2015.msand.postBuildAction.jevidatacollector.Util.Logger;
 import hudson.PluginWrapper;
 import hudson.model.Action;
 import jenkins.model.Jenkins;
@@ -66,7 +67,6 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 
 		// add information about this build
 		ComponentSummary mainComponent = loadMainComponent(buildData.getBuildId());
-
 		result.setMainComponent(mainComponent);
 		result.setBuildData(buildData);
 
@@ -76,6 +76,8 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 			DependencyResult depResult = analyseDependency(build, c, totalSet, result);
 			result.add(depResult);
 		}
+		Logger logger = Logger.getInstance();
+		logger.println(result.toString());
 		return result;
 	}
 
@@ -90,8 +92,12 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 	 * @throws Exception
 	 * @throws LoadingFailedException
 	 */
-	private DependencyResult analyseDependency(BuildSummary build, ComponentSummary c,
-			Map<String, ComponentSummary> totalSet, AnalyseResult result) throws Exception
+	private DependencyResult analyseDependency(
+			BuildSummary build, 
+			ComponentSummary c,
+			Map<String, ComponentSummary> totalSet, 
+			AnalyseResult result
+	) throws Exception 
 	{
 		DependencyResult depResult = new DependencyResult();
 		if (build != null) {
@@ -163,11 +169,8 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 	private BuildSummary loadBuildByReference(String reference) throws Exception
 	{
 		Transferable t = dataLoader.loadBuild(reference);
-		BuildSummary build = (BuildSummary) t.getObject(BuildSummary.class);
-		if (build != null) {
-			return build;
-		}
-		return null;
+		return (BuildSummary) t.getObject(BuildSummary.class);
+		
 	}
 
 	/**
@@ -187,7 +190,6 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 		return null;
 	}
 
-	@SuppressWarnings("unchecked")
 	/**
 	 * is loading direct oder all dependencies of a build according to its
 	 * buildId
@@ -197,9 +199,9 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 	 * @return Map<String, {@link ComponentSummary}
 	 * @throws LoadingFailedException
 	 */
+	@SuppressWarnings("unchecked")
 	private Map<String, ComponentSummary> loadDependencies(String buildId, DependencyType type) throws Exception
 	{
-
 		Transferable t = null;
 		if (type == DependencyType.ALL) {
 			t = dataLoader.loadDependencies(buildId, DependencyType.ALL);

@@ -150,8 +150,10 @@ public class BuildDependencyPublisher extends Recorder {
 	 */
 	private Map<FileType, File> loadDependencyReflectionFiles(Resolver pathResolver)
 	{
-		String finalLockPath = pathResolver.getAbsolutePath(FileType.COMPOSER_LOCK, lockPath);
-		String finalJsonPath = pathResolver.getAbsolutePath(FileType.COMPOSER_JSON, jsonPath);
+		//String finalLockPath = pathResolver.getAbsolutePath(FileType.COMPOSER_LOCK, lockPath);
+		//String finalJsonPath = pathResolver.getAbsolutePath(FileType.COMPOSER_JSON, jsonPath);
+		String finalLockPath = "/Users/Shared/Jenkins/Home/workspace/Extensions/Extension04/source/composer.lock";
+		String finalJsonPath = "/Users/Shared/Jenkins/Home/workspace/Extensions/Extension04/source/composer.json";
 		Map<FileType, File> files = new HashMap<FileType, File>();
 		files.put(FileType.COMPOSER_JSON, loadFile(finalJsonPath));
 		files.put(FileType.COMPOSER_LOCK, loadFile(finalLockPath));
@@ -270,6 +272,8 @@ public class BuildDependencyPublisher extends Recorder {
 		data.setTimestamp(build.getTimeInMillis());
 		data.setDbPath(getDescriptor().getDbPath());
 		injectVersionControlInfo(data, env);
+		logger.println(data.toString());
+		logger.println();
 		return data;
 	}
 
@@ -295,6 +299,9 @@ public class BuildDependencyPublisher extends Recorder {
 			data.setRevision(svnRevision);
 			data.setVersion(svnRevision);
 		}
+		logger.println(data.toString());
+		logger.println();
+		
 	}
 
 	/**

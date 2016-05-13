@@ -26,15 +26,37 @@ public class ListItemProvider {
 	{
 		ListBoxModel items = new ListBoxModel();
 		Path workspace = getWorkspace(project);
+		items.add(workspace.toAbsolutePath().toString());
+		items.add(type.toString());
 		List<Path> matches = getPathItems(workspace, type.toString());
 		if (matches.size() == 0 && matches != null) {
 			for (Path path : matches) {
+				items.add("test");
 				Path relative = workspace.relativize(path);
 				items.add(relative.toString());
 			}
 		} 
 		items.add("default");
 		return items;
+	}
+	
+	/**
+	 * is looking for all files underneath the workspace directory of a
+	 * build-job by given file name
+	 * 
+	 * @param project {@link AbstractProject}
+	 * @param compare file name to look for
+	 * @return list of {@link Path} of found files by compare value
+	 */
+	private static List<Path> getPathItems(Path workspace, String compare)
+	{
+		List<Path> matches = new ArrayList<Path>();
+		if (workspace != null) {
+			return findFiles(workspace, compare, matches);
+		} else {
+			
+		}
+		return matches;
 	}
 	
 	/**
@@ -65,24 +87,6 @@ public class ListItemProvider {
 	}
 
 	/**
-	 * is looking for all files underneath the workspace directory of a
-	 * build-job by given file name
-	 * 
-	 * @param project {@link AbstractProject}
-	 * @param compare file name to look for
-	 * @return list of {@link Path} of found files by compare value
-	 */
-	private static List<Path> getPathItems(Path workspace, String compare)
-	{
-		List<Path> matches = new ArrayList<Path>();
-		Path root = workspace;
-		if (root != null) {
-			return findFiles(root, compare, matches);
-		}  
-		return matches;
-	}
-
-	/**
 	 * extracting workspace path of last build
 	 * 
 	 * @param project {@link AbstractProject}
@@ -91,12 +95,9 @@ public class ListItemProvider {
 	private static Path getWorkspace(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project)
 	{
 		AbstractBuild<?, ?> build = project.getLastBuild();
-		
-		if (build == null) {
-			return null;
-		}
 		FilePath path = build.getWorkspace();
 		File root = null;
+		
 		try {
 			root = new File(path.toURI().toURL().getPath());
 		} catch (IOException e) {
