@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>build-depedency-version-analysis</name>
+	<name>version-analysis-of-build-dependencies</name>
 	<comment></comment>
 	<projects>
 	</projects>

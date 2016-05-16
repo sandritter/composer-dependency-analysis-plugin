@@ -12,7 +12,7 @@
 		<relativePath />
 	</parent>
 	<groupId>de.sandritter.michael.jenkins.plugin.vaid</groupId>
-	<artifactId>version-analysis-of-integration-dependencies</artifactId>
+	<artifactId>version-analysis-of-build-dependencies</artifactId>
 	<version>1.0</version>
 	<packaging>hpi</packaging>
 

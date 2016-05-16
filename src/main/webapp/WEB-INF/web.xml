@@ -28,8 +28,9 @@
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>jsp</servlet-name>
-        <url-pattern>/hello</url-pattern>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.js</url-pattern>
+        <url-pattern>*.css</url-pattern>
     </servlet-mapping>
 
 </web-app>    
