@@ -3,6 +3,7 @@ package de.sandritter.version_analysis_of_build_dependencies;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -201,7 +202,7 @@ public class BuildDependencyPublisher extends Recorder {
 		Transferable transport = null;
 		try {
 			transport = mappingFacade.mapRowData(buildData, files);
-			logger.println(
+			logger.log(
 				Logger.LABEL + 
 				Logger.SUCCESS + 
 				"collected build- and version-information of this build has been successfully mapped to data access objects"
@@ -220,7 +221,7 @@ public class BuildDependencyPublisher extends Recorder {
 	{
 		try {
 			build.addAction(new DependentComponentResolver(dataLoader, buildData));
-			logger.println(Logger.LABEL + Logger.SUCCESS + "dependent components have been sucessfully resolved");
+			logger.log(Logger.LABEL + Logger.SUCCESS + "dependent components have been sucessfully resolved");
 		} catch (Exception e) {
 			logger.logFailure(e, "RESOLVING DEPENDENT COMPONENTS FAILED");
 		}
@@ -235,7 +236,7 @@ public class BuildDependencyPublisher extends Recorder {
 	{
 		try {
 			dataStorage.storeData(transport);
-			logger.println(
+			logger.log(
 					Logger.LABEL + Logger.SUCCESS + "data access objects have been successfully stored to database");
 		} catch (Exception e) {
 			logger.logFailure(e, "STORAGE FAILED");
@@ -252,7 +253,7 @@ public class BuildDependencyPublisher extends Recorder {
 	{
 		try {
 			build.addAction(new IntegrationAnalyser(buildData, dataLoader));
-			logger.println(Logger.LABEL + Logger.SUCCESS
+			logger.log(Logger.LABEL + Logger.SUCCESS
 					+ "analysis of all installed components of this build have been successful");
 		} catch (Exception e) {
 			logger.logFailure(e, "ANALYSIS FAILED");
@@ -388,7 +389,10 @@ public class BuildDependencyPublisher extends Recorder {
 		 */
 		public ListBoxModel doFillLockPathItems(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project)
 		{
-			return ListItemProvider.fillPathItems(project, FileType.COMPOSER_LOCK);
+			return ListItemProvider.fillPathItems(
+				getWorkspace(project), 
+				FileType.COMPOSER_LOCK
+			);
 		}
 
 		/**
@@ -400,7 +404,32 @@ public class BuildDependencyPublisher extends Recorder {
 		 */
 		public ListBoxModel doFillJsonPathItems(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project)
 		{
-			return ListItemProvider.fillPathItems(project, FileType.COMPOSER_JSON);
+			return ListItemProvider.fillPathItems(
+				getWorkspace(project), 
+				FileType.COMPOSER_JSON
+			);
+		}
+		
+		/**
+		 * extracting workspace path of last build
+		 * 
+		 * @param project {@link AbstractProject}
+		 * @return workspace path
+		 */
+		private Path getWorkspace(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project)
+		{
+			AbstractBuild<?, ?> build = project.getLastBuild();
+			FilePath path = build.getWorkspace();
+			File root = null;
+			
+			try {
+				root = new File(path.toURI().toURL().getPath());
+			} catch (IOException e) {
+				logger.println();
+			} catch (InterruptedException e) {
+				//TODO
+			}
+			return root.toPath();
 		}
 
 		/**
@@ -419,7 +448,7 @@ public class BuildDependencyPublisher extends Recorder {
 					return FormValidation.ok();
 				} else {
 					return FormValidation
-							.error("The given file is not a sqlite database file. File should have .db suffix");
+						.error("The given file is not a sqlite database file. File should have .db suffix");
 				}
 			} else if (f.isDirectory()) {
 				return FormValidation

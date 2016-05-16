@@ -44,7 +44,7 @@ public class Logger {
 	 * prints a String to console output 
 	 * @param s
 	 */
-	public void println(String s){
+	public void log(String s){
 		out.println(s);
 	}
 	
@@ -58,7 +58,7 @@ public class Logger {
 	public void logPluginStart() {
 		startTime = System.currentTimeMillis();
 		logger.println();
-		logger.println("[VERSION ANALYSIS] : [va]");
+		logger.log("[VERSION ANALYSIS] : [va]");
 	}
 	
 	/**
@@ -73,15 +73,15 @@ public class Logger {
 		long diffSeconds = diff / 1000 % 60;
 		long diffMinutes = diff / (60 * 1000) % 60;
 		if (diff < 1000){			
-			println(LABEL + "TOTEL TIME ELAPSED: " + diff + " milliseconds.");
+			log(LABEL + "TOTEL TIME ELAPSED: " + diff + " milliseconds.");
 		} else {
-			println(LABEL + "TOTEL TIME ELAPSED: " + diffMinutes + " minutes " + diffSeconds + " seconds.");			
+			log(LABEL + "TOTEL TIME ELAPSED: " + diffMinutes + " minutes " + diffSeconds + " seconds.");			
 		}
 	}
 	
 	public void logFailure(Exception e, String title) {
-		logger.println(Logger.LABEL + Logger.WARNING + "-> " + title + ": ");
-		logger.println(Logger.LABEL + Logger.WARNING + "error message: " + e.getMessage());
+		logger.log(Logger.LABEL + Logger.WARNING + "-> " + title + ": ");
+		logger.log(Logger.LABEL + Logger.WARNING + "error message: " + e.getMessage());
 		logger.println();
 		errorCount++;
 	}
@@ -94,15 +94,15 @@ public class Logger {
 	public void logFinalProcessStatus() {
 		long end = System.currentTimeMillis();
 		if (errorCount == 0) {
-			logger.println(Logger.LABEL + Logger.SUCCESS
+			logger.log(Logger.LABEL + Logger.SUCCESS
 					+ "Integration Analysis Of Integration Dependencies ended successfully");
 		} else {
-			logger.println(Logger.LABEL + Logger.WARNING
+			logger.log(Logger.LABEL + Logger.WARNING
 					+ "Integration Analysis Of Integration Dependencies DIDN'T end successful");
-			logger.println(Logger.LABEL + "warnings occured: " + errorCount);
+			logger.log(Logger.LABEL + "warnings occured: " + errorCount);
 		}
-		logger.println(Logger.LABEL + "STARTED at: " + DateFormatter.getFormattedTime(startTime));
-		logger.println(Logger.LABEL + "ENDED at: " + DateFormatter.getFormattedTime(startTime));
+		logger.log(Logger.LABEL + "STARTED at: " + DateFormatter.getFormattedTime(startTime));
+		logger.log(Logger.LABEL + "ENDED at: " + DateFormatter.getFormattedTime(startTime));
 		this.logElapsedTime(end);
 		logger.println();
 	}

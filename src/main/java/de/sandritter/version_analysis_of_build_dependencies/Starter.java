@@ -14,17 +14,6 @@ public class Starter {
 	
 	public static void main(String[] args) throws Exception {
 		
-		Injector injector = Guice.createInjector(new FileLoadModule(), new MappingModule(), new PersistenceModule());
-		DataLoaderFactory dataLoaderFactory = injector.getInstance(DataLoaderFactory.class);
-		DataLoader dataLoader = dataLoaderFactory.create("/Users/Shared/Jenkins/Home/jevi.db");
-		
-		BuildData buildData = new BuildData();
-		buildData.setBuildId("b-k1-03");
-		buildData.setDbPath("/Users/Shared/Jenkins/Home/jevi.db");
-		buildData.setNumber(4);
-		buildData.setVersion("");
-		IntegrationAnalyser analyser = new IntegrationAnalyser(buildData, dataLoader);
-		System.out.println("success");
 	}
 	
 }

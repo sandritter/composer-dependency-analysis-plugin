@@ -16,7 +16,6 @@ import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfe
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Enum.DependencyType;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Exception.LoadingFailedException;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataLoader;
-import de.sandritter.version_analysis_of_build_dependencies.Util.Logger;
 import hudson.PluginWrapper;
 import hudson.model.Action;
 import jenkins.model.Jenkins;
@@ -63,7 +62,10 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 	private AnalyseResult analyse(BuildData buildData) throws Exception
 	{
 		AnalyseResult result = new AnalyseResult(buildData);
-		Map<String, ComponentSummary> totalSet = loadDependencies(buildData.getBuildId(), DependencyType.HIGH_LEVEL);
+		Map<String, ComponentSummary> totalSet = loadDependencies(
+			buildData.getBuildId(), 
+			DependencyType.HIGH_LEVEL
+		);
 
 		// add information about this build
 		ComponentSummary mainComponent = loadMainComponent(buildData.getBuildId());
@@ -115,7 +117,7 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 	}
 
 	/**
-	 * compares two references of the same component if references are
+	 * compares two references of the same component. If references are
 	 * different: a Disparity is added to the {@link DependencyResult} and the
 	 * amount of warnings of the {@link AnalyseResult} is increased by 1 by
 	 * every {@link DependencyResult} that has Disparities
@@ -125,21 +127,21 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 	 * @param depResult {@link DependencyResult}
 	 * @param result {@link AnalyseResult}
 	 */
-	private void compareReferences(Map<String, ComponentSummary> totalSet, Map<String, ComponentSummary> subSet,
-			DependencyResult depResult, AnalyseResult result)
-	{
-		boolean warningOccured = false;
+	private void compareReferences(
+		Map<String, ComponentSummary> totalSet, 
+		Map<String, ComponentSummary> subSet,
+		DependencyResult depResult, 
+		AnalyseResult result
+	) {
 		for (ComponentSummary latestVersionTested : subSet.values()) {
 			if (!totalSet.containsKey(latestVersionTested.getReference())) {
 				ComponentSummary versionInstalled = getComponentSummaryByName(totalSet.values(),
 						latestVersionTested.getComponentName());
 				Disparity disparity = new Disparity(latestVersionTested, versionInstalled);
 				depResult.addDisparity(disparity);
-				warningOccured = true;
 			}
 		}
-		if (warningOccured)
-			result.increaseWarningCount();
+		if (depResult.getDisparities() != null) result.increaseWarningCount();
 	};
 
 	/**
@@ -200,12 +202,7 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 	@SuppressWarnings("unchecked")
 	private Map<String, ComponentSummary> loadDependencies(String buildId, DependencyType type) throws Exception
 	{
-		Transferable t = null;
-		if (type == DependencyType.ALL) {
-			t = dataLoader.loadDependencies(buildId, DependencyType.ALL);
-		} else if (type == DependencyType.HIGH_LEVEL) {
-			t = dataLoader.loadDependencies(buildId, DependencyType.HIGH_LEVEL);
-		}
+		Transferable t =  dataLoader.loadDependencies(buildId, type);
 		Map<String, ComponentSummary> map = (Map<String, ComponentSummary>) t.getMap(ComponentSummary.class);
 		return map;
 	}

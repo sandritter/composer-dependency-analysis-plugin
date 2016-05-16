@@ -1,16 +1,11 @@
 package de.sandritter.version_analysis_of_build_dependencies.Util;
 
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kohsuke.stapler.AncestorInPath;
-
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Enum.FileType;
-import hudson.FilePath;
-import hudson.model.AbstractBuild;
 import hudson.model.AbstractProject;
 import hudson.util.ListBoxModel;
 
@@ -22,20 +17,16 @@ public class ListItemProvider {
 	 * @param type
 	 * @return
 	 */
-	public static ListBoxModel fillPathItems(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project, FileType type)
+	public static ListBoxModel fillPathItems(Path workspace, FileType type)
 	{
 		ListBoxModel items = new ListBoxModel();
-		Path workspace = getWorkspace(project);
-		items.add(workspace.toAbsolutePath().toString());
-		items.add(type.toString());
 		List<Path> matches = getPathItems(workspace, type.toString());
-		if (matches.size() == 0 && matches != null) {
+		if (matches.size() != 0 && matches != null) {
 			for (Path path : matches) {
-				items.add("test");
 				Path relative = workspace.relativize(path);
 				items.add(relative.toString());
 			}
-		} 
+		}
 		items.add("default");
 		return items;
 	}
@@ -53,9 +44,7 @@ public class ListItemProvider {
 		List<Path> matches = new ArrayList<Path>();
 		if (workspace != null) {
 			return findFiles(workspace, compare, matches);
-		} else {
-			
-		}
+		} 
 		return matches;
 	}
 	
@@ -68,7 +57,7 @@ public class ListItemProvider {
 	 * @param lst list to store {@link Path} found values
 	 * @return list of {@link Path}
 	 */
-	public static List<Path> findFiles(Path root, String compare, List<Path> lst)
+	private static List<Path> findFiles(Path root, String compare, List<Path> lst)
 	{
 		File dir = new File(root.toString());
 		File[] files = dir.listFiles();
@@ -84,27 +73,5 @@ public class ListItemProvider {
 			}
 		}
 		return lst;
-	}
-
-	/**
-	 * extracting workspace path of last build
-	 * 
-	 * @param project {@link AbstractProject}
-	 * @return workspace path
-	 */
-	private static Path getWorkspace(@SuppressWarnings("rawtypes") @AncestorInPath AbstractProject project)
-	{
-		AbstractBuild<?, ?> build = project.getLastBuild();
-		FilePath path = build.getWorkspace();
-		File root = null;
-		
-		try {
-			root = new File(path.toURI().toURL().getPath());
-		} catch (IOException e) {
-			//TODO
-		} catch (InterruptedException e) {
-			//TODO
-		}
-		return root.toPath();
 	}
 }

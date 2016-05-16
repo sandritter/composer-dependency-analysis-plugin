@@ -66,9 +66,9 @@ public class SQliteStorer implements DataStorage {
 			c = DriverManager.getConnection("jdbc:sqlite:" + dbPath);
 			c.setAutoCommit(false);
 		} catch (Exception e) {
-			logger.println(
+			logger.log(
 					Logger.LABEL + "-> CONNECTION FAILED: cannot establish connection -> database path: " + dbPath);
-			logger.println(Logger.LABEL + "error message: " + e.getMessage());
+			logger.log(Logger.LABEL + "error message: " + e.getMessage());
 			logger.println();
 		}
 
