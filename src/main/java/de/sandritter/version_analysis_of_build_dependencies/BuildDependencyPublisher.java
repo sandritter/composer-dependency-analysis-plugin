@@ -2,6 +2,7 @@ package de.sandritter.version_analysis_of_build_dependencies;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -35,6 +36,7 @@ import de.sandritter.version_analysis_of_build_dependencies.Util.PathResolver;
 import de.sandritter.version_analysis_of_build_dependencies.Util.Interface.Resolver;
 import hudson.EnvVars;
 import hudson.Extension;
+import hudson.FilePath;
 import hudson.Launcher;
 import hudson.model.AbstractBuild;
 import hudson.model.AbstractProject;
@@ -80,6 +82,11 @@ public class BuildDependencyPublisher extends Recorder {
 	 * path to the composer.json file
 	 */
 	private final String jsonPath;
+	
+	/**
+	 * workspace path of this build
+	 */
+	private String workspacePath;
 
 	/**
 	 * logger that logs all warnings and errors to console output
@@ -113,8 +120,10 @@ public class BuildDependencyPublisher extends Recorder {
 		loadProperties(); 
 		logger = Logger.getInstance(listener);
 		logger.logPluginStart();
+		
+		this.workspacePath = loadWorkspacePath(build);
 
-		Resolver pathResolver = new PathResolver(logger, build);
+		Resolver pathResolver = new PathResolver();
 		createModules(getDescriptor().getDbPath());
 
 		Map<FileType, File> dependencyReflectionFiles = loadDependencyReflectionFiles(pathResolver);
@@ -149,14 +158,37 @@ public class BuildDependencyPublisher extends Recorder {
 	 */
 	private Map<FileType, File> loadDependencyReflectionFiles(Resolver pathResolver)
 	{
-		//String finalLockPath = pathResolver.getAbsolutePath(FileType.COMPOSER_LOCK, lockPath);
-		//String finalJsonPath = pathResolver.getAbsolutePath(FileType.COMPOSER_JSON, jsonPath);
-		String finalLockPath = "/Users/Shared/Jenkins/Home/workspace/Extensions/Extension04/source/composer.lock";
-		String finalJsonPath = "/Users/Shared/Jenkins/Home/workspace/Extensions/Extension04/source/composer.json";
+		String finalLockPath = pathResolver
+				.resolveAbsolutePath(FileType.COMPOSER_LOCK, workspacePath, lockPath);
+		String finalJsonPath = pathResolver.
+				resolveAbsolutePath(FileType.COMPOSER_JSON, workspacePath, jsonPath);
+		
 		Map<FileType, File> files = new HashMap<FileType, File>();
 		files.put(FileType.COMPOSER_JSON, loadFile(finalJsonPath));
 		files.put(FileType.COMPOSER_LOCK, loadFile(finalLockPath));
 		return files;
+	}
+	
+	/**
+	 * is loading the workspace path of a build instance
+	 * 
+	 * @param build {@link AbstractBuild}
+	 * @return workspace path
+	 */
+	private String loadWorkspacePath(AbstractBuild<?, ?> build)
+	{
+		String path = "";
+		try {
+			FilePath workspace = build.getWorkspace();
+			path = workspace.toURI().toURL().getPath();
+		} catch (MalformedURLException e) {
+			logger.logFailure(e, "LOADING WORKSPACE FAILED");
+		} catch (IOException e) {
+			logger.logFailure(e, "LOADING WORKSPACE FAILED");
+		} catch (InterruptedException e) {
+			logger.logFailure(e, "LOADING WORKSPACE FAILED");
+		}
+		return path;
 	}
 
 	/**
@@ -271,13 +303,6 @@ public class BuildDependencyPublisher extends Recorder {
 		data.setTimestamp(build.getTimeInMillis());
 		data.setDbPath(getDescriptor().getDbPath());
 		injectVersionControlInfo(data, env);
-		logger.println();
-		logger.println("[Build-Data] :");
-		logger.println("BuildId: " + data.getBuildId());
-		logger.println("Revision: " + data.getRevision());
-		logger.println("JenkinsUrl: " + data.getJenkinsUrl());
-		logger.println("BuildNumber: " + data.getNumber());
-		logger.println();
 		return data;
 	}
 
@@ -303,9 +328,6 @@ public class BuildDependencyPublisher extends Recorder {
 			data.setRevision(svnRevision);
 			data.setVersion(svnRevision);
 		}
-		logger.println("injectedVersionCOntrollInfo");
-		logger.println();
-		
 	}
 
 	/**

@@ -10,10 +10,11 @@ import de.sandritter.version_analysis_of_build_dependencies.Mapping.Enum.FileTyp
 public interface Resolver {
 
 	/**
-	 * 
-	 * @param fileType
+	 * takes an absolute and relative path and puts them together
+	 * @param fileType {@link FileType}
+	 * @param absolutePath 
 	 * @param relativePath
-	 * @return
+	 * @return String absolute path
 	 */
-	public String getAbsolutePath(FileType fileType, String relativePath);
+	public String resolveAbsolutePath(FileType fileType, String absolutePath, String relativePath);
 }

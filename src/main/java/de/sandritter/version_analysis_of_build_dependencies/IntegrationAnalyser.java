@@ -76,8 +76,6 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 			DependencyResult depResult = analyseDependency(build, c, totalSet, result);
 			result.add(depResult);
 		}
-		Logger logger = Logger.getInstance();
-		logger.println(result.toString());
 		return result;
 	}
 

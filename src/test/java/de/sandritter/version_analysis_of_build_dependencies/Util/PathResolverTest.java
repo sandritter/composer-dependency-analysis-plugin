@@ -6,17 +6,10 @@ import java.io.File;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.powermock.api.easymock.PowerMock;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
 
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Enum.FileType;
 import de.sandritter.version_analysis_of_build_dependencies.Util.PathResolver;
-import hudson.model.AbstractBuild;
 
-@RunWith(PowerMockRunner.class)
-@PrepareForTest(PathResolver.class)
 public class PathResolverTest {
 	
 	private PathResolver pathResolver;
@@ -28,12 +21,7 @@ public class PathResolverTest {
 		String absoluteFilePath = getClass().getClassLoader().getResource("composer.json").getPath();
 		File f = new File(absoluteFilePath);
 		this.testWorkspacePath = f.getParent();
-		
-		AbstractBuild<?, ?> build = null;
-		
-		this.pathResolver = PowerMock.createPartialMock(PathResolver.class, "loadWorkspacePath");
-		PowerMock.expectPrivate(pathResolver, "loadWorkspacePath", build).andReturn(testWorkspacePath);
-		PowerMock.replay(pathResolver);
+		this.pathResolver = new PathResolver();
 	}
 	
 	@Test
@@ -41,7 +29,7 @@ public class PathResolverTest {
 	{
 		String relativePath = "/test/composer.json";
 		String expected = testWorkspacePath + relativePath;
-		String path = pathResolver.getAbsolutePath(FileType.COMPOSER_JSON, relativePath);
+		String path = pathResolver.resolveAbsolutePath(FileType.COMPOSER_JSON, testWorkspacePath, relativePath);
 		assertEquals(expected, path);
 	}
 	
@@ -50,7 +38,7 @@ public class PathResolverTest {
 	{
 		String relativePath = "/test/composer.lock";
 		String expected = testWorkspacePath + relativePath;
-		String path = pathResolver.getAbsolutePath(FileType.COMPOSER_LOCK, relativePath);
+		String path = pathResolver.resolveAbsolutePath(FileType.COMPOSER_LOCK, testWorkspacePath, relativePath);
 		assertEquals(expected, path);
 	}
 	
@@ -59,7 +47,7 @@ public class PathResolverTest {
 	{
 		String relativePath = "default";
 		String expected = testWorkspacePath + "/source/composer.lock";
-		String path = pathResolver.getAbsolutePath(FileType.COMPOSER_LOCK, relativePath);
+		String path = pathResolver.resolveAbsolutePath(FileType.COMPOSER_LOCK, testWorkspacePath, relativePath);
 		assertEquals(expected, path);
 	}
 
