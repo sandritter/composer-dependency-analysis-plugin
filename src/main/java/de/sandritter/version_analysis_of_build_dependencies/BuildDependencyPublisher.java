@@ -425,7 +425,7 @@ public class BuildDependencyPublisher extends Recorder {
 			try {
 				root = new File(path.toURI().toURL().getPath());
 			} catch (IOException e) {
-				logger.println();
+				//TODO
 			} catch (InterruptedException e) {
 				//TODO
 			}

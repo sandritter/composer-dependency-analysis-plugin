@@ -6,14 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Enum.FileType;
-import hudson.model.AbstractProject;
 import hudson.util.ListBoxModel;
 
 public class ListItemProvider {
 
 	/**
+	 * is looking for all files underneath the workspace directory of a
+	 * build-job by given file name
 	 * 
-	 * @param project
+	 * @param workspace
 	 * @param type
 	 * @return
 	 */
@@ -32,12 +33,9 @@ public class ListItemProvider {
 	}
 	
 	/**
-	 * is looking for all files underneath the workspace directory of a
-	 * build-job by given file name
-	 * 
-	 * @param project {@link AbstractProject}
-	 * @param compare file name to look for
-	 * @return list of {@link Path} of found files by compare value
+	 * @param workspace
+	 * @param compare
+	 * @return
 	 */
 	private static List<Path> getPathItems(Path workspace, String compare)
 	{

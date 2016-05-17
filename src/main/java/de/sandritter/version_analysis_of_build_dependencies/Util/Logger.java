@@ -80,9 +80,9 @@ public class Logger {
 	}
 	
 	public void logFailure(Exception e, String title) {
-		logger.log(Logger.LABEL + Logger.WARNING + "-> " + title + ": ");
-		logger.log(Logger.LABEL + Logger.WARNING + "error message: " + e.getMessage());
-		logger.println();
+//		logger.log(Logger.LABEL + Logger.WARNING + "-> " + title + ": ");
+//		logger.log(Logger.LABEL + Logger.WARNING + "error message: " + e.getMessage());
+//		logger.println();
 		errorCount++;
 	}
 	
@@ -92,18 +92,18 @@ public class Logger {
 	 * @param start timestamp of the time when the peform method was invoked
 	 */
 	public void logFinalProcessStatus() {
-		long end = System.currentTimeMillis();
-		if (errorCount == 0) {
-			logger.log(Logger.LABEL + Logger.SUCCESS
-					+ "Integration Analysis Of Integration Dependencies ended successfully");
-		} else {
-			logger.log(Logger.LABEL + Logger.WARNING
-					+ "Integration Analysis Of Integration Dependencies DIDN'T end successful");
-			logger.log(Logger.LABEL + "warnings occured: " + errorCount);
-		}
-		logger.log(Logger.LABEL + "STARTED at: " + DateFormatter.getFormattedTime(startTime));
-		logger.log(Logger.LABEL + "ENDED at: " + DateFormatter.getFormattedTime(startTime));
-		this.logElapsedTime(end);
-		logger.println();
+//		long end = System.currentTimeMillis();
+//		if (errorCount == 0) {
+//			logger.log(Logger.LABEL + Logger.SUCCESS
+//					+ "Integration Analysis Of Integration Dependencies ended successfully");
+//		} else {
+//			logger.log(Logger.LABEL + Logger.WARNING
+//					+ "Integration Analysis Of Integration Dependencies DIDN'T end successful");
+//			logger.log(Logger.LABEL + "warnings occured: " + errorCount);
+//		}
+//		logger.log(Logger.LABEL + "STARTED at: " + DateFormatter.getFormattedTime(startTime));
+//		logger.log(Logger.LABEL + "ENDED at: " + DateFormatter.getFormattedTime(startTime));
+//		this.logElapsedTime(end);
+//		logger.println();
 	}
 }
