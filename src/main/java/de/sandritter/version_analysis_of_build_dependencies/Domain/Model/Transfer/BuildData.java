@@ -62,6 +62,8 @@ public class BuildData {
 	private String version;
 
 	private String jenkinsUrl;
+	
+	private String jobUrl;
 
 	public String getBuildCategory()
 	{
@@ -184,6 +186,16 @@ public class BuildData {
 	public void setJenkinsUrl(String jenkinsUrl)
 	{
 		this.jenkinsUrl = jenkinsUrl;
+	}
+
+	public String getJobUrl()
+	{
+		return jobUrl;
+	}
+
+	public void setJobUrl(String jobUrl)
+	{
+		this.jobUrl = jobUrl;
 	}
 
 }

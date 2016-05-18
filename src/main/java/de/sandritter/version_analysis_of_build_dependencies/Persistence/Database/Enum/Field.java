@@ -13,6 +13,7 @@ public enum Field {
     JOB_NAME ("job_name"),
     CATEGORY ("category"),
     ANALYSE ("analyse"),
+    JOB_URL ("job_url"),
 
     REFERENCE ("reference"),
     VERSION ("version"),

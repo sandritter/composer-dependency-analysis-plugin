@@ -4,20 +4,14 @@ import java.util.Collection;
 import java.util.Map;
 
 import org.kohsuke.stapler.StaplerProxy;
-import org.kohsuke.stapler.StaplerRequest;
 
-import de.sandritter.version_analysis_of_build_dependencies.BuildDependencyPublisher.DescriptorImpl;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Database.ComponentSummary;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Database.DependentComponent;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.BuildData;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Interface.Transferable;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataLoader;
-import hudson.Launcher;
 import hudson.PluginWrapper;
-import hudson.model.AbstractBuild;
 import hudson.model.Action;
-import hudson.model.BuildListener;
-import hudson.tasks.Recorder;
 import jenkins.model.Jenkins;
 
 /**
@@ -54,7 +48,7 @@ public class DependentComponentResolver implements Action, StaplerProxy {
 		Transferable t = dataLoader.loadDependentComponents(componentName);
 		map = (Map<String, DependentComponent>) t.getMap(DependentComponent.class);
 		for (DependentComponent c : map.values()) {
-			String url = buildData.getJenkinsUrl() + "job/" + c.getJobName() + "/build?delay=0sec";
+			String url = buildData.getJobUrl() + "/build?delay=0sec";
 			c.setLink(url);
 		}
 	}
@@ -65,8 +59,9 @@ public class DependentComponentResolver implements Action, StaplerProxy {
 	 */
 	public String getAnalysisUrl()
 	{
-		String url = buildData.getJenkinsUrl() + "job/" + buildData.getJobName() + "/"
-				+ Integer.toString(buildData.getNumber()) + "/" + IntegrationAnalyser.SUB_URL;
+		String url = buildData.getJobUrl() + "/"
+				+ Integer.toString(buildData.getNumber()) 
+				+ "/" + IntegrationAnalyser.SUB_URL;
 		return url;
 	}
 

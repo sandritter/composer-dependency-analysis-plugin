@@ -27,6 +27,11 @@ public class Build {
 	 * name of the jenkins build job
 	 */
 	private String jobName;
+	 
+	/**
+	 * url to the build-job page
+	 */
+	private String jobUrl;
 
 	/**
 	 * 
@@ -35,12 +40,13 @@ public class Build {
 	 * @param number build number
 	 * @param jobName job name of the build job
 	 */
-	public Build(String buildId, long timestamp, int number, String jobName)
+	public Build(String buildId, long timestamp, int number, String jobName, String jobUrl)
 	{
 		this.buildId = buildId;
 		this.timestamp = timestamp;
 		this.number = number;
 		this.setJobName(jobName);
+		this.setJobUrl(jobUrl);
 	}
 
 	public String getBuildId()
@@ -81,5 +87,15 @@ public class Build {
 	public void setJobName(String jobName)
 	{
 		this.jobName = jobName;
+	}
+
+	public String getJobUrl()
+	{
+		return jobUrl;
+	}
+
+	public void setJobUrl(String jobUrl)
+	{
+		this.jobUrl = jobUrl;
 	}
 }

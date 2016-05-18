@@ -114,7 +114,8 @@ public class DaoMapper implements RowDataMapper {
 				buildData.getBuildId(), 
 				buildData.getTimestamp(),
 				buildData.getNumber(), 
-				buildData.getJobName()
+				buildData.getJobName(),
+				buildData.getJobUrl()
 			)
 		);
 	}

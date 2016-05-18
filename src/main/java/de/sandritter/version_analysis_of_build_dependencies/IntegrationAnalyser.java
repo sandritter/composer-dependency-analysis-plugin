@@ -36,7 +36,6 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 
 	private DataLoader dataLoader;
 	private AnalyseResult analyseResult;
-	private BuildData buildData;
 	public static final String SUB_URL = "intregration-analysis";
 
 	/** 
@@ -47,7 +46,6 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 	public IntegrationAnalyser(BuildData buildData, DataLoader dataLoader) throws Exception
 	{
 		this.dataLoader = dataLoader;
-		this.buildData = buildData;
 		this.analyseResult = analyse(buildData);
 	}
 
@@ -76,6 +74,9 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 		for (ComponentSummary c : totalSet.values()) {
 			BuildSummary build = loadBuildByReference(c.getReference());
 			DependencyResult depResult = analyseDependency(build, c, totalSet, result);
+			if (depResult.isExternal()) {
+				depResult.setAnalyseTarget(c);
+			}
 			result.add(depResult);
 		}
 		return result;
@@ -104,7 +105,8 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 			c.setTimestamp(build.getTime_stamp());
 			depResult.setRelatedBuild(build);
 			depResult.setLinked(true);
-			String url = buildData.getJenkinsUrl() + "job/" + build.getJobName() + "/"
+			
+			String url = build.getJobUrl() + "/"
 					+ Integer.toString(build.getBuildNumber()) + "/" + SUB_URL;
 			depResult.setLink(url);
 			depResult.setAnalyseTarget(c);
@@ -112,6 +114,8 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 			if (subSet != null) {
 				compareReferences(totalSet, subSet, depResult, result);
 			}
+		} else {
+			depResult.setExternal(true);
 		}
 		return depResult;
 	}
@@ -232,7 +236,7 @@ public class IntegrationAnalyser implements Action, StaplerProxy {
 		return "intregration-analysis";
 	}
 
-	public AnalyseResult getResults()
+	public AnalyseResult getAnalyse()
 	{
 		return analyseResult;
 	}

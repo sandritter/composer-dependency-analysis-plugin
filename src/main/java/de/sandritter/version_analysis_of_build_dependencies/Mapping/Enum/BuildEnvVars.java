@@ -17,7 +17,8 @@ public enum BuildEnvVars {
 	WORKSPACE ("WORKSPACE"),
 	SVN_REVISION ("SVN_REVISION"),
 	SVN_URL ("SVN_URL"),
-	JENKINS_URL ("JENKINS_URL");
+	JENKINS_URL ("JENKINS_URL"),
+	JOB_URL ("JOB_URL");
 	
     private final String name;       
 

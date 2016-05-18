@@ -18,6 +18,7 @@ import com.google.inject.Injector;
 
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.BuildData;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Interface.Transferable;
+import de.sandritter.version_analysis_of_build_dependencies.Exception.PluginConfigurationException;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Enum.BuildEnvVars;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Enum.FileType;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Enum.SourceType;
@@ -118,14 +119,13 @@ public class BuildDependencyPublisher extends Recorder {
 	@Override
 	public boolean perform(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener) throws IOException
 	{
-		loadProperties(); 
-		logger = Logger.getInstance(listener);
+		loadConfigProperties(); 
+		logger = Logger.getInstance(listener.getLogger());
 		logger.logPluginStart();
 		
 		this.workspacePath = loadWorkspacePath(build);
-
 		Resolver pathResolver = new PathResolver();
-		createModules(getDescriptor().getDbPath());
+		createModules(loadDatabasePath());
 
 		Map<FileType, File> dependencyReflectionFiles = loadDependencyReflectionFiles(pathResolver);
 		BuildData buildData = collectBuildData(build, listener);
@@ -140,15 +140,44 @@ public class BuildDependencyPublisher extends Recorder {
 		return true;
 	}
 	
-	public void loadProperties()
+	/**
+	 * loads plugin configuration from config.properties
+	 */
+	private void loadConfigProperties()
 	{
 		this.config = new Properties();
 		try {
 		    config.load(getClass().getResourceAsStream("/config.properties")); 
 		    System.out.println(config.getProperty("jenkins-log"));
 		} catch (IOException ex) {
+			logger.logFailure(
+				new PluginConfigurationException("could not load configuration from config.properties", ex), 
+				"Please check that your config file is right in place ;)"
+			);
 		    ex.printStackTrace();
 		}
+	}
+	
+	/**
+	 * loads the database path from the inner discriptor implementation
+	 * 
+	 * @return String
+	 */
+	private String loadDatabasePath()
+	{
+		String databasePath = null;
+		try {
+			databasePath = getDescriptor().getDbPath();
+			if (databasePath == null){
+				throw new PluginConfigurationException("could not find database path configuration");
+			}
+		} catch (PluginConfigurationException e) {
+			logger.logFailure(
+				new PluginConfigurationException("could not find databasePath", e), 
+				"Did you configure the database in your global jenkins settings? ;)"
+			);
+		}
+		return databasePath;
 	}
 
 	/**
@@ -299,6 +328,7 @@ public class BuildDependencyPublisher extends Recorder {
 		}
 		data.setJobName(env.get(BuildEnvVars.JOB_NAME.toString()));
 		data.setJenkinsUrl(env.get(BuildEnvVars.JENKINS_URL.toString()));
+		data.setJobUrl(env.get(BuildEnvVars.JOB_URL.toString()));
 		data.setBuildId(build.getId() + Long.toString(build.getTimeInMillis()));
 		data.setNumber(build.getNumber());
 		data.setTimestamp(build.getTimeInMillis());
@@ -490,10 +520,6 @@ public class BuildDependencyPublisher extends Recorder {
 		@Override
 		public boolean configure(StaplerRequest req, JSONObject formData) throws FormException
 		{
-			// To persist global configuration information,
-			// set that to properties and call save().
-			// ^Can also use req.bindJSON(this, formData);
-			// (easier when there are many fields; need set* methods for this,
 			dbPath = formData.getString("dbPath");
 			save();
 			return super.configure(req, formData);

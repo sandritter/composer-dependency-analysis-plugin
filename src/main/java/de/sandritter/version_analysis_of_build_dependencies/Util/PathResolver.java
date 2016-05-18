@@ -1,13 +1,9 @@
 package de.sandritter.version_analysis_of_build_dependencies.Util;
 
 import java.io.File;
-import java.io.IOException;
-import java.net.MalformedURLException;
 
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Enum.FileType;
 import de.sandritter.version_analysis_of_build_dependencies.Util.Interface.Resolver;
-import hudson.FilePath;
-import hudson.model.AbstractBuild;
 
 /**
  * PathResolver.java

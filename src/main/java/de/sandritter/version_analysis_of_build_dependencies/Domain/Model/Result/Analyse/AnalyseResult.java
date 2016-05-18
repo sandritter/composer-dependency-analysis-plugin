@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.util.List;
 
 import de.sandritter.version_analysis_of_build_dependencies.DependentComponentResolver;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Database.ComponentSummary;
@@ -18,7 +19,7 @@ import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfe
  *
  * @author Michael Sandritter
  */
-public class AnalyseResult extends ArrayList<DependencyResult> implements Serializable {
+public class AnalyseResult implements Serializable {
 
 	private static final long serialVersionUID = -477899930704734201L;
 
@@ -31,6 +32,12 @@ public class AnalyseResult extends ArrayList<DependencyResult> implements Serial
 	 * amount of {@link DependencyResult} with {@link Disparity}
 	 */
 	private double amountOfDependencyResultsWithDisparity = 0;
+	
+	private List<DependencyResult> depResults;
+
+	private List<DependencyResult> externalDeps;
+	
+	private List<DependencyResult> internalDeps;
 
 	/**
 	 * build specific information {@link BuildData}
@@ -40,6 +47,9 @@ public class AnalyseResult extends ArrayList<DependencyResult> implements Serial
 	public AnalyseResult(BuildData buildData)
 	{
 		setBuildData(buildData);
+		this.depResults = new ArrayList<DependencyResult>();
+		this.externalDeps = new ArrayList<DependencyResult>();
+		this.internalDeps = new ArrayList<DependencyResult>();
 	}
 
 	public ComponentSummary getMainComponent()
@@ -59,7 +69,7 @@ public class AnalyseResult extends ArrayList<DependencyResult> implements Serial
 
 	public String getResolverUrl()
 	{
-		String url = buildData.getJenkinsUrl() + "job/" + buildData.getJobName() + "/"
+		String url = buildData.getJobUrl() + "/"
 				+ Integer.toString(buildData.getNumber()) + "/" + DependentComponentResolver.SUB_URL;
 		return url;
 	}
@@ -71,7 +81,7 @@ public class AnalyseResult extends ArrayList<DependencyResult> implements Serial
 	 */
 	public String getPercentageOk()
 	{
-		double percentage = (size() - amountOfDependencyResultsWithDisparity) * 100 / size();
+		double percentage = (depResults.size() - amountOfDependencyResultsWithDisparity) * 100 / depResults.size();
 		return Double.toString(round(percentage, 2));
 	}
 
@@ -83,13 +93,13 @@ public class AnalyseResult extends ArrayList<DependencyResult> implements Serial
 	 */
 	public String getPercentageWarnings()
 	{
-		double percentage = amountOfDependencyResultsWithDisparity * 100 / size();
+		double percentage = amountOfDependencyResultsWithDisparity * 100 / depResults.size();
 		return Double.toString(round(percentage, 2));
 	}
 
 	public boolean hasDependencies()
 	{
-		if (size() > 0)
+		if (depResults.size() > 0)
 			return true;
 		return false;
 	}
@@ -119,5 +129,37 @@ public class AnalyseResult extends ArrayList<DependencyResult> implements Serial
 	public void setBuildData(BuildData buildData)
 	{
 		this.buildData = buildData;
+	}
+	
+	/**
+	 * adds DependencyResult to dependencyResultList
+	 * DependencyResult will also be added to the following list:
+	 * if DepedencyResult includes external dependency -> external dependency list
+	 * if DepedencyResult includes internal dependency -> internal dependency list
+	 * @param depResult
+	 */
+	public void add(DependencyResult depResult)
+	{
+		if (depResult.isExternal()){
+			externalDeps.add(depResult);
+		} else {
+			internalDeps.add(depResult);
+		}
+		depResults.add(depResult);
+	}
+	
+	public List<DependencyResult> getExternalDependencies()
+	{
+		return externalDeps;
+	}
+	
+	public List<DependencyResult> getInternalDependencies()
+	{
+		return internalDeps;
+	}
+	
+	public List<DependencyResult> getDepResults()
+	{
+		return depResults;
 	}
 }

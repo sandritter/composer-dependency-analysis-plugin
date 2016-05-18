@@ -45,7 +45,7 @@ public class SelectQueries {
 	 * select query for loading build-specific information of a build by the
 	 * reference of it's main component
 	 */
-	public static String buildOfMainDependency = "SELECT  build_id, time_stamp, build_number, job_name FROM build AS b "
+	public static String buildOfMainDependency = "SELECT  build_id, time_stamp, build_number, job_name, job_url FROM build AS b "
 			+ "INNER JOIN (" + "SELECT build_id FROM dependency WHERE reference=? AND type='main') AS d "
 			+ "ON b.id = d.build_id";
 

@@ -151,8 +151,8 @@ public class ComponentSummary implements Cloneable {
 
 	public String getLightReference()
 	{
-		if (reference != null && reference.length() > 4) {
-			return "***" + reference.substring(Math.max(0, reference.length() - 4));
+		if (reference != null && reference.length() > 7) {
+			return reference.substring(0, 7) + "***";
 		}
 		return reference;
 	}

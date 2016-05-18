@@ -127,6 +127,7 @@ public class SqliteDataMapper implements DatabaseMapper {
 			buildSum.setTime_stamp(result.getLong(Field.TIMESTAMP.toString()));
 			buildSum.setJobName(result.getString(Field.JOB_NAME.toString()));
 			buildSum.setBuildNumber(result.getInt(Field.BUILD_NUMBER.toString()));
+			buildSum.setJobUrl(result.getString(Field.JOB_URL.toString()));
 		}
 		return buildSum;
 	}

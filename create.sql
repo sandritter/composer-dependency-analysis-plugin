@@ -25,6 +25,7 @@ CREATE TABLE build (
 	time_stamp long not null,
 	build_number INTEGER not null, 
 	job_name TEXT,
+	job_url TEXT,
 	PRIMARY KEY (id)
 );
 
@@ -67,28 +68,28 @@ INSERT INTO stand VALUES ("ref-k5-02", "5.1", "Checkout");
 INSERT INTO stand VALUES ("ref-k6-01", "6.0", "Billing");
 INSERT INTO stand VALUES ("ref-k6-02", "6.1", "Billing");
 
-INSERT INTO build VALUES ("b-k1-01", 1449362787916, 1, "Job1");
-INSERT INTO build VALUES ("b-k1-02", 1449362783916, 2, "Job1");
-INSERT INTO build VALUES ("b-k1-03", 1449362784916, 3, "Job1");
-INSERT INTO build VALUES ("b-k1-04", 1449362785916, 4, "Job1");
+INSERT INTO build VALUES ("b-k1-01", 1449362787916, 1, "Job1", "https://jenkins-url/job-url/job-name/buildnumber");
+INSERT INTO build VALUES ("b-k1-02", 1449362783916, 2, "Job1", "https://jenkins-url/job-url/job-name/buildnumber");
+INSERT INTO build VALUES ("b-k1-03", 1449362784916, 3, "Job1", "https://jenkins-url/job-url/job-name/buildnumber");
+INSERT INTO build VALUES ("b-k1-04", 1449362785916, 4, "Job1", "https://jenkins-url/job-url/job-name/buildnumber");
 
-INSERT INTO build VALUES ("b-k2-01", 1449362782916, 1, "Job2");
-INSERT INTO build VALUES ("b-k2-02", 1449362737916, 2, "Job2");
-INSERT INTO build VALUES ("b-k2-03", 1449362747916, 3, "Job2");
-INSERT INTO build VALUES ("b-k2-04", 1449362757916, 4, "Job2");
+INSERT INTO build VALUES ("b-k2-01", 1449362782916, 1, "Job2", "https://jenkins-url/job-url/job-name/buildnumber");
+INSERT INTO build VALUES ("b-k2-02", 1449362737916, 2, "Job2", "https://jenkins-url/job-url/job-name/buildnumber");
+INSERT INTO build VALUES ("b-k2-03", 1449362747916, 3, "Job2", "https://jenkins-url/job-url/job-name/buildnumber");
+INSERT INTO build VALUES ("b-k2-04", 1449362757916, 4, "Job2", "https://jenkins-url/job-url/job-name/buildnumber");
 
-INSERT INTO build VALUES ("b-k3-01", 1449362387916, 1, "Job3");
-INSERT INTO build VALUES ("b-k3-02", 1449362487916, 2, "Job3");
-INSERT INTO build VALUES ("b-k3-03", 1449362687916, 2, "Job3");
+INSERT INTO build VALUES ("b-k3-01", 144936, 1, "Job3", "https://jenkins-url/job-url/job-name/buildnumber");
+INSERT INTO build VALUES ("b-k3-02", 1449362487916, 2, "Job3", "https://jenkins-url/job-url/job-name/buildnumber");
+INSERT INTO build VALUES ("b-k3-03", 1449362687916, 2, "Job3", "https://jenkins-url/job-url/job-name/buildnumber");
 
-INSERT INTO build VALUES ("b-k4-01", 1449362187916, 1, "Job4");
-INSERT INTO build VALUES ("b-k4-02", 1449362487916, 2, "Job4");
+INSERT INTO build VALUES ("b-k4-01", 1449362187916, 1, "Job4", "https://jenkins-url/job-url/job-name/buildnumber");
+INSERT INTO build VALUES ("b-k4-02", 1449362487916, 2, "Job4", "https://jenkins-url/job-url/job-name/buildnumber");
 
-INSERT INTO build VALUES ("b-k5-01", 1449362887916, 1, "Job5");
-INSERT INTO build VALUES ("b-k5-02", 1449362987916, 2, "Job5");
+INSERT INTO build VALUES ("b-k5-01", 1449362887916, 1, "Job5", "https://jenkins-url/job-url/job-name/buildnumber");
+INSERT INTO build VALUES ("b-k5-02", 1449362987916, 2, "Job5", "https://jenkins-url/job-url/job-name/buildnumber");
 
-INSERT INTO build VALUES ("b-k6-01", 1449365787916, 1, "Job6");
-INSERT INTO build VALUES ("b-k6-02", 1449366787916, 2, "Job6");
+INSERT INTO build VALUES ("b-k6-01", 1449365787916, 1, "Job6", "https://jenkins-url/job-url/job-name/buildnumber");
+INSERT INTO build VALUES ("b-k6-02", 1449366787916, 2, "Job6", "https://jenkins-url/job-url/job-name/buildnumber");
 
 --
 -- Komponente 1

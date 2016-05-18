@@ -27,6 +27,11 @@ public class BuildSummary {
 	 * name of the jenkins-build-job
 	 */
 	private String jobName;
+	
+	/**
+	 * url of the build-job page
+	 */
+	private String jobUrl;
 
 	public String getBuildId()
 	{
@@ -66,5 +71,15 @@ public class BuildSummary {
 	public void setBuildNumber(int buildNumber)
 	{
 		this.buildNumber = buildNumber;
+	}
+
+	public String getJobUrl()
+	{
+		return jobUrl;
+	}
+
+	public void setJobUrl(String jobUrl)
+	{
+		this.jobUrl = jobUrl;
 	}
 }

@@ -11,7 +11,7 @@ public class InsertQueries {
 	/**
 	 * insert query for the build table
 	 */
-	public String buildInsertQuery = "INSERT OR REPLACE INTO build (id, time_stamp, build_number, job_name) VALUES (?,?,?,?)";
+	public String buildInsertQuery = "INSERT OR REPLACE INTO build (id, time_stamp, build_number, job_name, job_url) VALUES (?,?,?,?,?)";
 	
 	/**
 	 * insert query for the stand table

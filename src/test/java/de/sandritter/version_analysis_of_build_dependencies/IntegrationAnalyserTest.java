@@ -41,9 +41,9 @@ public class IntegrationAnalyserTest {
 	public void testIntegrationAnalysis() throws Exception
 	{
 		IntegrationAnalyser analyzer = new IntegrationAnalyser(buildData, dataLoader);
-		AnalyseResult result = analyzer.getResults();
-		assertEquals(5, result.size());
-		for (DependencyResult depResult : result) {
+		AnalyseResult result = analyzer.getAnalyse();
+		assertEquals(5, result.getDepResults().size());
+		for (DependencyResult depResult : result.getDepResults()) {
 			if (depResult.getAnalyseTarget().getComponentName().equals("Checkout")) {
 				assertEquals(3, depResult.getDisparities().size());
 				assertEquals("WARNING", depResult.getStatus());

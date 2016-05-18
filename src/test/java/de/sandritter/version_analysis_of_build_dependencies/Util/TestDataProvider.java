@@ -28,7 +28,6 @@ public class TestDataProvider {
 		bBuilder = new BuildBuilder();
 	}
 	
-	
 	public Transferable getStorageData(String buildId, int index, int amount){
 		Transferable t = new Transport();
 		List<Component> lc = new ArrayList<Component>();
@@ -44,7 +43,7 @@ public class TestDataProvider {
 		lc.add(componentBuilder.getMock(""+j, ""+j, ""+j));
 		ls.add(standBuilder.getMock(""+j, ""+j, ""+j));
 		ld.add(depBuilder.getMock(buildId, ""+j, "main"));
-		Build build = bBuilder.getMock(buildId, (long) j, j, ""+j);
+		Build build = bBuilder.getMock(buildId, (long) j, j, ""+j, ""+j);
 		t.setObject(Build.class, build);
 		t.setList(Stand.class, ls);
 		t.setList(Dependency.class, ld);

@@ -7,11 +7,12 @@ import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.DAO.Bui
 
 public class BuildBuilder {
 
-	public Build getMock(String buildId, long timestamp, int number, String jobName){
+	public Build getMock(String buildId, long timestamp, int number, String jobName, String jobUrl){
 		Build source = mock(Build.class);
 		when(source.getBuildId()).thenReturn(buildId);
 		when(source.getTimestamp()).thenReturn(timestamp);
 		when(source.getJobName()).thenReturn(jobName);
+		when(source.getJobUrl()).thenReturn(jobUrl);
 		return source;
 	}
 }

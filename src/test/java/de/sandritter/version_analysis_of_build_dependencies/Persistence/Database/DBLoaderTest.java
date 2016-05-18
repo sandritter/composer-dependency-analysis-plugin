@@ -47,6 +47,7 @@ public class DBLoaderTest {
 		assertEquals((long) 144936, build.getTime_stamp());
 		assertEquals(1, build.getBuildNumber());
 		assertEquals("Job3", build.getJobName());
+		assertEquals("https://jenkins-url/job-url/job-name/buildnumber", build.getJobUrl());
 	}
 
 	@Test

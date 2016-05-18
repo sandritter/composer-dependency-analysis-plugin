@@ -84,6 +84,7 @@ public class DaoMapperTest{
 		assertEquals(buildData.getNumber(), build.getNumber());
 		assertEquals(buildData.getJobName(), build.getJobName());
 		assertEquals(buildData.getTimestamp(), build.getTimestamp());
+		assertEquals(buildData.getJobUrl(), build.getJobUrl());
 	}
 	
 	@Test

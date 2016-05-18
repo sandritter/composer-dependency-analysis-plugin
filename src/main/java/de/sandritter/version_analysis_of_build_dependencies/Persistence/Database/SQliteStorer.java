@@ -108,6 +108,7 @@ public class SQliteStorer implements DataStorage {
 			stmt.setLong(2, build.getTimestamp());
 			stmt.setInt(3, build.getNumber());
 			stmt.setString(4, build.getJobName());
+			stmt.setString(5, build.getJobUrl());
 			stmt.executeUpdate();
 			c.commit();
 

@@ -20,6 +20,7 @@ public class BuildDataBuilder {
 		when(data.getRevision()).thenReturn("reference" + idx);
 		when(data.getSourceType()).thenReturn(getRandomSourceType());
 		when(data.getSourceUrl()).thenReturn("https://sourceUrl." + idx);
+		when(data.getJobUrl()).thenReturn("https://sourceUrl/job/" + idx);
 		when(data.getVersion()).thenReturn("v1." + idx);
 		return data;
 	}

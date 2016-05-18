@@ -52,6 +52,8 @@ public class DependencyResult implements Serializable {
 	 * url to the analysis report of the related build
 	 */
 	private String link;
+	
+	private boolean isExternal = false;
 
 	/**
 	 * constructor
@@ -138,5 +140,15 @@ public class DependencyResult implements Serializable {
 	public void setLink(String link)
 	{
 		this.link = link;
+	}
+
+	public boolean isExternal()
+	{
+		return isExternal;
+	}
+
+	public void setExternal(boolean isExternal)
+	{
+		this.isExternal = isExternal;
 	}
 }
