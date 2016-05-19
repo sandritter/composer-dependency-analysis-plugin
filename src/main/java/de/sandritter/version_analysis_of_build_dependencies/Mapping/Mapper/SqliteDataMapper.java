@@ -179,6 +179,7 @@ public class SqliteDataMapper implements DatabaseMapper {
 			c.setBuildId(result.getString(Field.BUILD_ID.toString()));
 			c.setBuildNumber(result.getInt(Field.BUILD_NUMBER.toString()));
 			c.setTimeStamp(result.getLong(Field.TIMESTAMP.toString()));
+			c.setLink(result.getString(Field.JOB_URL.toString()));
 			if (!map.containsKey(c.getComponentName())) {
 				map.put(c.getComponentName(), c);
 			}

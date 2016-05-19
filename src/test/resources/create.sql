@@ -78,9 +78,9 @@ INSERT INTO build VALUES ("b-k2-02", 1449362737916, 2, "Job2", "https://jenkins-
 INSERT INTO build VALUES ("b-k2-03", 1449362747916, 3, "Job2", "https://jenkins-url/job-url/job-name/buildnumber");
 INSERT INTO build VALUES ("b-k2-04", 1449362757916, 4, "Job2", "https://jenkins-url/job-url/job-name/buildnumber");
 
-INSERT INTO build VALUES ("b-k3-01", 144936, 1, "Job3", "https://jenkins-url/job-url/job-name/buildnumber");
-INSERT INTO build VALUES ("b-k3-02", 1449362487916, 2, "Job3", "https://jenkins-url/job-url/job-name/buildnumber");
-INSERT INTO build VALUES ("b-k3-03", 1449362687916, 2, "Job3", "https://jenkins-url/job-url/job-name/buildnumber");
+INSERT INTO build VALUES ("b-k3-01", 144936, 1, "Job3", "https://jenkins-url/job-url/job-name/buildnumber3");
+INSERT INTO build VALUES ("b-k3-02", 1449362487916, 2, "Job3", "https://jenkins-url/job-url/job-name/buildnumber3");
+INSERT INTO build VALUES ("b-k3-03", 1449362687916, 2, "Job3", "https://jenkins-url/job-url/job-name/buildnumber3");
 
 INSERT INTO build VALUES ("b-k4-01", 1449362187916, 1, "Job4", "https://jenkins-url/job-url/job-name/buildnumber");
 INSERT INTO build VALUES ("b-k4-02", 1449362487916, 2, "Job4", "https://jenkins-url/job-url/job-name/buildnumber");

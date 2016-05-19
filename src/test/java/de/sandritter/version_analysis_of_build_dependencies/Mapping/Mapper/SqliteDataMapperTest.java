@@ -46,6 +46,7 @@ public class SqliteDataMapperTest {
 			assertEquals(Field.COMPONENT_NAME.toString(), c.getComponentName());
 			assertEquals(Field.REFERENCE.toString(), c.getReference());
 			assertEquals(Field.VERSION.toString(), c.getVersion());
+			assertEquals(Field.JOB_URL.toString(), c.getLink());
 		}
 	}
 	

@@ -10,6 +10,7 @@ import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.BuildData;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Interface.Transferable;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataLoader;
+import de.sandritter.version_analysis_of_build_dependencies.Util.PropertyReader;
 import hudson.PluginWrapper;
 import hudson.model.Action;
 import jenkins.model.Jenkins;
@@ -33,11 +34,13 @@ public class DependentComponentResolver implements Action, StaplerProxy {
 	private BuildData buildData;
 	private Map<String, DependentComponent> map;
 	public final static String SUB_URL = "dependency-resolver";
+	private PropertyReader propertyReader;
 
 	public DependentComponentResolver(DataLoader dataLoader, BuildData buildData) throws Exception
 	{
 		this.dataLoader = dataLoader;
 		this.buildData = buildData;
+		this.propertyReader = PropertyReader.getInstance();
 		resolveDependentComponents(buildData);
 	}
 
@@ -47,8 +50,9 @@ public class DependentComponentResolver implements Action, StaplerProxy {
 		String componentName = loadComponentNameOfMainComponent(buildData.getBuildId());
 		Transferable t = dataLoader.loadDependentComponents(componentName);
 		map = (Map<String, DependentComponent>) t.getMap(DependentComponent.class);
+		String apiToken = propertyReader.getConfig().getProperty("api-token");
 		for (DependentComponent c : map.values()) {
-			String url = buildData.getJobUrl() + "/build?delay=0sec";
+			String url =  c.getLink() + "build?token=" + apiToken;
 			c.setLink(url);
 		}
 	}

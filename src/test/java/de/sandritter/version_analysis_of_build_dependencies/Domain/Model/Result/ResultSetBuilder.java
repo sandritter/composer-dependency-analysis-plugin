@@ -45,6 +45,7 @@ public class ResultSetBuilder{
 		when(result.getInt(Field.BUILD_NUMBER.toString())).thenReturn(1);
 		when(result.getLong(Field.TIMESTAMP.toString())).thenReturn((long) 1);
 		when(result.getString(Field.JOB_NAME.toString())).thenReturn(Field.JOB_NAME.toString());
+		when(result.getString(Field.JOB_URL.toString())).thenReturn(Field.JOB_URL.toString());
 		return result;
 	}
 

@@ -16,6 +16,7 @@ import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Database.DependentComponent;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Interface.Transferable;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Enum.DependencyType;
+import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Enum.Field;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Factory.DataLoaderFactory;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataLoader;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Module.PersistenceModule;
@@ -47,7 +48,7 @@ public class DBLoaderTest {
 		assertEquals((long) 144936, build.getTime_stamp());
 		assertEquals(1, build.getBuildNumber());
 		assertEquals("Job3", build.getJobName());
-		assertEquals("https://jenkins-url/job-url/job-name/buildnumber", build.getJobUrl());
+		assertEquals("https://jenkins-url/job-url/job-name/buildnumber3", build.getJobUrl());
 	}
 
 	@Test
@@ -82,6 +83,22 @@ public class DBLoaderTest {
 		@SuppressWarnings("unchecked")
 		Map<String, DependentComponent> totalSet = (Map<String, DependentComponent>) t.getMap(DependentComponent.class);
 		assertEquals(4, totalSet.size());
+	}
+	
+	@Test
+	public void shouldHaveSpecificPropertiesOfDependentComponent() throws Exception
+	{
+		Transferable t = dataLoader.loadDependentComponents("Kunde");
+		@SuppressWarnings("unchecked")
+		Map<String, DependentComponent> totalSet = (Map<String, DependentComponent>) t.getMap(DependentComponent.class);
+		DependentComponent component = totalSet.get("Warenkorb");
+		assertNotNull(component.getBuildId());
+		assertNotNull(component.getBuildNumber());
+		assertNotNull(component.getReference());
+		assertNotNull(component.getVersion());
+		assertEquals("Warenkorb", component.getComponentName());
+		assertEquals("Job3", component.getJobName());
+		assertEquals("https://jenkins-url/job-url/job-name/buildnumber3", component.getLink());
 	}
 
 	@Test

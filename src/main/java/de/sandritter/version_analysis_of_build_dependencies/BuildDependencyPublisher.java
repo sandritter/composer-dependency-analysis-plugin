@@ -119,7 +119,6 @@ public class BuildDependencyPublisher extends Recorder {
 	@Override
 	public boolean perform(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener) throws IOException
 	{
-		loadConfigProperties(); 
 		logger = Logger.getInstance(listener.getLogger());
 		logger.logPluginStart();
 		
@@ -138,24 +137,6 @@ public class BuildDependencyPublisher extends Recorder {
 		logger.logFinalProcessStatus();
 		
 		return true;
-	}
-	
-	/**
-	 * loads plugin configuration from config.properties
-	 */
-	private void loadConfigProperties()
-	{
-		this.config = new Properties();
-		try {
-		    config.load(getClass().getResourceAsStream("/config.properties")); 
-		    System.out.println(config.getProperty("jenkins-log"));
-		} catch (IOException ex) {
-			logger.logFailure(
-				new PluginConfigurationException("could not load configuration from config.properties", ex), 
-				"Please check that your config file is right in place ;)"
-			);
-		    ex.printStackTrace();
-		}
 	}
 	
 	/**

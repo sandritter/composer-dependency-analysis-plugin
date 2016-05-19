@@ -16,6 +16,7 @@ import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfe
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Enum.DependencyType;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Exception.LoadingFailedException;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataLoader;
+import de.sandritter.version_analysis_of_build_dependencies.Util.Logger;
 import hudson.PluginWrapper;
 import hudson.model.Action;
 import jenkins.model.Jenkins;
