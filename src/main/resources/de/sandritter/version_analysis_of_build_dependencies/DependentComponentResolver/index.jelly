@@ -10,12 +10,12 @@
 						<j:forEach var="dep" items="${it.dependentComponents}">
 						<div class="list-group-item">
 							<div class="row">
-								<div class="col-xs-12 col-sm-8 col-md-8">
+								<div class="col-xs-12 col-sm-12 col-md-8">
 									<h4>${dep.componentName} <small> #${dep.buildNumber}</small></h4>
 									<p>last build: ${dep.formattedTime}</p>
 								</div>
-								<div class="col-xs-12 col-sm-4 col-md-4" style="text-align:center; padding-top: 13px">
-									<a href="${dep.link}" class="btn btn-success" role="button">build now</a>
+								<div class="col-xs-4 col-sm-4 col-md-4" style="text-align:center; padding-top: 13px">
+									<button type="button" class="build btn btn-success" data-link="${dep.link}" >build now</button>
 								</div>
 							</div>
 						</div>
@@ -26,14 +26,23 @@
 				<p>
 					<a class="btn btn-primary" href="${it.getAnalysisUrl()}">back to tne analysis</a>
 				</p>
+				<script>
+					$(".build").each(function(key, value){
+						$(value).click(function(e) {
+							console.log($(this).attr("data-link"));
+							$.ajax({
+							  type: "POST",
+							  url: $(this).attr("data-link")
+							});
+					    });
+					});
+				</script>
 	         </l:main-panel>
 	         <l:header>
 	         	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	         	<link rel="stylesheet" type="text/css" href="${rootURL}/plugin/version-analysis-of-build-dependencies/css/bootstrap-theme.min.css" />
 	         	<link rel="stylesheet" type="text/css" href="${rootURL}/plugin/version-analysis-of-build-dependencies/css/bootstrap.min.css" />
 	         	<script src="${rootURL}/plugin/version-analysis-of-build-dependencies/js/bootstrap.min.js"></script>
-	         	<style type="text/css">
-	         	</style>
 	         </l:header>
 	    </l:layout>
 	</j:jelly>

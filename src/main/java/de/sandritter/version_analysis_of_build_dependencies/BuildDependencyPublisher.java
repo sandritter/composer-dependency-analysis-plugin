@@ -136,6 +136,8 @@ public class BuildDependencyPublisher extends Recorder {
 		resolveDependencies(build, buildData);
 		logger.logFinalProcessStatus();
 		
+		build.getIconColor();
+		
 		return true;
 	}
 	
