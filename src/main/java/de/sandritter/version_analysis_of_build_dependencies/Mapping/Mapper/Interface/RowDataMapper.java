@@ -2,6 +2,7 @@ package de.sandritter.version_analysis_of_build_dependencies.Mapping.Mapper.Inte
 
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.BuildData;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Interface.Transferable;
+import de.sandritter.version_analysis_of_build_dependencies.Mapping.Exception.DataMappingFailedException;
 
 /**
  * RowDataMapper.java
@@ -18,5 +19,5 @@ public interface RowDataMapper {
 	 * @param buildData {@link BuildData}
 	 * @return Transferable {@link Transferable}
 	 */
-	public Transferable mapData(BuildData buildData, Transferable transport);
+	public Transferable mapData(BuildData buildData, Transferable transport) throws DataMappingFailedException;
 }

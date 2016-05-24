@@ -15,6 +15,7 @@ import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Depende
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.BuildData;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Interface.Transferable;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Enum.DependencyType;
+import de.sandritter.version_analysis_of_build_dependencies.Mapping.Exception.DataMappingFailedException;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Mapper.Interface.RowDataMapper;
 
 /**
@@ -55,11 +56,16 @@ public class DaoMapper implements RowDataMapper {
 	}
 
 	@Override
-	public Transferable mapData(BuildData buildData, Transferable transport) {
-		DependencyReflectionCollection lockDataImage = (DependencyReflectionCollection) transport.getObject(DependencyReflectionCollection.class);
-		JsonDataImage jsonDataImage = (JsonDataImage) transport.getObject(JsonDataImage.class);
-		generateORLists(buildData, jsonDataImage, lockDataImage);
-		generateORObjects(buildData, jsonDataImage, lockDataImage);
+	public Transferable mapData(BuildData buildData, Transferable transport) throws DataMappingFailedException {
+		
+		try {
+			DependencyReflectionCollection lockDataImage = (DependencyReflectionCollection) transport.getObject(DependencyReflectionCollection.class);
+			JsonDataImage jsonDataImage = (JsonDataImage) transport.getObject(JsonDataImage.class);
+			generateORLists(buildData, jsonDataImage, lockDataImage);
+			generateORObjects(buildData, jsonDataImage, lockDataImage);
+		} catch(Exception e) {
+			throw new DataMappingFailedException("[DaoMapper.java]: DataMapping failed because some buildData value is null", e);
+		}
 		return this.transport;
 	}
 
@@ -69,18 +75,28 @@ public class DaoMapper implements RowDataMapper {
 	 * @param buildData {@link BuildData}
 	 * @param jsonDataImage {@link JsonDataImage}
 	 * @param lockDataImage {@link DependencyReflectionCollection}
+	 * @throws Exception 
 	 */
-	private void generateORLists(BuildData buildData, JsonDataImage jsonDataImage, DependencyReflectionCollection lockDataImage) {
+	private void generateORLists(BuildData buildData, JsonDataImage jsonDataImage, DependencyReflectionCollection lockDataImage) throws Exception 
+	{
+		try {
+			componentList.add(new Component(jsonDataImage.getName(), buildData.getSourceType(), buildData.getSourceUrl()));
+			standList.add(new Stand(buildData.getVersion(), buildData.getRevision(), jsonDataImage.getName()));
+			dependencyList.add(new Dependency(buildData.getRevision(), buildData.getBuildId(), DependencyType.MAIN.toString()));
+		} catch (Exception e) {
+			throw new Exception("JsonDataImage", e);
+		}
 		
-		List<DependencyReflection> packages = lockDataImage.getPackages();
-		generateDependencies(packages, buildData.getBuildId(), DependencyType.HIGH_LEVEL);
-	
-		componentList.add(new Component(jsonDataImage.getName(), buildData.getSourceType(), buildData.getSourceUrl()));
-		standList.add(new Stand(buildData.getVersion(), buildData.getRevision(), jsonDataImage.getName()));
-		dependencyList.add(new Dependency(buildData.getRevision(), buildData.getBuildId(), DependencyType.MAIN.toString()));
-		transport.setList(Component.class, componentList);
-		transport.setList(Stand.class, standList);
-		transport.setList(Dependency.class, dependencyList);
+		try {
+			List<DependencyReflection> packages = lockDataImage.getPackages();
+			generateDependencies(packages, buildData.getBuildId(), DependencyType.HIGH_LEVEL);
+			
+			transport.setList(Component.class, componentList);
+			transport.setList(Stand.class, standList);
+			transport.setList(Dependency.class, dependencyList);
+		} catch (Exception e) {
+			throw new Exception("generateOrLists", e);
+		}
 	}
 
 	
@@ -89,13 +105,24 @@ public class DaoMapper implements RowDataMapper {
 	 * @param lst - list of {@link DependencyReflection}
 	 * @param buildId - build identifier
 	 * @param type {@link DependencyType}
+	 * @throws Exception 
 	 */
-	private void generateDependencies(List<DependencyReflection> lst, String buildId, DependencyType type){
-		for (DependencyReflection pkg : lst){
-			String reference = pkg.getSource().getReference().replace("/trunk/@", "");
-			dependencyList.add(new Dependency(reference, buildId, type.toString()));
-			componentList.add(new Component(pkg.getName(), pkg.getSource().getType(), pkg.getSource().getUrl()));
-			standList.add(new Stand(pkg.getVersion(), reference, pkg.getName()));
+	private void generateDependencies(List<DependencyReflection> lst, String buildId, DependencyType type) throws Exception{
+		try {
+			for (int i = 0; i < lst.size() -1; i++) {
+				DependencyReflection pkg = lst.get(i);
+				String reference = "";
+				try {
+					reference = pkg.getSource().getReference();
+				} catch (NullPointerException e) {
+					System.out.println(pkg.getName());
+				}
+				dependencyList.add(new Dependency(reference, buildId, type.toString()));
+				componentList.add(new Component(pkg.getName(), pkg.getSource().getType(), pkg.getSource().getUrl()));
+				standList.add(new Stand(pkg.getVersion(), reference, pkg.getName()));
+			}
+		} catch (Exception e) {
+			throw new Exception("generateOrLists", e);
 		}
 		
 	}
@@ -106,17 +133,14 @@ public class DaoMapper implements RowDataMapper {
 	 * @param buildData
 	 * @param jsonDataImage
 	 * @param lockDataImage
+	 * @throws Exception 
 	 */
-	private void generateORObjects(BuildData buildData, JsonDataImage jsonDataImage, DependencyReflectionCollection lockDataImage) {
-		transport.setObject(
-			Build.class,
-			new Build(
-				buildData.getBuildId(), 
-				buildData.getTimestamp(),
-				buildData.getNumber(), 
-				buildData.getJobName(),
-				buildData.getJobUrl()
-			)
-		);
+	private void generateORObjects(BuildData buildData, JsonDataImage jsonDataImage, DependencyReflectionCollection lockDataImage) throws Exception {
+		try {
+			transport.setObject(Build.class, new Build(buildData.getBuildId(), buildData.getTimestamp(),
+					buildData.getNumber(), buildData.getJobName(), buildData.getJobUrl()));
+		} catch (Exception e) {
+			throw new Exception("generateOrLists", e);
+		}
 	}
 }

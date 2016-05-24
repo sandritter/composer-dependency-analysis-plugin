@@ -36,7 +36,6 @@ public class DependencyReflection {
 	/**
 	 * {@link VersionControlSource}
 	 */
-	@JsonProperty("source")
 	private VersionControlSource source;
 
 	public VersionControlSource getSource()
@@ -74,7 +73,14 @@ public class DependencyReflection {
 		this.version = version;
 	}
 
+	@JsonProperty("source")
 	public void setSource(VersionControlSource source)
+	{
+		this.source = source;
+	}
+	
+	@JsonProperty("dist")
+	public void setDistSource(VersionControlSource source) 
 	{
 		this.source = source;
 	}

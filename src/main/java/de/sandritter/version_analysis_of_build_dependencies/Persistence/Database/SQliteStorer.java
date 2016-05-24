@@ -113,7 +113,7 @@ public class SQliteStorer implements DataStorage {
 			c.commit();
 
 		} catch (SQLException e) {
-			throw new Exception("cannot store data access object -> Build.java\n" + e.getMessage());
+			throw new Exception("cannot store data access object -> Build.java\n" + e.getMessage(), e);
 		} finally {
 			if (stmt != null)
 				stmt.close();
@@ -136,7 +136,8 @@ public class SQliteStorer implements DataStorage {
 			c = establishConnection();
 			String sql = InsertQueries.componentInsertQuery;
 			stmt = c.prepareStatement(sql);
-			for (Component component : lst) {
+			for (int i = 0; i < lst.size(); i++) {
+				Component component = lst.get(i);
 				stmt.setString(1, component.getName());
 				stmt.setString(2, component.getSourceUrl());
 				stmt.setString(3, component.getSourceType());
@@ -145,7 +146,7 @@ public class SQliteStorer implements DataStorage {
 			stmt.executeBatch();
 			c.commit();
 		} catch (SQLException e) {
-			throw new Exception("cannot store data access object -> Component.java\n" + e.getMessage());
+			throw new Exception("cannot store data access object -> Component.java\n" + e.getMessage(), e);
 		} finally {
 			if (stmt != null)
 				stmt.close();
@@ -169,7 +170,8 @@ public class SQliteStorer implements DataStorage {
 			c = establishConnection();
 			String sql = InsertQueries.standInsertQuery;
 			stmt = c.prepareStatement(sql);
-			for (Stand s : lst) {
+			for (int i = 0; i < lst.size(); i++) {
+				Stand s = lst.get(i);
 				stmt.setString(1, s.getReference());
 				stmt.setString(2, s.getVersion());
 				stmt.setString(3, s.getComponentName());
@@ -179,7 +181,7 @@ public class SQliteStorer implements DataStorage {
 			c.commit();
 
 		} catch (SQLException e) {
-			throw new Exception("cannot store data access object -> Stand.java\n" + e.getMessage());
+			throw new Exception("cannot store data access object -> Stand.java\n" + e.getMessage(), e);
 		} finally {
 			if (stmt != null)
 				stmt.close();
@@ -204,7 +206,8 @@ public class SQliteStorer implements DataStorage {
 			c = establishConnection();
 			String sql = InsertQueries.dependencyInsertQuery;
 			stmt = c.prepareStatement(sql);
-			for (Dependency d : lst) {
+			for (int i = 0; i < lst.size(); i++) {
+				Dependency d = lst.get(0);
 				stmt.setString(1, d.getReference());
 				stmt.setString(2, d.getBuildId());
 				stmt.setString(3, d.getType());
@@ -214,7 +217,7 @@ public class SQliteStorer implements DataStorage {
 			c.commit();
 
 		} catch (SQLException e) {
-			throw new Exception("cannot store data access object -> Dependency.java\n" + e.getMessage());
+			throw new Exception("cannot store data access object -> Dependency.java\n" + e.getMessage(), e);
 		} finally {
 			if (stmt != null)
 				stmt.close();

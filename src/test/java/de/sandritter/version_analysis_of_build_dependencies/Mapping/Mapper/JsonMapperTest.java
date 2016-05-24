@@ -21,6 +21,7 @@ public class JsonMapperTest{
 	
 	private File composerJson;
 	private File composerLock;
+	private File composerLockExtended;
 	private DependencyReflectionMapper mapper;
 	private final int amountPackages = 23;
 	private final int amountDirectRequirements = 5;
@@ -29,10 +30,10 @@ public class JsonMapperTest{
 	public void setUp() throws MalformedURLException, URISyntaxException{
 		ClassLoader classLoader = getClass().getClassLoader();
 		composerJson = new File(classLoader.getResource("composer.json").getFile());
-		
-		classLoader = getClass().getClassLoader();
 		composerLock = new File(classLoader.getResource("composer.lock").getFile());
-		mapper = new DependencyReflectionMapper();
+		composerLockExtended = new File(classLoader.getResource("composer/composer.lock").getFile());
+	
+		mapper = new DependencyReflectionMapper();		
 	}
 	
 	@Test
@@ -96,5 +97,17 @@ public class JsonMapperTest{
 	public void testComposerLockMappingException()throws DataMappingFailedException{
 		File lock = new File("composer-fail.lock");
 		mapper.mapFileToDependencyReflectionData(lock);
+	}
+	
+	@Test
+	public void shouldMapExtendedComposerLockFile() 
+	{
+		DependencyReflectionCollection lock;
+		try {
+			lock = (DependencyReflectionCollection) mapper.mapData(composerLockExtended, DependencyReflectionCollection.class);
+			assertEquals(34, lock.getPackages().size());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -59,7 +59,7 @@ public class ListItemProviderTest {
 	public void shouldFillListWithAllLockItems()
 	{
 		ListBoxModel lst = ListItemProvider.fillPathItems(workspacePath, FileType.COMPOSER_LOCK);
-		assertEquals(6, lst.size());
+		assertEquals(7, lst.size());
 	}
 	
 	@Test 
@@ -72,6 +72,7 @@ public class ListItemProviderTest {
 		options.add("test/composer.lock");
 		options.add("TYPO3/extension1/composer.lock");
 		options.add("TYPO3/extension2/composer.lock");
+		options.add("composer/composer.lock");
 		options.add("default");
 		
 		//perform

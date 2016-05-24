@@ -47,13 +47,13 @@ public class DependencyReflectionMapper implements DependencyReflectionMapable{
 	 * @return Object {@link Object}
 	 * @throws DataMappingFailedException
 	 */
-	private Object mapData(File f, Class<?> cls) throws DataMappingFailedException
+	public Object mapData(File f, Class<?> cls) throws DataMappingFailedException
 	{
 		Object dataImage = null;
 		try {
 			dataImage = mapper.readValue(f, cls);
 		} catch (Exception e) {
-			throw new DataMappingFailedException("[ComposerMapper.java]: " + e.getMessage());
+			throw new DataMappingFailedException(getClass().getName() + ": " + e.getMessage(), e);
 		}
 		return dataImage;
 	}

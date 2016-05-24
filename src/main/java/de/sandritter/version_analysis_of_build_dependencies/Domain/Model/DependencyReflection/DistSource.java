@@ -13,7 +13,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
  * @author Michael Sandritter 24.09.2015
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class VersionControlSource {
+public class DistSource {
 
 	/**
 	 * repository url
@@ -30,7 +30,7 @@ public class VersionControlSource {
 	/**
 	 * reference that points on a unique version of a component
 	 */
-	@JsonProperty("reference")
+	@JsonProperty("shasum")
 	private String reference;
 
 	public String getUrl()
@@ -63,9 +63,4 @@ public class VersionControlSource {
 		this.reference = reference;
 	}
 
-	@JsonProperty("shasum")
-	public void setShasum(String reference)
-	{
-		this.reference = reference;
-	}
 }

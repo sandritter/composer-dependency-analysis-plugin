@@ -2,6 +2,7 @@ package de.sandritter.version_analysis_of_build_dependencies.Mapping.Mapper;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
 import java.util.List;
 
 import org.junit.Before;
@@ -19,6 +20,7 @@ import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfe
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.BuildDataBuilder;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Transport;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Interface.Transferable;
+import de.sandritter.version_analysis_of_build_dependencies.Mapping.Exception.DataMappingFailedException;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Mapper.DaoMapper;
 
 public class DaoMapperTest{ 
@@ -45,13 +47,13 @@ public class DaoMapperTest{
 	}
 	
 	@Test
-	public void shouldMapData(){
+	public void shouldMapData() throws DataMappingFailedException{
 		Transferable tranport = mapper.mapData(buildData, transport);
 		assertNotNull(tranport);
 	}
 	
 	@Test
-	public void shouldMapDependency(){
+	public void shouldMapDependency() throws DataMappingFailedException{
 		Transferable t = mapper.mapData(buildData, transport);
 		@SuppressWarnings("unchecked")
 		List<Dependency> lst = (List<Dependency>) t.getList(Dependency.class);
@@ -64,7 +66,7 @@ public class DaoMapperTest{
 	}
 	
 	@Test
-	public void shouldMapStand(){
+	public void shouldMapStand() throws DataMappingFailedException{
 		Transferable t = mapper.mapData(buildData, transport);
 		@SuppressWarnings("unchecked")
 		List<Stand> lst = (List<Stand>) t.getList(Stand.class);
@@ -77,7 +79,7 @@ public class DaoMapperTest{
 	}
 	
 	@Test
-	public void shouldMapBuild(){
+	public void shouldMapBuild() throws DataMappingFailedException{
 		Transferable tranport = mapper.mapData(buildData, transport);
 		Build build = (Build) tranport.getObject(Build.class);
 		assertEquals(buildData.getBuildId(), build.getBuildId());
@@ -88,7 +90,35 @@ public class DaoMapperTest{
 	}
 	
 	@Test
-	public void shouldMapComponent(){
+	public void shouldWork() throws DataMappingFailedException
+	{
+		ClassLoader classLoader = getClass().getClassLoader();
+		File composerJson = new File(classLoader.getResource("composer.json").getFile());
+		File composerLockExtended = new File(classLoader.getResource("composer/composer.lock").getFile());
+		
+		DependencyReflectionMapper reflectMapper = new DependencyReflectionMapper();
+		
+		DependencyReflectionCollection col = (DependencyReflectionCollection) reflectMapper.mapData(composerLockExtended, DependencyReflectionCollection.class);
+		JsonDataImage json = (JsonDataImage) reflectMapper.mapData(composerJson, JsonDataImage.class);
+		
+		Transferable transport = new Transport();
+		transport.setObject(DependencyReflectionCollection.class, col);
+		transport.setObject(JsonDataImage.class, json);
+		
+		BuildDataBuilder buildDataBuilder = new BuildDataBuilder();
+		BuildData buildData = buildDataBuilder.getMock(1);
+		
+		Transferable t = mapper.mapData(buildData, transport);
+		List<Dependency> depList = (List<Dependency>) t.getList(Dependency.class);
+		List<Stand> standList = (List<Stand>) t.getList(Stand.class);
+		List<Component> componentList = (List<Component>) t.getList(Component.class);
+		assertEquals(34, depList.size());
+		assertEquals(34, standList.size());
+		assertEquals(34, componentList.size());
+	}
+	
+	@Test
+	public void shouldMapComponent() throws DataMappingFailedException{
 		Transferable t = mapper.mapData(buildData, transport);
 		@SuppressWarnings("unchecked")
 		List<Component> lst = (List<Component>) t.getList(Component.class);
@@ -98,6 +128,14 @@ public class DaoMapperTest{
 			assertNotNull(c.getSourceUrl());
 		}
 		assertEquals(amountDepenencies, lst.size());
+	}
+	
+	@Test(expected=DataMappingFailedException.class) 
+	public void shoudThrowDataMappingFailedException() throws DataMappingFailedException{
+		BuildData buildData = new BuildData();
+		Transferable transport = new Transport();
+		@SuppressWarnings("unused")
+		Transferable t = mapper.mapData(buildData, transport);
 	}
 	
 }

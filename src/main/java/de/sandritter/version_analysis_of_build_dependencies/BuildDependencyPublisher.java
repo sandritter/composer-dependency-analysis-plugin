@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+import org.apache.tools.ant.BuildException;
 import org.kohsuke.stapler.AncestorInPath;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.QueryParameter;
@@ -29,6 +30,7 @@ import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Factory.DataStorageFactory;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataLoader;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataStorage;
+import de.sandritter.version_analysis_of_build_dependencies.Persistence.IO.Exception.FileDoesNotExistException;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.IO.Interface.IOAccess;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Module.FileLoadModule;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Module.PersistenceModule;
@@ -123,10 +125,9 @@ public class BuildDependencyPublisher extends Recorder {
 		logger.logPluginStart();
 		
 		this.workspacePath = loadWorkspacePath(build);
-		Resolver pathResolver = new PathResolver();
 		createModules(loadDatabasePath());
 
-		Map<FileType, File> dependencyReflectionFiles = loadDependencyReflectionFiles(pathResolver);
+		Map<FileType, File> dependencyReflectionFiles = loadDependencyReflectionFiles();
 		BuildData buildData = collectBuildData(build, listener);
 		Transferable transport = mapData(buildData, dependencyReflectionFiles);
 
@@ -135,8 +136,6 @@ public class BuildDependencyPublisher extends Recorder {
 		analyseBuild(build, buildData);
 		resolveDependencies(build, buildData);
 		logger.logFinalProcessStatus();
-		
-		build.getIconColor();
 		
 		return true;
 	}
@@ -169,12 +168,13 @@ public class BuildDependencyPublisher extends Recorder {
 	 * @param pathResolver {@link Resolver}
 	 * @return Map<{@link FileType},{@link File}>
 	 */
-	private Map<FileType, File> loadDependencyReflectionFiles(Resolver pathResolver)
+	private Map<FileType, File> loadDependencyReflectionFiles()
 	{
-		String finalLockPath = pathResolver
-				.resolveAbsolutePath(FileType.COMPOSER_LOCK, workspacePath, lockPath);
-		String finalJsonPath = pathResolver.
-				resolveAbsolutePath(FileType.COMPOSER_JSON, workspacePath, jsonPath);
+		PathResolver pathResolver = new PathResolver();
+		String finalLockPath = pathResolver.resolveAbsolutePath(FileType.COMPOSER_LOCK, workspacePath, lockPath);
+		String finalJsonPath = pathResolver.resolveAbsolutePath(FileType.COMPOSER_JSON, workspacePath, jsonPath);
+		logger.log(finalJsonPath);
+		logger.log(finalLockPath);
 		
 		Map<FileType, File> files = new HashMap<FileType, File>();
 		files.put(FileType.COMPOSER_JSON, loadFile(finalJsonPath));
@@ -190,9 +190,10 @@ public class BuildDependencyPublisher extends Recorder {
 	 */
 	private String loadWorkspacePath(AbstractBuild<?, ?> build)
 	{
-		String path = "";
+		String path = null;
+		FilePath workspace = null;
 		try {
-			FilePath workspace = build.getWorkspace();
+			workspace = build.getWorkspace();
 			path = workspace.toURI().toURL().getPath();
 		} catch (MalformedURLException e) {
 			logger.logFailure(e, "LOADING WORKSPACE FAILED");
@@ -304,20 +305,47 @@ public class BuildDependencyPublisher extends Recorder {
 		EnvVars env = null;
 		try {
 			env = build.getEnvironment(l);
+			logger.println();
+			for (String s : env.keySet()) {
+				logger.log(s + ": " + env.get(s));
+			}
+			logger.println();
+			data = readEnvironment(build, data, env);
 		} catch (IOException e) {
 			logger.logFailure(e, "LOADING ENVIRONMENT OF BUILD FAILED");
 		} catch (InterruptedException e) {
 			logger.logFailure(e, "LOADING ENVIRONMENT OF BUILD STOPPED");
+		} catch (Exception e) {
+			logger.logFailure(
+				new BuildException("FAILED reading from build environment",e),
+				"READING FROM BUILD ENVIRONMENT FAILED"
+			);
 		}
-		data.setJobName(env.get(BuildEnvVars.JOB_NAME.toString()));
-		data.setJenkinsUrl(env.get(BuildEnvVars.JENKINS_URL.toString()));
-		data.setJobUrl(env.get(BuildEnvVars.JOB_URL.toString()));
+		return data;
+	}
+	
+	private BuildData readEnvironment(AbstractBuild<?, ?> build, BuildData data, EnvVars env) throws Exception
+	{
+		data.setJobName(getStringEnvVar(env, BuildEnvVars.JOB_NAME));
+		data.setJenkinsUrl(getStringEnvVar(env, BuildEnvVars.JENKINS_URL));
+		data.setJobUrl(getStringEnvVar(env, BuildEnvVars.JOB_URL));
 		data.setBuildId(build.getId() + Long.toString(build.getTimeInMillis()));
 		data.setNumber(build.getNumber());
 		data.setTimestamp(build.getTimeInMillis());
 		data.setDbPath(getDescriptor().getDbPath());
 		injectVersionControlInfo(data, env);
 		return data;
+	}
+	
+	private String getStringEnvVar(EnvVars env, BuildEnvVars varType){
+		String var = "";
+		try {
+			var = env.get(varType.toString());
+		} catch (Exception e) {
+			logger.logFailure(e, "couldn't get build environment variable with following key: "+ varType.toString());
+			return "";
+		}
+		return var;
 	}
 
 	/**
@@ -329,16 +357,16 @@ public class BuildDependencyPublisher extends Recorder {
 	 */
 	private void injectVersionControlInfo(BuildData data, EnvVars env)
 	{
-		String svnRevision = env.get(BuildEnvVars.SVN_REVISION.toString());
-		String gitRevision = env.get(BuildEnvVars.GIT_COMMIT.toString());
+		String svnRevision = getStringEnvVar(env, BuildEnvVars.SVN_REVISION);
+		String gitRevision = getStringEnvVar(env, BuildEnvVars.GIT_COMMIT);
 		if (gitRevision != null) {
 			data.setSourceType(SourceType.GIT.toString());
-			data.setSourceUrl(env.get(BuildEnvVars.GIT_URL.toString()));
+			data.setSourceUrl(getStringEnvVar(env, BuildEnvVars.GIT_URL));
 			data.setRevision(gitRevision);
-			data.setVersion(env.get(BuildEnvVars.GIT_TAG_NAME.toString()));
+			data.setVersion(getStringEnvVar(env, BuildEnvVars.GIT_TAG_NAME));
 		} else if (svnRevision != null) {
 			data.setSourceType(SourceType.SVN.toString());
-			data.setSourceUrl(env.get(BuildEnvVars.SVN_URL.toString()));
+			data.setSourceUrl(getStringEnvVar(env, BuildEnvVars.SVN_URL));
 			data.setRevision(svnRevision);
 			data.setVersion(svnRevision);
 		}
@@ -358,7 +386,12 @@ public class BuildDependencyPublisher extends Recorder {
 		} catch (IOException e) {
 			logger.logFailure(e, "FILE LOADING FAILED");
 		}
-		return file;
+		if (file.isFile()) {			
+			return file;
+		} else {
+			logger.logFailure(new FileDoesNotExistException("failed loading File by given path: " + path), "given file object is not a file");
+		}
+		return null;
 	}
 
 	@Override

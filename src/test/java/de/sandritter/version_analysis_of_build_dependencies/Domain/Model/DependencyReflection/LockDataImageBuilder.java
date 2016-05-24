@@ -26,7 +26,7 @@ public class LockDataImageBuilder {
 	
 	private List<DependencyReflection> getPackages(int amount){
 		List<DependencyReflection> lst = new ArrayList<DependencyReflection>();
-		for (int i = 1; i < amount; i++){
+		for (int i = 1; i <= amount; i++){
 			lst.add(pkgBuilder.getMock(Integer.toString(i)));
 		}
 		return lst;

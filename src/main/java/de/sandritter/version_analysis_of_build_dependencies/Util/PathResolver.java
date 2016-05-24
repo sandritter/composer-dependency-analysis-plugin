@@ -37,15 +37,15 @@ public class PathResolver implements Resolver {
 	 * concatenates a file name and directory and returns a absolute path of
 	 * that file
 	 * 
-	 * @param value relative path
+	 * @param relative relative path
 	 * @param workspace workspace path
 	 * @return absolute path
 	 */
-	private String getAbsolute(String value, String workspace)
+	private String getAbsolute(String relative, String workspace)
 	{
-		File f = new File(value);
+		File f = new File(relative);
 		File workspacePath = new File(workspace);
-		File absolutePath = new File(workspacePath, value);
+		File absolutePath = new File(workspacePath, relative);
 		if (f.isFile() && f.isAbsolute()) {
 			return f.getAbsolutePath();
 		}

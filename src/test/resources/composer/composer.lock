@@ -1,0 +1,3786 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "1fc1f5251012b8f230cddda5be52c4dd",
+    "content-hash": "1e72f02d90c096f9bffb1b51bfcbbfdd",
+    "packages": [
+        {
+            "name": "aeq/hal",
+            "version": "0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kschu91/hal.git",
+                "reference": "f35aef13474e0b6a7356bfb3a5c13a1ddd37867d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/aeq-hal-f35aef13474e0b6a7356bfb3a5c13a1ddd37867d-zip-136489.zip",
+                "reference": "f35aef13474e0b6a7356bfb3a5c13a1ddd37867d",
+                "shasum": "3142a08d3ca95f9c4883559126d1c363febf7efe"
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2",
+                "ql/uri-template": "^1.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8",
+                "squizlabs/php_codesniffer": "^2.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Aeq\\Hal\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Kevin Schu",
+                    "email": "kevin.schu@aoe.com"
+                }
+            ],
+            "time": "2016-04-18 11:39:17"
+        },
+        {
+            "name": "aoe/addthis",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AOEpeople/TYPO3-Addthis.git",
+                "reference": "88c26d82f60d0b3ba74193cee38393959b0e39ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/aoe-addthis-88c26d82f60d0b3ba74193cee38393959b0e39ac-zip-f8f616.zip",
+                "reference": "88c26d82f60d0b3ba74193cee38393959b0e39ac",
+                "shasum": "3b05d2d423faa525e6b3fe72e048b1d08291a3f9"
+            },
+            "require": {
+                "php": ">=5.2.0",
+                "typo3/cms-core": "*",
+                "typo3/cms-extbase": "*",
+                "typo3/cms-fluid": "*"
+            },
+            "replace": {
+                "addthis": "*"
+            },
+            "require-dev": {
+                "phpmd/phpmd": "2.2.*",
+                "phpunit/phpcov": "2.0.*",
+                "phpunit/phpunit": "4.8.*",
+                "sebastian/phpcpd": "2.0.*",
+                "squizlabs/php_codesniffer": "2.3.*",
+                "typo3/cms": "6.2.*"
+            },
+            "type": "typo3-cms-extension",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "AOE GmbH",
+                    "email": "dev@aoe.com",
+                    "homepage": "http://www.aoe.com"
+                }
+            ],
+            "description": "AddThis based on extbase",
+            "homepage": "https://forge.typo3.org/projects/extension-addthis",
+            "keywords": [
+                "addthis",
+                "extbase",
+                "typo3"
+            ],
+            "time": "2016-03-18 14:06:46"
+        },
+        {
+            "name": "aoe/aoe-exorbyte",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "git@git.aoesupport.com:modules/typo3/aoe/aoe_exorbyte",
+                "reference": "tags/0.2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/aoe-aoe-exorbyte-0.2.1-14bd3e.zip",
+                "reference": "tags/0.2.1",
+                "shasum": "824a9019265902f02153e2cd73a9c6d171b6936d"
+            },
+            "require": {
+                "typo3/cms-core": "*"
+            },
+            "replace": {
+                "aoe_exorbyte": "*"
+            },
+            "type": "typo3-cms-extension"
+        },
+        {
+            "name": "aoe/aoe-footnote",
+            "version": "1.4.0",
+            "source": {
+                "type": "svn",
+                "url": "https://svn.aoesupport.com/repository/extensions/aoe/aoe_footnote",
+                "reference": "tags/1.4.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/aoe-aoe-footnote-1.4.0-e4af4d.zip",
+                "reference": "tags/1.4.0",
+                "shasum": "696c9ab22ecdb7b77715b1ef47116078f0cfd43b"
+            },
+            "require": {
+                "aoe/linkhandler": "*",
+                "aoe/mvc": "*",
+                "php": ">=5.2.0",
+                "typo3/cms-core": "*"
+            },
+            "replace": {
+                "aoe_footnote": "*"
+            },
+            "type": "typo3-cms-extension"
+        },
+        {
+            "name": "aoe/cryptotickets",
+            "version": "1.12.0",
+            "source": {
+                "type": "git",
+                "url": "git@git.aoesupport.com:modules/typo3/projects/congstar/cryptotickets",
+                "reference": "tags/1.12.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/aoe-cryptotickets-1.12.0-4edf39.zip",
+                "reference": "tags/1.12.0",
+                "shasum": "ab9f59a5b27d5a471218fb6f78f8118b246e4969"
+            },
+            "require": {
+                "php": ">=5.2.0",
+                "typo3/cms-core": "*",
+                "typo3/cms-extbase": "*",
+                "typo3/cms-fluid": "*"
+            },
+            "replace": {
+                "cryptotickets": "*"
+            },
+            "type": "typo3-cms-extension"
+        },
+        {
+            "name": "aoe/eft",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@git.aoesupport.com:modules/typo3/aoe/eft",
+                "reference": "7a15c6b4ae6fbd4bfde6449169cf9636be60b902"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/aoe-eft-dev-master-6700cd.zip",
+                "reference": "7a15c6b4ae6fbd4bfde6449169cf9636be60b902",
+                "shasum": "5f79f5911e778b2f40ee09d8ccd10baea69c02bb"
+            },
+            "require": {
+                "aoe/addthis": "*",
+                "aoe/aoe-exorbyte": "*",
+                "aoe/aoe-footnote": "*",
+                "aoe/cryptotickets": "*",
+                "aoe/extracache": "*",
+                "aoe/google-tag-manager": "*",
+                "aoe/happy-feet": "*",
+                "aoe/linkhandler": "*",
+                "aoe/mvc": "*",
+                "aoe/picocontainer": "*",
+                "aoe/shorturl": "*",
+                "aoe/webtrekk": "*",
+                "php": ">=5.3.0",
+                "typo3-ter/zend-framework": "*",
+                "typo3/cms-core": "*"
+            },
+            "replace": {
+                "eft": "*"
+            },
+            "require-dev": {
+                "aoe/congstar-library-eftdatabuilder": "dev-master@dev",
+                "mockery/mockery": "0.9.*",
+                "phpmd/phpmd": "2.2.*",
+                "phpspec/prophecy-phpunit": "~1.0",
+                "phpunit/phpcov": "2.0.*",
+                "phpunit/phpunit": "4.8.*",
+                "sebastian/phpcpd": "2.0.*",
+                "squizlabs/php_codesniffer": "2.3.*",
+                "typo3/cms": "6.2.*"
+            },
+            "type": "typo3-cms-extension",
+            "authors": [
+                {
+                    "name": "AOE GmbH",
+                    "email": "dev@aoe.com"
+                }
+            ],
+            "time": "2016-05-23 14:54:31"
+        },
+        {
+            "name": "aoe/extracache",
+            "version": "0.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AOEpeople/TYPO3-Extra-Cache.git",
+                "reference": "27843a5ff43bbe50e5cb567b51a83684857df2bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/aoe-extracache-27843a5ff43bbe50e5cb567b51a83684857df2bf-zip-a10a5b.zip",
+                "reference": "27843a5ff43bbe50e5cb567b51a83684857df2bf",
+                "shasum": "dd02696c43a720fdae6ccc08b7df1f36118a3ef5"
+            },
+            "require": {
+                "aoe/nc-staticfilecache": "*",
+                "php": ">=5.3.0",
+                "typo3/cms-core": "*",
+                "typo3/cms-extbase": "*"
+            },
+            "replace": {
+                "extracache": "*"
+            },
+            "require-dev": {
+                "phpmd/phpmd": "2.2.*",
+                "phpunit/phpcov": "2.0.*",
+                "phpunit/phpunit": "4.8.*",
+                "sebastian/phpcpd": "2.0.*",
+                "squizlabs/php_codesniffer": "2.3.*",
+                "typo3/cms": "6.2.*"
+            },
+            "type": "typo3-cms-extension",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "AOE GmbH",
+                    "email": "dev@aoe.com",
+                    "homepage": "http://www.aoe.com"
+                }
+            ],
+            "description": "Extends staticcache with more functionality.",
+            "homepage": "https://forge.typo3.org/projects/extension-extracache",
+            "keywords": [
+                "extbase",
+                "extracache",
+                "typo3"
+            ],
+            "time": "2016-03-18 09:39:31"
+        },
+        {
+            "name": "aoe/google-tag-manager",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AOEpeople/TYPO3-Google-Tag-Manager.git",
+                "reference": "003cadae87ac1bc8fbd76642486a9987c6e5ade6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/aoe-google-tag-manager-003cadae87ac1bc8fbd76642486a9987c6e5ade6-zip-d470d6.zip",
+                "reference": "003cadae87ac1bc8fbd76642486a9987c6e5ade6",
+                "shasum": "aa355f74cedb114962508651422c015a94bc95b9"
+            },
+            "require": {
+                "php": ">=5.5.0",
+                "typo3/cms-core": "*",
+                "typo3/cms-extbase": "*",
+                "typo3/cms-fluid": "*"
+            },
+            "replace": {
+                "google_tag_manager": "*"
+            },
+            "require-dev": {
+                "phpmd/phpmd": "2.2.*",
+                "phpunit/phpcov": "2.0.*",
+                "phpunit/phpunit": "4.8.*",
+                "sebastian/phpcpd": "2.0.*",
+                "squizlabs/php_codesniffer": "2.3.*",
+                "typo3/cms": "6.2.*"
+            },
+            "type": "typo3-cms-extension",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "AOE GmbH",
+                    "email": "dev@aoe.com",
+                    "homepage": "http://www.aoe.com"
+                }
+            ],
+            "description": "Extension that creates an interface for Google Tag Manager",
+            "homepage": "https://github.com/AOEpeople/TYPO3-Google-Tag-Manager",
+            "keywords": [
+                "extbase",
+                "google-tag-manager",
+                "typo3"
+            ],
+            "time": "2016-05-19 08:56:02"
+        },
+        {
+            "name": "aoe/happy-feet",
+            "version": "1.3.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AOEpeople/happy_feet.git",
+                "reference": "3609a9d8383cce91f9ac99ad6ac03755cfba4476"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/aoe-happy-feet-3609a9d8383cce91f9ac99ad6ac03755cfba4476-zip-9aa388.zip",
+                "reference": "3609a9d8383cce91f9ac99ad6ac03755cfba4476",
+                "shasum": "bb5d2f4a5f821ffa4cb9864f89ad1c7cf3a30b1d"
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "typo3/cms-core": "*",
+                "typo3/cms-extbase": "*"
+            },
+            "replace": {
+                "happy_feet": "*"
+            },
+            "require-dev": {
+                "phpmd/phpmd": "2.2.*",
+                "phpunit/phpcov": "2.0.*",
+                "phpunit/phpunit": "4.8.*",
+                "sebastian/phpcpd": "2.0.*",
+                "squizlabs/php_codesniffer": "2.3.*",
+                "typo3/cms": "6.2.*"
+            },
+            "type": "typo3-cms-extension",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "AOE GmbH",
+                    "email": "dev@aoe.com",
+                    "homepage": "http://www.aoe.com"
+                }
+            ],
+            "description": "Happy Feet Footnotes.",
+            "homepage": "https://github.com/AOEpeople/happy_feet",
+            "keywords": [
+                "extbase",
+                "footnote",
+                "typo3"
+            ],
+            "time": "2016-05-19 12:40:28"
+        },
+        {
+            "name": "aoe/linkhandler",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AOEpeople/linkhandler.git",
+                "reference": "tags/2.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/aoe-linkhandler-2.0.2-e88dbb.zip",
+                "reference": "tags/2.0.2",
+                "shasum": "893405765ab2dd4add7fca84654aa8b0d510da45"
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "typo3/cms-core": "*"
+            },
+            "replace": {
+                "linkhandler": "*"
+            },
+            "type": "typo3-cms-extension"
+        },
+        {
+            "name": "aoe/mvc",
+            "version": "0.7.0",
+            "source": {
+                "type": "git",
+                "url": "git@git.aoesupport.com:modules/typo3/aoe/mvc.git",
+                "reference": "tags/0.7.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/aoe-mvc-0.7.0-05f861.zip",
+                "reference": "tags/0.7.0",
+                "shasum": "205ac79d0673c4eb1fae7a4f490c00227cb4710c"
+            },
+            "require": {
+                "aoe/picocontainer": "*",
+                "php": ">=5.3.0",
+                "typo3/cms-core": "*"
+            },
+            "replace": {
+                "mvc": "*"
+            },
+            "type": "typo3-cms-extension"
+        },
+        {
+            "name": "aoe/nc-staticfilecache",
+            "version": "2.6",
+            "source": {
+                "type": "git",
+                "url": "https://git.typo3.org/TYPO3CMS/Extensions/nc_staticfilecache.git",
+                "reference": "tags/2.6.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/aoe-nc-staticfilecache-2.6-55f61b.zip",
+                "reference": "tags/2.6.4",
+                "shasum": "41ddbcb781ec37db69dd2c8adc931aa2207b4d7b"
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "typo3/cms-core": "*"
+            },
+            "replace": {
+                "nc_staticfilecache": "*"
+            },
+            "type": "typo3-cms-extension"
+        },
+        {
+            "name": "aoe/picocontainer",
+            "version": "1.0.0",
+            "source": {
+                "type": "svn",
+                "url": "https://svn.aoesupport.com/repository/extensions/aoe/picocontainer",
+                "reference": "tags/1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/aoe-picocontainer-1.0.0-dde0e5.zip",
+                "reference": "tags/1.0.0",
+                "shasum": "23c73f23b5efd41f7e049da7378d55562f7e2007"
+            },
+            "require": {
+                "typo3/cms-core": "*"
+            },
+            "replace": {
+                "picocontainer": "*"
+            },
+            "type": "typo3-cms-extension"
+        },
+        {
+            "name": "aoe/restler",
+            "version": "1.5.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AOEpeople/TYPO3_Restler.git",
+                "reference": "e55e35df3ea05f2c791d0636221371aedfc6903e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/aoe-restler-e55e35df3ea05f2c791d0636221371aedfc6903e-zip-9eefb5.zip",
+                "reference": "e55e35df3ea05f2c791d0636221371aedfc6903e",
+                "shasum": "a069eddfd4fd163322e14f92c4d744225b46c6d0"
+            },
+            "require": {
+                "luracast/restler": "3.0.0.20160315",
+                "php": ">=5.5.0",
+                "typo3/cms-core": ">=6.2.14"
+            },
+            "replace": {
+                "restler": "*"
+            },
+            "require-dev": {
+                "phpmd/phpmd": "2.2.*",
+                "phpunit/phpcov": "2.0.*",
+                "phpunit/phpunit": "4.6.*",
+                "sebastian/phpcpd": "2.0.*",
+                "squizlabs/php_codesniffer": "2.3.*",
+                "typo3/cms": "6.2.*"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "Aoe\\Restler\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "AOE GmbH",
+                    "email": "dev@aoe.com"
+                }
+            ],
+            "description": "A TYPO3-Extension, that integrates the popular PHP REST-framework Restler in TYPO3.",
+            "homepage": "https://typo3.org/extensions/repository/view/restler",
+            "keywords": [
+                "Restler",
+                "api",
+                "rest",
+                "typo3"
+            ],
+            "time": "2016-05-06 07:59:09"
+        },
+        {
+            "name": "aoe/shorturl",
+            "version": "0.1.1",
+            "source": {
+                "type": "svn",
+                "url": "https://svn.aoesupport.com/repository/extensions/aoe/shorturl",
+                "reference": "tags/0.1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/aoe-shorturl-0.1.1-3d21df.zip",
+                "reference": "tags/0.1.1",
+                "shasum": "a36222f141999a0642847dbf35e481ea9f0d1579"
+            },
+            "require": {
+                "typo3/cms-core": "*"
+            },
+            "replace": {
+                "shorturl": "*"
+            },
+            "type": "typo3-cms-extension"
+        },
+        {
+            "name": "aoe/webtrekk",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "git@git.aoesupport.com:modules/typo3/aoe/webtrekk",
+                "reference": "tags/1.3.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/aoe-webtrekk-1.3.0-f21c70.zip",
+                "reference": "tags/1.3.0",
+                "shasum": "08ab6954bba6d3916a151e12e3d7b59c61294b66"
+            },
+            "require": {
+                "aoe/mvc": "*",
+                "php": ">=5.3.0",
+                "typo3/cms-core": "*"
+            },
+            "replace": {
+                "webtrekk": "*"
+            },
+            "type": "typo3-cms-extension"
+        },
+        {
+            "name": "doctrine/annotations",
+            "version": "v1.2.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/annotations.git",
+                "reference": "f25c8aab83e0c3e976fd7d19875f198ccf2f7535"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/doctrine-annotations-f25c8aab83e0c3e976fd7d19875f198ccf2f7535-zip-b3ba6f.zip",
+                "reference": "f25c8aab83e0c3e976fd7d19875f198ccf2f7535",
+                "shasum": "6aee8cf095483075563c638a68986383cce0eb9a"
+            },
+            "require": {
+                "doctrine/lexer": "1.*",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "doctrine/cache": "1.*",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Common\\Annotations\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Docblock Annotations Parser",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "annotations",
+                "docblock",
+                "parser"
+            ],
+            "time": "2015-08-31 12:32:49"
+        },
+        {
+            "name": "doctrine/instantiator",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/instantiator.git",
+                "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/doctrine-instantiator-8e884e78f9f0eb1329e445619e04456e64d8051d-zip-681b88.zip",
+                "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d",
+                "shasum": "169d92b764fd0dcd3f62631bac4c2ce5a7e537f4"
+            },
+            "require": {
+                "php": ">=5.3,<8.0-DEV"
+            },
+            "require-dev": {
+                "athletic/athletic": "~0.1.8",
+                "ext-pdo": "*",
+                "ext-phar": "*",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Instantiator\\": "src/Doctrine/Instantiator/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com",
+                    "homepage": "http://ocramius.github.com/"
+                }
+            ],
+            "description": "A small, lightweight utility to instantiate objects in PHP without invoking their constructors",
+            "homepage": "https://github.com/doctrine/instantiator",
+            "keywords": [
+                "constructor",
+                "instantiate"
+            ],
+            "time": "2015-06-14 21:17:01"
+        },
+        {
+            "name": "doctrine/lexer",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/lexer.git",
+                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/doctrine-lexer-83893c552fd2045dd78aef794c31e694c37c0b8c-zip-53c158.zip",
+                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
+                "shasum": "49c35d5f69a85f438dc8354481473258db58b960"
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Common\\Lexer\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Base library for a lexer that can be used in Top-Down, Recursive Descent Parsers.",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "lexer",
+                "parser"
+            ],
+            "time": "2014-09-09 13:34:57"
+        },
+        {
+            "name": "guzzlehttp/guzzle",
+            "version": "6.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "d094e337976dff9d8e2424e8485872194e768662"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/guzzlehttp-guzzle-d094e337976dff9d8e2424e8485872194e768662-zip-a8745d.zip",
+                "reference": "d094e337976dff9d8e2424e8485872194e768662",
+                "shasum": "e0ae308aad825c099663658db0d4f8551d65e90c"
+            },
+            "require": {
+                "guzzlehttp/promises": "~1.0",
+                "guzzlehttp/psr7": "~1.1",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "~4.0",
+                "psr/log": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.2-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions_include.php"
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2016-03-21 20:02:09"
+        },
+        {
+            "name": "guzzlehttp/promises",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/promises.git",
+                "reference": "c10d860e2a9595f8883527fa0021c7da9e65f579"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/guzzlehttp-promises-c10d860e2a9595f8883527fa0021c7da9e65f579-zip-6acfec.zip",
+                "reference": "c10d860e2a9595f8883527fa0021c7da9e65f579",
+                "shasum": "a60c09b22de0c34ee6324cc21e5cae68a7b1a5f7"
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle promises library",
+            "keywords": [
+                "promise"
+            ],
+            "time": "2016-05-18 16:56:05"
+        },
+        {
+            "name": "guzzlehttp/psr7",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "31382fef2889136415751badebbd1cb022a4ed72"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/guzzlehttp-psr7-31382fef2889136415751badebbd1cb022a4ed72-zip-9a0d20.zip",
+                "reference": "31382fef2889136415751badebbd1cb022a4ed72",
+                "shasum": "400e6c46574d08ef7a9da47ad24db98874a2fe4d"
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "PSR-7 message implementation",
+            "keywords": [
+                "http",
+                "message",
+                "stream",
+                "uri"
+            ],
+            "time": "2016-04-13 19:56:01"
+        },
+        {
+            "name": "helhum/class-alias-loader",
+            "version": "1.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helhum/class-alias-loader.git",
+                "reference": "22d49a54af4d3dc81b7b200355b0d2e67b826ad0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/helhum-class-alias-loader-22d49a54af4d3dc81b7b200355b0d2e67b826ad0-zip-3eff1f.zip",
+                "reference": "22d49a54af4d3dc81b7b200355b0d2e67b826ad0",
+                "shasum": "b7d19a4a836a44990591d5fff8613ff59364336b"
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Helhum\\ClassAliasLoader\\Composer\\Plugin",
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Helhum\\ClassAliasLoader\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Helmut Hummel",
+                    "email": "info@helhum.io"
+                }
+            ],
+            "description": "Amends the composer class loader to support class aliases to provide backwards compatibility for packages",
+            "homepage": "http://github.com/helhum/class-alias-loader",
+            "keywords": [
+                "alias",
+                "autoloader",
+                "classloader",
+                "composer"
+            ],
+            "time": "2015-06-11 14:08:07"
+        },
+        {
+            "name": "jms/metadata",
+            "version": "1.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/metadata.git",
+                "reference": "22b72455559a25777cfd28c4ffda81ff7639f353"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/jms-metadata-22b72455559a25777cfd28c4ffda81ff7639f353-zip-cad78b.zip",
+                "reference": "22b72455559a25777cfd28c4ffda81ff7639f353",
+                "shasum": "ae505c1f9b0de742355e8b8343e28cb0fb96fa03"
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "doctrine/cache": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Metadata\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "https://github.com/schmittjoh",
+                    "role": "Developer of wrapped JMSSerializerBundle"
+                }
+            ],
+            "description": "Class/method/property metadata management in PHP",
+            "keywords": [
+                "annotations",
+                "metadata",
+                "xml",
+                "yaml"
+            ],
+            "time": "2014-07-12 07:13:19"
+        },
+        {
+            "name": "jms/parser-lib",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/parser-lib.git",
+                "reference": "c509473bc1b4866415627af0e1c6cc8ac97fa51d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/jms-parser-lib-c509473bc1b4866415627af0e1c6cc8ac97fa51d-zip-d6e55f.zip",
+                "reference": "c509473bc1b4866415627af0e1c6cc8ac97fa51d",
+                "shasum": "f8a77a3c19239d070b9194fd6ce459b0ad71de61"
+            },
+            "require": {
+                "phpoption/phpoption": ">=0.9,<2.0-dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "JMS\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "description": "A library for easily creating recursive-descent parsers.",
+            "time": "2012-11-18 18:08:43"
+        },
+        {
+            "name": "jms/serializer",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/serializer.git",
+                "reference": "fe13a1f993ea3456e195b7820692f2eb2b6bbb48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/jms-serializer-fe13a1f993ea3456e195b7820692f2eb2b6bbb48-zip-f244cf.zip",
+                "reference": "fe13a1f993ea3456e195b7820692f2eb2b6bbb48",
+                "shasum": "a602fb276fc5b4c97849c23a7056b344853bdb20"
+            },
+            "require": {
+                "doctrine/annotations": "1.*",
+                "doctrine/instantiator": "~1.0.3",
+                "jms/metadata": "~1.1",
+                "jms/parser-lib": "1.*",
+                "php": ">=5.4.0",
+                "phpcollection/phpcollection": "~0.1"
+            },
+            "conflict": {
+                "twig/twig": "<1.12"
+            },
+            "require-dev": {
+                "doctrine/orm": "~2.1",
+                "doctrine/phpcr-odm": "~1.0.1",
+                "jackalope/jackalope-doctrine-dbal": "1.0.*",
+                "phpunit/phpunit": "~4.0",
+                "propel/propel1": "~1.7",
+                "symfony/filesystem": "2.*",
+                "symfony/form": "~2.1",
+                "symfony/translation": "~2.0",
+                "symfony/validator": "~2.0",
+                "symfony/yaml": "2.*",
+                "twig/twig": "~1.12|~2.0"
+            },
+            "suggest": {
+                "symfony/yaml": "Required if you'd like to serialize data to YAML format."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "JMS\\Serializer": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Library for (de-)serializing data of any complexity; supports XML, JSON, and YAML.",
+            "homepage": "http://jmsyst.com/libs/serializer",
+            "keywords": [
+                "deserialization",
+                "jaxb",
+                "json",
+                "serialization",
+                "xml"
+            ],
+            "time": "2015-10-27 09:24:41"
+        },
+        {
+            "name": "luracast/restler",
+            "version": "3.0.0.20160315",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AOEpeople/Restler.git",
+                "reference": "35d36e3c1fc4e1d87ced2535fb14b030ed6a9272"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/luracast-restler-35d36e3c1fc4e1d87ced2535fb14b030ed6a9272-zip-e0a3f0.zip",
+                "reference": "35d36e3c1fc4e1d87ced2535fb14b030ed6a9272",
+                "shasum": "586295c53526e955e97b853d6a51ff5ef22fc750"
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "conflict": {
+                "restler/framework": "3.*"
+            },
+            "require-dev": {
+                "behat/behat": "2.5.*@stable",
+                "bshaffer/oauth2-server-php": "v1.0",
+                "guzzle/guzzle": "3.8.1"
+            },
+            "suggest": {
+                "behat/behat": "Behaviour driven development testing framework (see require-dev for details)",
+                "bshaffer/oauth2-server-php": "If you want to use OAuth2 for authentication",
+                "guzzle/guzzle": "RESTful api HTTP client framework (see require-dev for details)",
+                "illuminate/view": "If you want to use laravel blade templates with Html format",
+                "mustache/mustache": "If you want to use mustache/handlebar templates with Html format",
+                "rodneyrehm/plist": "If you need Apple plist binary/xml format",
+                "symfony/yaml": "If you need YAML format",
+                "twig/twig": "If you want to use twig templates with Html format",
+                "zendframework/zendamf": "If you need AMF format"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "v3": "v3.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Luracast\\Restler": "vendor/"
+                }
+            },
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Luracast",
+                    "email": "arul@luracast.com"
+                }
+            ],
+            "description": "Restler is a simple and effective multi-format Web API Server framework written in PHP. Just deal with your business logic in php, Restler will take care of the REST!",
+            "homepage": "http://luracast.com/products/restler/",
+            "keywords": [
+                "REST",
+                "api",
+                "framework",
+                "server"
+            ],
+            "support": {
+                "source": "https://github.com/AOEpeople/Restler/tree/3.0.0.20160315"
+            },
+            "time": "2016-02-28 15:57:37"
+        },
+        {
+            "name": "phpcollection/phpcollection",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/php-collection.git",
+                "reference": "b8bf55a0a929ca43b01232b36719f176f86c7e83"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/phpcollection-phpcollection-b8bf55a0a929ca43b01232b36719f176f86c7e83-zip-cd37a8.zip",
+                "reference": "b8bf55a0a929ca43b01232b36719f176f86c7e83",
+                "shasum": "fbe8af10bcfa558479088321c3703a77d2160155"
+            },
+            "require": {
+                "phpoption/phpoption": "1.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "PhpCollection": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "https://github.com/schmittjoh",
+                    "role": "Developer of wrapped JMSSerializerBundle"
+                }
+            ],
+            "description": "General-Purpose Collection Library for PHP",
+            "keywords": [
+                "collection",
+                "list",
+                "map",
+                "sequence",
+                "set"
+            ],
+            "time": "2014-03-11 13:46:42"
+        },
+        {
+            "name": "phpoption/phpoption",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/php-option.git",
+                "reference": "94e644f7d2051a5f0fcf77d81605f152eecff0ed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/phpoption-phpoption-94e644f7d2051a5f0fcf77d81605f152eecff0ed-zip-03c623.zip",
+                "reference": "94e644f7d2051a5f0fcf77d81605f152eecff0ed",
+                "shasum": "804da3975d36a69832e22c630701ae4acaf3c4ca"
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "PhpOption\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Option Type for PHP",
+            "keywords": [
+                "language",
+                "option",
+                "php",
+                "type"
+            ],
+            "time": "2015-07-25 16:39:46"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/psr-http-message-85d63699f0dbedb190bbd4b0d2b9dc707ea4c298-zip-13c6c1.zip",
+                "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
+                "shasum": "7125d9647770ddc91fe6358efcc66a2c90f095a7"
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "time": "2015-05-04 20:22:00"
+        },
+        {
+            "name": "ql/uri-template",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/QuickenLoans/uri-template.git",
+                "reference": "ea0b70ec757658529331c7861ec39b0a58fc61a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/ql-uri-template-ea0b70ec757658529331c7861ec39b0a58fc61a1-zip-0c0ac7.zip",
+                "reference": "ea0b70ec757658529331c7861ec39b0a58fc61a1",
+                "shasum": "f41f1b86c85f0a19f86381bf40d7f792635a3272"
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/php-invoker": "*",
+                "phpunit/phpunit": "*",
+                "satooshi/php-coveralls": "dev-master@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "QL\\UriTemplate": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Nagi",
+                    "email": "mattnagi@quickenloans.com"
+                }
+            ],
+            "description": "An implementation of RFC 6570 level 4",
+            "homepage": "https://github.com/QuickenLoans/uri-template",
+            "keywords": [
+                "URI Template",
+                "rfc6570",
+                "template",
+                "uri",
+                "url"
+            ],
+            "time": "2015-12-09 10:44:44"
+        },
+        {
+            "name": "typo3-ter/zend-framework",
+            "version": "2.0.1",
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/typo3-ter-zend-framework-2.0.1.zip",
+                "reference": null,
+                "shasum": "4e75a662a28a306871214b6d091476acc8b31cc6"
+            },
+            "require": {
+                "typo3/cms-core": ">= 4.5.0"
+            },
+            "replace": {
+                "typo3-ter/zend_framework": "self.version",
+                "zend_framework": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "classmap": [
+                    ""
+                ],
+                "exclude-from-classmap": [
+                    "Tests",
+                    "tests",
+                    "class.ext_update.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Thomas Breuss, Claudio Frau",
+                    "email": "thomas.breuss@zephir.ch",
+                    "company": "Zephir AG",
+                    "username": "tebe"
+                }
+            ],
+            "description": "Integrates the Zend Framework library if not available on the webserver.",
+            "time": "2013-03-12 15:44:42"
+        },
+        {
+            "name": "typo3/cms",
+            "version": "6.2.25",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3/TYPO3.CMS.git",
+                "reference": "d05d757b05b5cd205a9d9ede8874ff2bc9257f35"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3/TYPO3.CMS/zipball/d05d757b05b5cd205a9d9ede8874ff2bc9257f35",
+                "reference": "d05d757b05b5cd205a9d9ede8874ff2bc9257f35",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/instantiator": "1.0.5",
+                "ext-fileinfo": "*",
+                "ext-pcre": "*",
+                "ext-session": "*",
+                "ext-xml": "*",
+                "helhum/class-alias-loader": "1.1.5",
+                "php": "^5.3.7",
+                "typo3/cms-composer-installers": ">1.1.4,<1.3.0"
+            },
+            "replace": {
+                "typo3/cms-about": "self.version",
+                "typo3/cms-aboutmodules": "self.version",
+                "typo3/cms-adodb": "self.version",
+                "typo3/cms-backend": "self.version",
+                "typo3/cms-belog": "self.version",
+                "typo3/cms-beuser": "self.version",
+                "typo3/cms-cms": "self.version",
+                "typo3/cms-context-help": "self.version",
+                "typo3/cms-core": "self.version",
+                "typo3/cms-cshmanual": "self.version",
+                "typo3/cms-css-styled-content": "self.version",
+                "typo3/cms-dbal": "self.version",
+                "typo3/cms-documentation": "self.version",
+                "typo3/cms-extbase": "self.version",
+                "typo3/cms-extensionmanager": "self.version",
+                "typo3/cms-extra-page-cm-options": "self.version",
+                "typo3/cms-feedit": "self.version",
+                "typo3/cms-felogin": "self.version",
+                "typo3/cms-filelist": "self.version",
+                "typo3/cms-filemetadata": "self.version",
+                "typo3/cms-fluid": "self.version",
+                "typo3/cms-form": "self.version",
+                "typo3/cms-frontend": "self.version",
+                "typo3/cms-func": "self.version",
+                "typo3/cms-func-wizards": "self.version",
+                "typo3/cms-impexp": "self.version",
+                "typo3/cms-indexed-search": "self.version",
+                "typo3/cms-indexed-search-mysql": "self.version",
+                "typo3/cms-info": "self.version",
+                "typo3/cms-info-pagetsconfig": "self.version",
+                "typo3/cms-install": "self.version",
+                "typo3/cms-lang": "self.version",
+                "typo3/cms-linkvalidator": "self.version",
+                "typo3/cms-lowlevel": "self.version",
+                "typo3/cms-opendocs": "self.version",
+                "typo3/cms-openid": "self.version",
+                "typo3/cms-perm": "self.version",
+                "typo3/cms-recordlist": "self.version",
+                "typo3/cms-recycler": "self.version",
+                "typo3/cms-reports": "self.version",
+                "typo3/cms-rsaauth": "self.version",
+                "typo3/cms-rtehtmlarea": "self.version",
+                "typo3/cms-saltedpasswords": "self.version",
+                "typo3/cms-scheduler": "self.version",
+                "typo3/cms-setup": "self.version",
+                "typo3/cms-sv": "self.version",
+                "typo3/cms-sys-action": "self.version",
+                "typo3/cms-sys-note": "self.version",
+                "typo3/cms-t3editor": "self.version",
+                "typo3/cms-t3skin": "self.version",
+                "typo3/cms-taskcenter": "self.version",
+                "typo3/cms-tstemplate": "self.version",
+                "typo3/cms-version": "self.version",
+                "typo3/cms-viewpage": "self.version",
+                "typo3/cms-wizard-crpages": "self.version",
+                "typo3/cms-wizard-sortpages": "self.version",
+                "typo3/cms-workspaces": "self.version"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "1.3.*@dev",
+                "phpunit/phpunit": "~4.7.0"
+            },
+            "suggest": {
+                "ext-gd": "GDlib/Freetype is required for building images with text (GIFBUILDER) and can also be used to scale images",
+                "ext-openssl": "",
+                "ext-soap": "",
+                "ext-zip": "",
+                "ext-zlib": "TYPO3 uses zlib for amongst others output compression and un/packing t3x extension files"
+            },
+            "type": "typo3-cms-core",
+            "extra": {
+                "branch-alias": {
+                    "dev-TYPO3_6-2": "6.2.x-dev"
+                },
+                "autoload-case-sensitivity": false,
+                "class-alias-maps": [
+                    "typo3/sysext/backend/Migrations/Code/ClassAliasMap.php",
+                    "typo3/sysext/core/Migrations/Code/ClassAliasMap.php",
+                    "typo3/sysext/cshmanual/Migrations/Code/ClassAliasMap.php",
+                    "typo3/sysext/extbase/Migrations/Code/ClassAliasMap.php",
+                    "typo3/sysext/extensionmanager/Migrations/Code/ClassAliasMap.php",
+                    "typo3/sysext/fluid/Migrations/Code/ClassAliasMap.php",
+                    "typo3/sysext/frontend/Migrations/Code/ClassAliasMap.php",
+                    "typo3/sysext/install/Migrations/Code/ClassAliasMap.php",
+                    "typo3/sysext/lang/Migrations/Code/ClassAliasMap.php",
+                    "typo3/sysext/recordlist/Migrations/Code/ClassAliasMap.php",
+                    "typo3/sysext/saltedpasswords/Migrations/Code/ClassAliasMap.php",
+                    "typo3/sysext/sv/Migrations/Code/ClassAliasMap.php"
+                ]
+            },
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\Flow\\": "typo3/sysext/core/Resources/PHP/TYPO3.Flow/Classes/"
+                },
+                "psr-4": {
+                    "Psr\\Log\\": "typo3/contrib/Psr/Log/",
+                    "TYPO3\\CMS\\Backend\\": "typo3/sysext/backend/Classes/",
+                    "TYPO3\\CMS\\Core\\": "typo3/sysext/core/Classes/",
+                    "TYPO3\\CMS\\Cshmanual\\": "typo3/sysext/cshmanual/Classes/",
+                    "TYPO3\\CMS\\Extbase\\": "typo3/sysext/extbase/Classes/",
+                    "TYPO3\\CMS\\Extensionmanager\\": "typo3/sysext/extensionmanager/Classes/",
+                    "TYPO3\\CMS\\Fluid\\": "typo3/sysext/fluid/Classes/",
+                    "TYPO3\\CMS\\Frontend\\": "typo3/sysext/frontend/Classes/",
+                    "TYPO3\\CMS\\Install\\": "typo3/sysext/install/Classes/",
+                    "TYPO3\\CMS\\Lang\\": "typo3/sysext/lang/Classes/",
+                    "TYPO3\\CMS\\Recordlist\\": "typo3/sysext/recordlist/Classes/",
+                    "TYPO3\\CMS\\Saltedpasswords\\": "typo3/sysext/saltedpasswords/Classes/",
+                    "TYPO3\\CMS\\Sv\\": "typo3/sysext/sv/Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "TYPO3 CMS Core Team",
+                    "homepage": "http://forge.typo3.org/projects/typo3cms-core",
+                    "role": "Developer"
+                },
+                {
+                    "name": "The TYPO3 Community",
+                    "homepage": "https://typo3.org/community/",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "TYPO3 CMS is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.",
+            "homepage": "http://typo3.org/",
+            "keywords": [
+                "Content management system",
+                "cms",
+                "extbase",
+                "typo3"
+            ],
+            "time": "2016-05-24 09:55:18"
+        },
+        {
+            "name": "typo3/cms-composer-installers",
+            "version": "1.2.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3/CmsComposerInstallers.git",
+                "reference": "dfc242a9153a318a6f00058203a454e33e0f8d88"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/typo3-cms-composer-installers-dfc242a9153a318a6f00058203a454e33e0f8d88-zip-4af8c0.zip",
+                "reference": "dfc242a9153a318a6f00058203a454e33e0f8d88",
+                "shasum": "4079abaada86246da1f47f1e9d670d60f60aa045"
+            },
+            "require": {
+                "composer-plugin-api": "^1.0.0"
+            },
+            "conflict": {
+                "composer/installers": "<1.0.24,>1.0.24"
+            },
+            "replace": {
+                "lw/typo3cms-installers": "*",
+                "netresearch/composer-installers": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.*"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "TYPO3\\CMS\\Composer\\Installer\\Plugin",
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Opitz",
+                    "email": "christian.opitz@netresearch.de"
+                },
+                {
+                    "name": "Lars Peipmann",
+                    "email": "lars@peipmann.de"
+                }
+            ],
+            "description": "TYPO3 CMS Installers",
+            "homepage": "http://forge.typo3.org/projects/team-composer",
+            "keywords": [
+                "cms",
+                "core",
+                "extension",
+                "installer",
+                "typo3"
+            ],
+            "time": "2016-04-07 09:02:38"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "behat/behat",
+            "version": "v2.5.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/Behat.git",
+                "reference": "c1e48826b84669c97a1efa78459aedfdcdcf2120"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/behat-behat-c1e48826b84669c97a1efa78459aedfdcdcf2120-zip-b447bc.zip",
+                "reference": "c1e48826b84669c97a1efa78459aedfdcdcf2120",
+                "shasum": "11e49f7d83dff830ffb5cd9c3e6421845b413525"
+            },
+            "require": {
+                "behat/gherkin": "~2.3.0",
+                "php": ">=5.3.1",
+                "symfony/config": "~2.3",
+                "symfony/console": "~2.0",
+                "symfony/dependency-injection": "~2.0",
+                "symfony/event-dispatcher": "~2.0",
+                "symfony/finder": "~2.0",
+                "symfony/translation": "~2.3",
+                "symfony/yaml": "~2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7.19"
+            },
+            "suggest": {
+                "behat/mink-extension": "for integration with Mink testing framework",
+                "behat/symfony2-extension": "for integration with Symfony2 web framework",
+                "behat/yii-extension": "for integration with Yii web framework"
+            },
+            "bin": [
+                "bin/behat"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Behat\\Behat": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com",
+                    "homepage": "http://everzet.com"
+                }
+            ],
+            "description": "Scenario-oriented BDD framework for PHP 5.3",
+            "homepage": "http://behat.org/",
+            "keywords": [
+                "BDD",
+                "Behat",
+                "Symfony2"
+            ],
+            "time": "2015-06-01 09:37:55"
+        },
+        {
+            "name": "behat/gherkin",
+            "version": "v2.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/Gherkin.git",
+                "reference": "2b33963da5525400573560c173ab5c9c057e1852"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/behat-gherkin-2b33963da5525400573560c173ab5c9c057e1852-zip-415b8f.zip",
+                "reference": "2b33963da5525400573560c173ab5c9c057e1852",
+                "shasum": "85de1f16c943ca9a82e30c6de75b3ba8d12de7e4"
+            },
+            "require": {
+                "php": ">=5.3.1",
+                "symfony/finder": "~2.0"
+            },
+            "require-dev": {
+                "symfony/config": "~2.0",
+                "symfony/translation": "~2.0",
+                "symfony/yaml": "~2.0"
+            },
+            "suggest": {
+                "symfony/config": "If you want to use Config component to manage resources",
+                "symfony/translation": "If you want to use Symfony2 translations adapter",
+                "symfony/yaml": "If you want to parse features, represented in YAML files"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "2.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Behat\\Gherkin": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com",
+                    "homepage": "http://everzet.com"
+                }
+            ],
+            "description": "Gherkin DSL parser for PHP 5.3",
+            "homepage": "http://behat.org/",
+            "keywords": [
+                "BDD",
+                "Behat",
+                "DSL",
+                "Symfony2",
+                "parser"
+            ],
+            "time": "2013-10-15 11:22:17"
+        },
+        {
+            "name": "guzzle/guzzle",
+            "version": "v3.9.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle3.git",
+                "reference": "0645b70d953bc1c067bbc8d5bc53194706b628d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/0645b70d953bc1c067bbc8d5bc53194706b628d9",
+                "reference": "0645b70d953bc1c067bbc8d5bc53194706b628d9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.3",
+                "symfony/event-dispatcher": "~2.1"
+            },
+            "replace": {
+                "guzzle/batch": "self.version",
+                "guzzle/cache": "self.version",
+                "guzzle/common": "self.version",
+                "guzzle/http": "self.version",
+                "guzzle/inflection": "self.version",
+                "guzzle/iterator": "self.version",
+                "guzzle/log": "self.version",
+                "guzzle/parser": "self.version",
+                "guzzle/plugin": "self.version",
+                "guzzle/plugin-async": "self.version",
+                "guzzle/plugin-backoff": "self.version",
+                "guzzle/plugin-cache": "self.version",
+                "guzzle/plugin-cookie": "self.version",
+                "guzzle/plugin-curlauth": "self.version",
+                "guzzle/plugin-error-response": "self.version",
+                "guzzle/plugin-history": "self.version",
+                "guzzle/plugin-log": "self.version",
+                "guzzle/plugin-md5": "self.version",
+                "guzzle/plugin-mock": "self.version",
+                "guzzle/plugin-oauth": "self.version",
+                "guzzle/service": "self.version",
+                "guzzle/stream": "self.version"
+            },
+            "require-dev": {
+                "doctrine/cache": "~1.3",
+                "monolog/monolog": "~1.0",
+                "phpunit/phpunit": "3.7.*",
+                "psr/log": "~1.0",
+                "symfony/class-loader": "~2.1",
+                "zendframework/zend-cache": "2.*,<2.3",
+                "zendframework/zend-log": "2.*,<2.3"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "Guzzle 5 has moved to a new package name. The package you have installed, Guzzle 3, is deprecated."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Guzzle": "src/",
+                    "Guzzle\\Tests": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Guzzle Community",
+                    "homepage": "https://github.com/guzzle/guzzle/contributors"
+                }
+            ],
+            "description": "PHP HTTP client. This library is deprecated in favor of https://packagist.org/packages/guzzlehttp/guzzle",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2015-03-18 18:23:50"
+        },
+        {
+            "name": "hamcrest/hamcrest-php",
+            "version": "v1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hamcrest/hamcrest-php.git",
+                "reference": "b37020aa976fa52d3de9aa904aa2522dc518f79c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/hamcrest-hamcrest-php-b37020aa976fa52d3de9aa904aa2522dc518f79c-zip-2bc6c0.zip",
+                "reference": "b37020aa976fa52d3de9aa904aa2522dc518f79c",
+                "shasum": "85e4cbeb72b502cd75e3f8b814636f4a8c2282eb"
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "replace": {
+                "cordoval/hamcrest-php": "*",
+                "davedevelopment/hamcrest-php": "*",
+                "kodova/hamcrest-php": "*"
+            },
+            "require-dev": {
+                "phpunit/php-file-iterator": "1.3.3",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "hamcrest"
+                ],
+                "files": [
+                    "hamcrest/Hamcrest.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "description": "This is the PHP port of Hamcrest Matchers",
+            "keywords": [
+                "test"
+            ],
+            "time": "2015-05-11 14:41:42"
+        },
+        {
+            "name": "justinrainbow/json-schema",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/justinrainbow/json-schema.git",
+                "reference": "a4bee9f4b344b66e0a0d96c7afae1e92edf385fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/justinrainbow-json-schema-a4bee9f4b344b66e0a0d96c7afae1e92edf385fe-zip-b8c1dd.zip",
+                "reference": "a4bee9f4b344b66e0a0d96c7afae1e92edf385fe",
+                "shasum": "f55788f7c7bc7ea83924e38b583a08827b9c9a09"
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "json-schema/json-schema-test-suite": "1.1.0",
+                "phpdocumentor/phpdocumentor": "~2",
+                "phpunit/phpunit": "~3.7"
+            },
+            "bin": [
+                "bin/validate-json"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JsonSchema\\": "src/JsonSchema/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Bruno Prieto Reis",
+                    "email": "bruno.p.reis@gmail.com"
+                },
+                {
+                    "name": "Justin Rainbow",
+                    "email": "justin.rainbow@gmail.com"
+                },
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch"
+                },
+                {
+                    "name": "Robert Schönthal",
+                    "email": "seroscho@googlemail.com"
+                }
+            ],
+            "description": "A library to validate a json schema.",
+            "homepage": "https://github.com/justinrainbow/json-schema",
+            "keywords": [
+                "json",
+                "schema"
+            ],
+            "time": "2015-09-08 22:28:04"
+        },
+        {
+            "name": "mockery/mockery",
+            "version": "0.9.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/padraic/mockery.git",
+                "reference": "4db079511a283e5aba1b3c2fb19037c645e70fc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/mockery-mockery-4db079511a283e5aba1b3c2fb19037c645e70fc2-zip-7a9189.zip",
+                "reference": "4db079511a283e5aba1b3c2fb19037c645e70fc2",
+                "shasum": "3abf2f51f550cf3855e083b2e32e9182f8a67590"
+            },
+            "require": {
+                "hamcrest/hamcrest-php": "~1.1",
+                "lib-pcre": ">=7.0",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.9.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Mockery": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Pádraic Brady",
+                    "email": "padraic.brady@gmail.com",
+                    "homepage": "http://blog.astrumfutura.com"
+                },
+                {
+                    "name": "Dave Marshall",
+                    "email": "dave.marshall@atstsolutions.co.uk",
+                    "homepage": "http://davedevelopment.co.uk"
+                }
+            ],
+            "description": "Mockery is a simple yet flexible PHP mock object framework for use in unit testing with PHPUnit, PHPSpec or any other testing framework. Its core goal is to offer a test double framework with a succinct API capable of clearly defining all possible object operations and interactions using a human readable Domain Specific Language (DSL). Designed as a drop in alternative to PHPUnit's phpunit-mock-objects library, Mockery is easy to integrate with PHPUnit and can operate alongside phpunit-mock-objects without the World ending.",
+            "homepage": "http://github.com/padraic/mockery",
+            "keywords": [
+                "BDD",
+                "TDD",
+                "library",
+                "mock",
+                "mock objects",
+                "mockery",
+                "stub",
+                "test",
+                "test double",
+                "testing"
+            ],
+            "time": "2016-05-22 21:52:33"
+        },
+        {
+            "name": "pdepend/pdepend",
+            "version": "2.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pdepend/pdepend.git",
+                "reference": "b086687f3a01dc6bb92d633aef071d2c5dd0db06"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/pdepend-pdepend-b086687f3a01dc6bb92d633aef071d2c5dd0db06-zip-69f44f.zip",
+                "reference": "b086687f3a01dc6bb92d633aef071d2c5dd0db06",
+                "shasum": "80f28a223f460d57c9177612acd07a6f69563663"
+            },
+            "require": {
+                "php": ">=5.3.7",
+                "symfony/config": "^2.3.0|^3",
+                "symfony/dependency-injection": "^2.3.0|^3",
+                "symfony/filesystem": "^2.3.0|^3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.4.0,<4.8",
+                "squizlabs/php_codesniffer": "^2.0.0"
+            },
+            "bin": [
+                "src/bin/pdepend"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PDepend\\": "src/main/php/PDepend"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Official version of pdepend to be handled with Composer",
+            "time": "2016-03-10 15:15:04"
+        },
+        {
+            "name": "phpdocumentor/reflection-docblock",
+            "version": "2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
+                "reference": "d68dbdc53dc358a816f00b300704702b2eaff7b8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/phpdocumentor-reflection-docblock-d68dbdc53dc358a816f00b300704702b2eaff7b8-zip-b8dbaa.zip",
+                "reference": "d68dbdc53dc358a816f00b300704702b2eaff7b8",
+                "shasum": "4efa4e7695adf17f0f4b00e789007affe98a3dd8"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "suggest": {
+                "dflydev/markdown": "~1.0",
+                "erusev/parsedown": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "phpDocumentor": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike van Riel",
+                    "email": "mike.vanriel@naenius.com"
+                }
+            ],
+            "time": "2015-02-03 12:10:50"
+        },
+        {
+            "name": "phpmd/phpmd",
+            "version": "2.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpmd/phpmd.git",
+                "reference": "5eeb5a4d39c8304910b33ae49f8813905346cc35"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/phpmd-phpmd-5eeb5a4d39c8304910b33ae49f8813905346cc35-zip-f0f309.zip",
+                "reference": "5eeb5a4d39c8304910b33ae49f8813905346cc35",
+                "shasum": "bf387bdc2c2b0c9e22b51cd057e8ce7437f76881"
+            },
+            "require": {
+                "pdepend/pdepend": "~2.0",
+                "php": ">=5.3.0",
+                "symfony/config": ">=2.4",
+                "symfony/dependency-injection": ">=2.4",
+                "symfony/filesystem": ">=2.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*",
+                "squizlabs/php_codesniffer": "*"
+            },
+            "bin": [
+                "src/bin/phpmd"
+            ],
+            "type": "project",
+            "autoload": {
+                "psr-0": {
+                    "PHPMD\\": "src/main/php"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Manuel Pichler",
+                    "email": "github@manuel-pichler.de",
+                    "homepage": "https://github.com/manuelpichler",
+                    "role": "Project Founder"
+                },
+                {
+                    "name": "Other contributors",
+                    "homepage": "https://github.com/phpmd/phpmd/graphs/contributors",
+                    "role": "Contributors"
+                }
+            ],
+            "description": "PHPMD is a spin-off project of PHP Depend and aims to be a PHP equivalent of the well known Java tool PMD.",
+            "homepage": "http://phpmd.org/",
+            "keywords": [
+                "mess detection",
+                "mess detector",
+                "pdepend",
+                "phpmd",
+                "pmd"
+            ],
+            "time": "2015-05-27 18:16:57"
+        },
+        {
+            "name": "phpspec/prophecy",
+            "version": "v1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpspec/prophecy.git",
+                "reference": "3c91bdf81797d725b14cb62906f9a4ce44235972"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/phpspec-prophecy-3c91bdf81797d725b14cb62906f9a4ce44235972-zip-bc5dd8.zip",
+                "reference": "3c91bdf81797d725b14cb62906f9a4ce44235972",
+                "shasum": "1f334a6d9234a88ed8ac9210671acda9ab569db3"
+            },
+            "require": {
+                "doctrine/instantiator": "^1.0.2",
+                "php": "^5.3|^7.0",
+                "phpdocumentor/reflection-docblock": "~2.0",
+                "sebastian/comparator": "~1.1",
+                "sebastian/recursion-context": "~1.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Prophecy\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com",
+                    "homepage": "http://everzet.com"
+                },
+                {
+                    "name": "Marcello Duarte",
+                    "email": "marcello.duarte@gmail.com"
+                }
+            ],
+            "description": "Highly opinionated mocking framework for PHP 5.3+",
+            "homepage": "https://github.com/phpspec/prophecy",
+            "keywords": [
+                "Double",
+                "Dummy",
+                "fake",
+                "mock",
+                "spy",
+                "stub"
+            ],
+            "time": "2016-02-15 07:46:21"
+        },
+        {
+            "name": "phpunit/php-code-coverage",
+            "version": "2.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
+                "reference": "eabf68b476ac7d0f73793aada060f1c1a9bf8979"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/phpunit-php-code-coverage-eabf68b476ac7d0f73793aada060f1c1a9bf8979-zip-36457d.zip",
+                "reference": "eabf68b476ac7d0f73793aada060f1c1a9bf8979",
+                "shasum": "8586a1d0ed07342a193569193adb7393fe9d1bda"
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "phpunit/php-file-iterator": "~1.3",
+                "phpunit/php-text-template": "~1.2",
+                "phpunit/php-token-stream": "~1.3",
+                "sebastian/environment": "^1.3.2",
+                "sebastian/version": "~1.0"
+            },
+            "require-dev": {
+                "ext-xdebug": ">=2.1.4",
+                "phpunit/phpunit": "~4"
+            },
+            "suggest": {
+                "ext-dom": "*",
+                "ext-xdebug": ">=2.2.1",
+                "ext-xmlwriter": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
+            "homepage": "https://github.com/sebastianbergmann/php-code-coverage",
+            "keywords": [
+                "coverage",
+                "testing",
+                "xunit"
+            ],
+            "time": "2015-10-06 15:47:00"
+        },
+        {
+            "name": "phpunit/php-file-iterator",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
+                "reference": "6150bf2c35d3fc379e50c7602b75caceaa39dbf0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/phpunit-php-file-iterator-6150bf2c35d3fc379e50c7602b75caceaa39dbf0-zip-a7b18d.zip",
+                "reference": "6150bf2c35d3fc379e50c7602b75caceaa39dbf0",
+                "shasum": "b24f05c47ed3d6d3592e1651933426f1fdb116d3"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "FilterIterator implementation that filters files based on a list of suffixes.",
+            "homepage": "https://github.com/sebastianbergmann/php-file-iterator/",
+            "keywords": [
+                "filesystem",
+                "iterator"
+            ],
+            "time": "2015-06-21 13:08:43"
+        },
+        {
+            "name": "phpunit/php-text-template",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-text-template.git",
+                "reference": "31f8b717e51d9a2afca6c9f046f5d69fc27c8686"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/phpunit-php-text-template-31f8b717e51d9a2afca6c9f046f5d69fc27c8686-zip-c6bcbd.zip",
+                "reference": "31f8b717e51d9a2afca6c9f046f5d69fc27c8686",
+                "shasum": "f4f5f2570fc90a257818a28be1fbdb43d048c0c0"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Simple template engine.",
+            "homepage": "https://github.com/sebastianbergmann/php-text-template/",
+            "keywords": [
+                "template"
+            ],
+            "time": "2015-06-21 13:50:34"
+        },
+        {
+            "name": "phpunit/php-timer",
+            "version": "1.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-timer.git",
+                "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/phpunit-php-timer-38e9124049cf1a164f1e4537caf19c99bf1eb260-zip-cb2ac7.zip",
+                "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260",
+                "shasum": "4737a75b3a08b02d91d07f8e500853a62c76c7d6"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4|~5"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Utility class for timing",
+            "homepage": "https://github.com/sebastianbergmann/php-timer/",
+            "keywords": [
+                "timer"
+            ],
+            "time": "2016-05-12 18:03:57"
+        },
+        {
+            "name": "phpunit/php-token-stream",
+            "version": "1.4.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-token-stream.git",
+                "reference": "3144ae21711fb6cac0b1ab4cbe63b75ce3d4e8da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/phpunit-php-token-stream-3144ae21711fb6cac0b1ab4cbe63b75ce3d4e8da-zip-cd5a07.zip",
+                "reference": "3144ae21711fb6cac0b1ab4cbe63b75ce3d4e8da",
+                "shasum": "f8535aa2f2469f6530f3cedc8628b75f280a828c"
+            },
+            "require": {
+                "ext-tokenizer": "*",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Wrapper around PHP's tokenizer extension.",
+            "homepage": "https://github.com/sebastianbergmann/php-token-stream/",
+            "keywords": [
+                "tokenizer"
+            ],
+            "time": "2015-09-15 10:49:45"
+        },
+        {
+            "name": "phpunit/phpcov",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpcov.git",
+                "reference": "9ef291483ff65eefd8639584d61bbfb044d747f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpcov/zipball/9ef291483ff65eefd8639584d61bbfb044d747f3",
+                "reference": "9ef291483ff65eefd8639584d61bbfb044d747f3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "phpunit/php-code-coverage": "~2.0",
+                "phpunit/phpunit": ">=4.1",
+                "sebastian/diff": "~1.1",
+                "sebastian/finder-facade": "~1.1",
+                "sebastian/version": "~1.0",
+                "symfony/console": "~2.2"
+            },
+            "bin": [
+                "phpcov"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "CLI frontend for PHP_CodeCoverage",
+            "homepage": "https://github.com/sebastianbergmann/phpcov",
+            "time": "2015-10-05 09:24:23"
+        },
+        {
+            "name": "phpunit/phpunit",
+            "version": "4.8.26",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "fc1d8cd5b5de11625979125c5639347896ac2c74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/phpunit-phpunit-fc1d8cd5b5de11625979125c5639347896ac2c74-zip-80bc94.zip",
+                "reference": "fc1d8cd5b5de11625979125c5639347896ac2c74",
+                "shasum": "b55b00c851b5812ee67954e84a6a9db0a1a5d339"
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-json": "*",
+                "ext-pcre": "*",
+                "ext-reflection": "*",
+                "ext-spl": "*",
+                "php": ">=5.3.3",
+                "phpspec/prophecy": "^1.3.1",
+                "phpunit/php-code-coverage": "~2.1",
+                "phpunit/php-file-iterator": "~1.4",
+                "phpunit/php-text-template": "~1.2",
+                "phpunit/php-timer": "^1.0.6",
+                "phpunit/phpunit-mock-objects": "~2.3",
+                "sebastian/comparator": "~1.1",
+                "sebastian/diff": "~1.2",
+                "sebastian/environment": "~1.3",
+                "sebastian/exporter": "~1.2",
+                "sebastian/global-state": "~1.0",
+                "sebastian/version": "~1.0",
+                "symfony/yaml": "~2.1|~3.0"
+            },
+            "suggest": {
+                "phpunit/php-invoker": "~1.1"
+            },
+            "bin": [
+                "phpunit"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.8.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "The PHP Unit Testing framework.",
+            "homepage": "https://phpunit.de/",
+            "keywords": [
+                "phpunit",
+                "testing",
+                "xunit"
+            ],
+            "time": "2016-05-17 03:09:28"
+        },
+        {
+            "name": "phpunit/phpunit-mock-objects",
+            "version": "2.3.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
+                "reference": "ac8e7a3db35738d56ee9a76e78a4e03d97628983"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/phpunit-phpunit-mock-objects-ac8e7a3db35738d56ee9a76e78a4e03d97628983-zip-83ccd8.zip",
+                "reference": "ac8e7a3db35738d56ee9a76e78a4e03d97628983",
+                "shasum": "5f390cbbbe86eaf5f58108b6d16eaa7ed803cf8c"
+            },
+            "require": {
+                "doctrine/instantiator": "^1.0.2",
+                "php": ">=5.3.3",
+                "phpunit/php-text-template": "~1.2",
+                "sebastian/exporter": "~1.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.4"
+            },
+            "suggest": {
+                "ext-soap": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Mock Object library for PHPUnit",
+            "homepage": "https://github.com/sebastianbergmann/phpunit-mock-objects/",
+            "keywords": [
+                "mock",
+                "xunit"
+            ],
+            "time": "2015-10-02 06:51:40"
+        },
+        {
+            "name": "sebastian/comparator",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/comparator.git",
+                "reference": "937efb279bd37a375bcadf584dec0726f84dbf22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/sebastian-comparator-937efb279bd37a375bcadf584dec0726f84dbf22-zip-275d2d.zip",
+                "reference": "937efb279bd37a375bcadf584dec0726f84dbf22",
+                "shasum": "139237447cac9b2a71a6eda8379c2775c00586a4"
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "sebastian/diff": "~1.2",
+                "sebastian/exporter": "~1.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jeff Welch",
+                    "email": "whatthejeff@gmail.com"
+                },
+                {
+                    "name": "Volker Dusch",
+                    "email": "github@wallbash.com"
+                },
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@2bepublished.at"
+                },
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Provides the functionality to compare PHP values for equality",
+            "homepage": "http://www.github.com/sebastianbergmann/comparator",
+            "keywords": [
+                "comparator",
+                "compare",
+                "equality"
+            ],
+            "time": "2015-07-26 15:48:44"
+        },
+        {
+            "name": "sebastian/diff",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/diff.git",
+                "reference": "13edfd8706462032c2f52b4b862974dd46b71c9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/sebastian-diff-13edfd8706462032c2f52b4b862974dd46b71c9e-zip-13c115.zip",
+                "reference": "13edfd8706462032c2f52b4b862974dd46b71c9e",
+                "shasum": "275c91fde413a2d2c976b1ce16c76d651d4d6dac"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kore Nordmann",
+                    "email": "mail@kore-nordmann.de"
+                },
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Diff implementation",
+            "homepage": "https://github.com/sebastianbergmann/diff",
+            "keywords": [
+                "diff"
+            ],
+            "time": "2015-12-08 07:14:41"
+        },
+        {
+            "name": "sebastian/environment",
+            "version": "1.3.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/environment.git",
+                "reference": "4e8f0da10ac5802913afc151413bc8c53b6c2716"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/sebastian-environment-4e8f0da10ac5802913afc151413bc8c53b6c2716-zip-65fddb.zip",
+                "reference": "4e8f0da10ac5802913afc151413bc8c53b6c2716",
+                "shasum": "fe1513fb6eedf5d29d15dc9b68d42f5fe492ad2d"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Provides functionality to handle HHVM/PHP environments",
+            "homepage": "http://www.github.com/sebastianbergmann/environment",
+            "keywords": [
+                "Xdebug",
+                "environment",
+                "hhvm"
+            ],
+            "time": "2016-05-17 03:18:57"
+        },
+        {
+            "name": "sebastian/exporter",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/exporter.git",
+                "reference": "7ae5513327cb536431847bcc0c10edba2701064e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/sebastian-exporter-7ae5513327cb536431847bcc0c10edba2701064e-zip-5e64a9.zip",
+                "reference": "7ae5513327cb536431847bcc0c10edba2701064e",
+                "shasum": "fb3386fadff518de22a637c90eb2c5fecd061a05"
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "sebastian/recursion-context": "~1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jeff Welch",
+                    "email": "whatthejeff@gmail.com"
+                },
+                {
+                    "name": "Volker Dusch",
+                    "email": "github@wallbash.com"
+                },
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@2bepublished.at"
+                },
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                },
+                {
+                    "name": "Adam Harvey",
+                    "email": "aharvey@php.net"
+                }
+            ],
+            "description": "Provides the functionality to export PHP variables for visualization",
+            "homepage": "http://www.github.com/sebastianbergmann/exporter",
+            "keywords": [
+                "export",
+                "exporter"
+            ],
+            "time": "2015-06-21 07:55:53"
+        },
+        {
+            "name": "sebastian/finder-facade",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/finder-facade.git",
+                "reference": "2a6f7f57efc0aa2d23297d9fd9e2a03111a8c0b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/finder-facade/zipball/2a6f7f57efc0aa2d23297d9fd9e2a03111a8c0b9",
+                "reference": "2a6f7f57efc0aa2d23297d9fd9e2a03111a8c0b9",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/finder": "~2.3|~3.0",
+                "theseer/fdomdocument": "~1.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "FinderFacade is a convenience wrapper for Symfony's Finder component.",
+            "homepage": "https://github.com/sebastianbergmann/finder-facade",
+            "time": "2016-02-17 07:02:23"
+        },
+        {
+            "name": "sebastian/global-state",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/global-state.git",
+                "reference": "bc37d50fea7d017d3d340f230811c9f1d7280af4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/sebastian-global-state-bc37d50fea7d017d3d340f230811c9f1d7280af4-zip-c4abec.zip",
+                "reference": "bc37d50fea7d017d3d340f230811c9f1d7280af4",
+                "shasum": "a65ee472fd9bd90062115fc18cfdcf74d346db72"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.2"
+            },
+            "suggest": {
+                "ext-uopz": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Snapshotting of global state",
+            "homepage": "http://www.github.com/sebastianbergmann/global-state",
+            "keywords": [
+                "global state"
+            ],
+            "time": "2015-10-12 03:26:01"
+        },
+        {
+            "name": "sebastian/phpcpd",
+            "version": "2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpcpd.git",
+                "reference": "24d9a880deadb0b8c9680e9cfe78e30b704225db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpcpd/zipball/24d9a880deadb0b8c9680e9cfe78e30b704225db",
+                "reference": "24d9a880deadb0b8c9680e9cfe78e30b704225db",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "phpunit/php-timer": ">=1.0.6",
+                "sebastian/finder-facade": "~1.1",
+                "sebastian/version": "~1.0|~2.0",
+                "symfony/console": "~2.7|^3.0",
+                "theseer/fdomdocument": "~1.4"
+            },
+            "bin": [
+                "phpcpd"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Copy/Paste Detector (CPD) for PHP code.",
+            "homepage": "https://github.com/sebastianbergmann/phpcpd",
+            "time": "2016-04-17 19:32:49"
+        },
+        {
+            "name": "sebastian/recursion-context",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/recursion-context.git",
+                "reference": "913401df809e99e4f47b27cdd781f4a258d58791"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/sebastian-recursion-context-913401df809e99e4f47b27cdd781f4a258d58791-zip-205e4a.zip",
+                "reference": "913401df809e99e4f47b27cdd781f4a258d58791",
+                "shasum": "afd7820b6d85726e8a69faa131db40b60d7097bf"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jeff Welch",
+                    "email": "whatthejeff@gmail.com"
+                },
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                },
+                {
+                    "name": "Adam Harvey",
+                    "email": "aharvey@php.net"
+                }
+            ],
+            "description": "Provides functionality to recursively process PHP variables",
+            "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
+            "time": "2015-11-11 19:50:13"
+        },
+        {
+            "name": "sebastian/version",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/version.git",
+                "reference": "58b3a85e7999757d6ad81c787a1fbf5ff6c628c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/sebastian-version-58b3a85e7999757d6ad81c787a1fbf5ff6c628c6-zip-8093ed.zip",
+                "reference": "58b3a85e7999757d6ad81c787a1fbf5ff6c628c6",
+                "shasum": "8308ac0f7b2b5185bec2a3861e549a29b1b1710b"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Library that helps with managing the version number of Git-hosted PHP projects",
+            "homepage": "https://github.com/sebastianbergmann/version",
+            "time": "2015-06-21 13:59:46"
+        },
+        {
+            "name": "squizlabs/php_codesniffer",
+            "version": "2.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "11a2545c44a5915f883e2e5ec12e14ed345e3ab2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/squizlabs-php_codesniffer-11a2545c44a5915f883e2e5ec12e14ed345e3ab2-zip-59bde0.zip",
+                "reference": "11a2545c44a5915f883e2e5ec12e14ed345e3ab2",
+                "shasum": "9458a5cc4d4299a16723563d889d3c383eba151f"
+            },
+            "require": {
+                "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.1.2"
+            },
+            "bin": [
+                "scripts/phpcs",
+                "scripts/phpcbf"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "CodeSniffer.php",
+                    "CodeSniffer/CLI.php",
+                    "CodeSniffer/Exception.php",
+                    "CodeSniffer/File.php",
+                    "CodeSniffer/Fixer.php",
+                    "CodeSniffer/Report.php",
+                    "CodeSniffer/Reporting.php",
+                    "CodeSniffer/Sniff.php",
+                    "CodeSniffer/Tokens.php",
+                    "CodeSniffer/Reports/",
+                    "CodeSniffer/Tokenizers/",
+                    "CodeSniffer/DocGenerators/",
+                    "CodeSniffer/Standards/AbstractPatternSniff.php",
+                    "CodeSniffer/Standards/AbstractScopeSniff.php",
+                    "CodeSniffer/Standards/AbstractVariableSniff.php",
+                    "CodeSniffer/Standards/IncorrectPatternException.php",
+                    "CodeSniffer/Standards/Generic/Sniffs/",
+                    "CodeSniffer/Standards/MySource/Sniffs/",
+                    "CodeSniffer/Standards/PEAR/Sniffs/",
+                    "CodeSniffer/Standards/PSR1/Sniffs/",
+                    "CodeSniffer/Standards/PSR2/Sniffs/",
+                    "CodeSniffer/Standards/Squiz/Sniffs/",
+                    "CodeSniffer/Standards/Zend/Sniffs/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Sherwood",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "http://www.squizlabs.com/php-codesniffer",
+            "keywords": [
+                "phpcs",
+                "standards"
+            ],
+            "time": "2015-09-09 00:18:50"
+        },
+        {
+            "name": "symfony/config",
+            "version": "v2.8.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/config.git",
+                "reference": "edbbcf33cffa2a85104fc80de8dc052cc51596bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/symfony-config-edbbcf33cffa2a85104fc80de8dc052cc51596bb-zip-d8466e.zip",
+                "reference": "edbbcf33cffa2a85104fc80de8dc052cc51596bb",
+                "shasum": "134773e04a05e014925d79bc90261b5ce6855420"
+            },
+            "require": {
+                "php": ">=5.3.9",
+                "symfony/filesystem": "~2.3|~3.0.0"
+            },
+            "suggest": {
+                "symfony/yaml": "To use the yaml reference dumper"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Config\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Config Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-04-20 18:52:26"
+        },
+        {
+            "name": "symfony/console",
+            "version": "v2.8.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/console.git",
+                "reference": "48221d3de4dc22d2cd57c97e8b9361821da86609"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/symfony-console-48221d3de4dc22d2cd57c97e8b9361821da86609-zip-0e430b.zip",
+                "reference": "48221d3de4dc22d2cd57c97e8b9361821da86609",
+                "shasum": "51aaa1dfac2f1d98d4d216db3be4172c8bbc6ed8"
+            },
+            "require": {
+                "php": ">=5.3.9",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/event-dispatcher": "~2.1|~3.0.0",
+                "symfony/process": "~2.1|~3.0.0"
+            },
+            "suggest": {
+                "psr/log": "For using the console logger",
+                "symfony/event-dispatcher": "",
+                "symfony/process": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Console\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Console Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-04-26 12:00:47"
+        },
+        {
+            "name": "symfony/dependency-injection",
+            "version": "v2.8.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dependency-injection.git",
+                "reference": "bd04588c087651ceffdc45d40dc4de05af9c7c52"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/symfony-dependency-injection-bd04588c087651ceffdc45d40dc4de05af9c7c52-zip-9cb676.zip",
+                "reference": "bd04588c087651ceffdc45d40dc4de05af9c7c52",
+                "shasum": "754a04001b7d40c9e3a6afcdf6e9a2ba175e3b75"
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "conflict": {
+                "symfony/expression-language": "<2.6"
+            },
+            "require-dev": {
+                "symfony/config": "~2.2|~3.0.0",
+                "symfony/expression-language": "~2.6|~3.0.0",
+                "symfony/yaml": "~2.1|~3.0.0"
+            },
+            "suggest": {
+                "symfony/config": "",
+                "symfony/expression-language": "For using expressions in service container configuration",
+                "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\DependencyInjection\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony DependencyInjection Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-05-09 18:12:35"
+        },
+        {
+            "name": "symfony/event-dispatcher",
+            "version": "v2.8.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/event-dispatcher.git",
+                "reference": "a158f13992a3147d466af7a23b564ac719a4ddd8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/symfony-event-dispatcher-a158f13992a3147d466af7a23b564ac719a4ddd8-zip-f70938.zip",
+                "reference": "a158f13992a3147d466af7a23b564ac719a4ddd8",
+                "shasum": "a9b5652e6d42b9144b799958caf557e557091297"
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/config": "~2.0,>=2.0.5|~3.0.0",
+                "symfony/dependency-injection": "~2.6|~3.0.0",
+                "symfony/expression-language": "~2.6|~3.0.0",
+                "symfony/stopwatch": "~2.3|~3.0.0"
+            },
+            "suggest": {
+                "symfony/dependency-injection": "",
+                "symfony/http-kernel": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\EventDispatcher\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony EventDispatcher Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-05-03 18:59:18"
+        },
+        {
+            "name": "symfony/filesystem",
+            "version": "v2.8.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/filesystem.git",
+                "reference": "dee379131dceed90a429e951546b33edfe7dccbb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/symfony-filesystem-dee379131dceed90a429e951546b33edfe7dccbb-zip-146c6d.zip",
+                "reference": "dee379131dceed90a429e951546b33edfe7dccbb",
+                "shasum": "c1ec23e15ffea82430821fa93f9d1d354ccabf80"
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-04-12 18:01:21"
+        },
+        {
+            "name": "symfony/finder",
+            "version": "v2.8.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/finder.git",
+                "reference": "ca24cf2cd4e3826f571e0067e535758e73807aa1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/symfony-finder-ca24cf2cd4e3826f571e0067e535758e73807aa1-zip-d6ca02.zip",
+                "reference": "ca24cf2cd4e3826f571e0067e535758e73807aa1",
+                "shasum": "1900a045117e5eea9dd63389215f085603802e4d"
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Finder\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Finder Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-03-10 10:53:53"
+        },
+        {
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "dff51f72b0706335131b00a7f49606168c582594"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/symfony-polyfill-mbstring-dff51f72b0706335131b00a7f49606168c582594-zip-aa7928.zip",
+                "reference": "dff51f72b0706335131b00a7f49606168c582594",
+                "shasum": "7010433f73e0927744880ee7dae9caa4a00cadf1"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2016-05-18 14:26:46"
+        },
+        {
+            "name": "symfony/translation",
+            "version": "v2.8.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/translation.git",
+                "reference": "d60b8e076d22953aabebeebda53bf334438e7aca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/symfony-translation-d60b8e076d22953aabebeebda53bf334438e7aca-zip-5923a5.zip",
+                "reference": "d60b8e076d22953aabebeebda53bf334438e7aca",
+                "shasum": "0879f30078cdba7a148c1e033163ec65678c1909"
+            },
+            "require": {
+                "php": ">=5.3.9",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "conflict": {
+                "symfony/config": "<2.7"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/config": "~2.8",
+                "symfony/intl": "~2.4|~3.0.0",
+                "symfony/yaml": "~2.2|~3.0.0"
+            },
+            "suggest": {
+                "psr/log": "To use logging capability in translator",
+                "symfony/config": "",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Translation\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Translation Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-03-25 01:40:30"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v2.8.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "e4fbcc65f90909c999ac3b4dfa699ee6563a9940"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.congo.congstar.aoe.lan//dist/symfony-yaml-e4fbcc65f90909c999ac3b4dfa699ee6563a9940-zip-822171.zip",
+                "reference": "e4fbcc65f90909c999ac3b4dfa699ee6563a9940",
+                "shasum": "c8b480b89852ee172375fa35e347a3617f99387d"
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-03-29 19:00:15"
+        },
+        {
+            "name": "theseer/fdomdocument",
+            "version": "1.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/theseer/fDOMDocument.git",
+                "reference": "d9ad139d6c2e8edf5e313ffbe37ff13344cf0684"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/theseer/fDOMDocument/zipball/d9ad139d6c2e8edf5e313ffbe37ff13344cf0684",
+                "reference": "d9ad139d6c2e8edf5e313ffbe37ff13344cf0684",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "lib-libxml": "*",
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Arne Blankerts",
+                    "email": "arne@blankerts.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "The classes contained within this repository extend the standard DOM to use exceptions at all occasions of errors instead of PHP warnings or notices. They also add various custom methods and shortcuts for convenience and to simplify the usage of DOM.",
+            "homepage": "https://github.com/theseer/fDOMDocument",
+            "time": "2015-05-27 22:58:02"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "aoe/eft": 20,
+        "behat/behat": 0
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

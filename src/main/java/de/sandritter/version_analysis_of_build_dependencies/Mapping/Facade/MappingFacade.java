@@ -50,11 +50,17 @@ public class MappingFacade implements Mapping{
 	 * @return {@link Transferable}
 	 * @throws DataMappingFailedException
 	 */
-	public Transferable mapRowData(BuildData buildData, Map<FileType, File> files) throws DataMappingFailedException{
+	public Transferable mapRowData(BuildData buildData, Map<FileType, File> files) throws DataMappingFailedException {
 		JsonDataImage jsonDataImage = composerMapper.mapFileToJsonDataImage(files.get(FileType.COMPOSER_JSON));
 		DependencyReflectionCollection lockDataImage = composerMapper.mapFileToDependencyReflectionData(files.get(FileType.COMPOSER_LOCK));
 		transport.setObject(JsonDataImage.class, jsonDataImage);
 		transport.setObject(DependencyReflectionCollection.class, lockDataImage);
-		return rowDataMapper.mapData(buildData, transport);
+		Transferable t = null;
+		try {
+			t = rowDataMapper.mapData(buildData, transport);
+		} catch (DataMappingFailedException e) {
+			throw new DataMappingFailedException(e.getMessage(), e);
+		}
+		return t;
 	}
 }

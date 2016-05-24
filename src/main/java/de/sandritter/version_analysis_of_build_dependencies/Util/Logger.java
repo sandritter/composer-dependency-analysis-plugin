@@ -89,6 +89,9 @@ public class Logger {
 	{
 		log(Logger.LABEL + Logger.WARNING + "-> " + title + ": ");
 		log(Logger.LABEL + Logger.WARNING + "error message: " + e.getMessage());
+		for (StackTraceElement s : e.getStackTrace()) {
+			log(s.toString());
+		}
 		println();
 		errorCount++;
 	}

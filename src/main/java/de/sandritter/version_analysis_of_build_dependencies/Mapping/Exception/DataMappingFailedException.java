@@ -13,4 +13,9 @@ public class DataMappingFailedException extends Exception{
 	{
 		super(message);
 	}
+
+	public DataMappingFailedException(String message, Exception e)
+	{
+		super(message, e);
+	}
 }

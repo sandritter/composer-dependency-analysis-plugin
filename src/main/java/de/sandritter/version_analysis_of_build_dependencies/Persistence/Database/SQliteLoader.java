@@ -61,7 +61,7 @@ public class SQliteLoader implements DataLoader {
 			c = DriverManager.getConnection("jdbc:sqlite:" + dbPath);
 			c.setAutoCommit(false);
 		} catch (Exception e) {
-			throw new Exception("[DBLoader.java cannot establish connection]: " + dbPath + "\n" + e.getMessage());
+			throw new Exception("[DBLoader.java cannot establish connection]: " + dbPath + "\n" + e.getMessage(), e);
 		}
 
 		return c;
