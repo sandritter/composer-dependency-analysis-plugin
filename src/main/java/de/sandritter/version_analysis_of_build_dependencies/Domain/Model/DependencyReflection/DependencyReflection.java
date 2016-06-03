@@ -19,7 +19,7 @@ public class DependencyReflection {
 	 * component name
 	 */
 	@JsonProperty("name")
-	private String name;
+	private String name = "";
 
 	/**
 	 * component version
@@ -71,6 +71,13 @@ public class DependencyReflection {
 	public void setVersion(String version)
 	{
 		this.version = version;
+	}
+	
+	public boolean hasName() {
+		if (!name.equals("")) {
+			return true;
+		}
+		return false;
 	}
 
 	@JsonProperty("source")

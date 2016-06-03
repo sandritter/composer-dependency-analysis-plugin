@@ -1,0 +1,183 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "aa7fbf585ea7dbabef3cdebe15f60268",
+    "content-hash": "e58d9bd57951b837199a0bb543955c0e",
+    "packages": [
+        {
+            "name": "Test-Komponente",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "git@git.aoesupport.com:modules/typo3/aoe/aoe_exorbyte",
+                "reference": "tags/0.1.0"
+            },
+            "require": {
+                "typo3/cms-core": "*"
+            },
+            "replace": {
+                "aoe_exorbyte": "*"
+            },
+            "type": "typo3-cms-extension"
+        },
+        {
+            "name": "aoe/aoe-footnote",
+            "version": "1.3.11",
+            "source": {
+                "type": "svn",
+                "url": "https://svn.aoesupport.com/repository/extensions/aoe/aoe_footnote",
+                "reference": "tags/1.3.11"
+            },
+            "require": {
+                "aoe/linkhandler": "*",
+                "aoe/mvc": "*",
+                "php": ">=5.2.0",
+                "typo3/cms-core": "*"
+            },
+            "replace": {
+                "aoe_footnote": "*"
+            },
+            "type": "typo3-cms-extension"
+        },
+        {
+            "name": "aoe/cryptotickets",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "git@git.aoesupport.com:modules/typo3/projects/congstar/cryptotickets",
+                "reference": "tags/1.1.1"
+            },
+            "require": {
+                "php": ">=5.2.0",
+                "typo3/cms-core": "*",
+                "typo3/cms-extbase": "*",
+                "typo3/cms-fluid": "*"
+            },
+            "replace": {
+                "cryptotickets": "*"
+            },
+            "type": "typo3-cms-extension"
+        },
+        {
+            "name": "aoe/eft",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@git.aoesupport.com:modules/typo3/aoe/eft",
+                "reference": "a1b8cfbcc9614338cad1d3a29b7cf0a322e2321f"
+            },
+            "require": {
+                "aoe/aoe-exorbyte": "*",
+                "aoe/aoe-footnote": "*",
+                "aoe/cryptotickets": "*",
+                "aoe/extracache": "*",
+                "aoe/happy-feet": "*",
+                "aoe/linkhandler": "*",
+                "aoe/mvc": "*",
+                "aoe/picocontainer": "*",
+                "aoe/shorturl": "*",
+                "aoe/webtrekk": "*",
+                "php": ">=5.3.0",
+                "typo3-ter/addthis": "*",
+                "typo3-ter/google-tag-manager": "*",
+                "typo3-ter/zend-framework": "*",
+                "typo3/cms-core": "*"
+            },
+            "replace": {
+                "eft": "*"
+            },
+            "require-dev": {
+                "aoe/congstar-library-eftdatabuilder": "dev-master@dev",
+                "mockery/mockery": "0.9.*",
+                "phpmd/phpmd": "2.2.*",
+                "phpspec/prophecy-phpunit": "~1.0",
+                "phpunit/phpcov": "2.0.*",
+                "phpunit/phpunit": "4.8.*",
+                "sebastian/phpcpd": "2.0.*",
+                "squizlabs/php_codesniffer": "2.3.*",
+                "typo3/cms": "6.2.*"
+            },
+            "type": "typo3-cms-extension",
+            "authors": [
+                {
+                    "name": "AOE GmbH",
+                    "email": "dev@aoe.com"
+                }
+            ],
+            "time": "2015-10-16 10:44:56"
+        },
+        {
+            "name": "aoe/eft-core",
+            "version": "1.162.0",
+            "dist": {
+                "type": "zip",
+                "url": "git@git.aoesupport.com:modules/typo3/projects/congstar/eft_core.git",
+                "reference": "5685d506c9c93393a9d339b2726d7c0c39fef442",
+                "shasum": ""
+            },
+            "require": {
+                "aoe/eft": "dev-master@dev",
+                "php": ">=5.3.0",
+                "symfony/config": "2.6.*",
+                "typo3/cms-core": "*"
+            },
+            "replace": {
+                "eft_core": "*"
+            },
+            "require-dev": {
+                "aoe/congstar-library-eftdatabuilder": "dev-master@dev",
+                "mockery/mockery": "0.9.*",
+                "phpmd/phpmd": "2.2.*",
+                "phpspec/prophecy-phpunit": "~1.0",
+                "phpunit/phpcov": "2.0.*",
+                "phpunit/phpunit": "4.8.*",
+                "sebastian/phpcpd": "2.0.*",
+                "squizlabs/php_codesniffer": "2.3.*",
+                "typo3/cms": "6.2.*"
+            },
+            "type": "typo3-cms-extension",
+            "authors": [
+                {
+                    "name": "AOE GmbH",
+                    "email": "dev@aoe.com"
+                }
+            ],
+            "time": "2015-10-13 15:35:30"
+        },
+        {
+            "name": "aoe/extracache",
+            "version": "0.7.17",
+            "source": {
+                "type": "svn",
+                "url": "https://svn.typo3.org/TYPO3v4/Extensions/extracache",
+                "reference": "2139d1232ndfg123"
+            },
+            "require": {
+                "aoe/nc-staticfilecache": "*",
+                "php": ">=5.3.0",
+                "typo3/cms-core": "*",
+                "typo3/cms-extbase": "*"
+            },
+            "replace": {
+                "extracache": "*"
+            },
+            "type": "typo3-cms-extension"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "aoe/eft": 20,
+        "luracast/restler": 20,
+        "behat/behat": 0
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.3.0"
+    },
+    "platform-dev": []
+}

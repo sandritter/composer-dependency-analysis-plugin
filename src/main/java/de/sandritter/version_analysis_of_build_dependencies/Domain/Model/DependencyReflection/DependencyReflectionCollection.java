@@ -1,5 +1,6 @@
 package de.sandritter.version_analysis_of_build_dependencies.Domain.Model.DependencyReflection;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
@@ -14,6 +15,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DependencyReflectionCollection {
 
+	private List<DependencyReflection> filteredPackages = null;
 	/**
 	 * list of packages loaded via composer
 	 */
@@ -22,6 +24,28 @@ public class DependencyReflectionCollection {
 
 	public List<DependencyReflection> getPackages()
 	{
-		return packages;
+		if (filteredPackages == null) {
+			filteredPackages = filterPackages(packages);
+		}
+		return filteredPackages;
 	}
+	
+	/**
+	 * filteres dependency reflections when there name or reference property is null
+	 * both properties are required as primary key
+	 * if they don't exist they are filterd out
+	 * @param packages
+	 * @return
+	 */
+	private List<DependencyReflection> filterPackages(List<DependencyReflection> packages)
+	{
+		List<DependencyReflection> lst = new ArrayList<DependencyReflection>();
+		for (DependencyReflection dr : packages) {
+			if (dr.hasName() && dr.getSource().hasReference()) {
+				lst.add(dr);
+			}
+		}
+		return lst;
+	}
+	
 }

@@ -31,7 +31,7 @@ public class VersionControlSource {
 	 * reference that points on a unique version of a component
 	 */
 	@JsonProperty("reference")
-	private String reference;
+	private String reference = "";
 
 	public String getUrl()
 	{
@@ -63,9 +63,16 @@ public class VersionControlSource {
 		this.reference = reference;
 	}
 
-	@JsonProperty("shasum")
-	public void setShasum(String reference)
+	@JsonProperty("reference")
+	public void setDistReference(String reference)
 	{
 		this.reference = reference;
+	}
+	
+	public boolean hasReference() {
+		if (!reference.equals("")) {
+			return true;
+		}
+		return false;
 	}
 }

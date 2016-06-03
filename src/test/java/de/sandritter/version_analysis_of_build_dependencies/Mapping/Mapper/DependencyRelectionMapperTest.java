@@ -17,7 +17,7 @@ import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Depende
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Exception.DataMappingFailedException;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Mapper.DependencyReflectionMapper;
 
-public class JsonMapperTest{
+public class DependencyRelectionMapperTest{
 	
 	private File composerJson;
 	private File composerLock;
