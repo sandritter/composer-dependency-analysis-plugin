@@ -1,14 +1,14 @@
-package de.sandritter.version_analysis_of_build_dependencies.Mapping.Module;
+package de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Mapping.Module;
 
 import com.google.inject.AbstractModule;
 
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Mapping.Interface.DependencyReflectionMapable;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Mapping.Interface.RowDataMapper;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Transport;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Interface.Transferable;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Facade.MappingFacade;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Mapper.DaoMapper;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Mapper.DependencyReflectionMapper;
-import de.sandritter.version_analysis_of_build_dependencies.Mapping.Mapper.Interface.DependencyReflectionMapable;
-import de.sandritter.version_analysis_of_build_dependencies.Mapping.Mapper.Interface.RowDataMapper;
 
 /**
  * MappingModule.java

@@ -5,8 +5,8 @@ import org.junit.Test;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.IO.Interface.IOAccess;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Module.FileLoadModule;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.IO.Interface.IOAccess;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.IO.Module.FileLoadModule;
 
 public class FileLoadModuleTest {
 

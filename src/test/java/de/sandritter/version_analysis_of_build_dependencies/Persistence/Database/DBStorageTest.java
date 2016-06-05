@@ -8,6 +8,8 @@ import org.junit.Test;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Interface.DataStorage;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Module.PersistenceModule;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.DependencyReflection.DependencyReflectionCollection;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.DependencyReflection.JsonDataImage;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.BuildData;
@@ -17,8 +19,6 @@ import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfe
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Mapper.DaoMapper;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Mapper.DependencyReflectionMapper;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Factory.DataStorageFactory;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataStorage;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Module.PersistenceModule;
 import de.sandritter.version_analysis_of_build_dependencies.Util.TestDataProvider;
 
 public class DBStorageTest {

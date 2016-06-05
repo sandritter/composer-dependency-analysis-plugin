@@ -89,6 +89,7 @@ public class DaoMapperTest{
 		assertEquals(buildData.getJobUrl(), build.getJobUrl());
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void shouldWork() throws DataMappingFailedException
 	{
@@ -112,9 +113,9 @@ public class DaoMapperTest{
 		List<Dependency> depList = (List<Dependency>) t.getList(Dependency.class);
 		List<Stand> standList = (List<Stand>) t.getList(Stand.class);
 		List<Component> componentList = (List<Component>) t.getList(Component.class);
-		assertEquals(34, depList.size());
-		assertEquals(34, standList.size());
-		assertEquals(34, componentList.size());
+		assertEquals(33, depList.size());
+		assertEquals(33, standList.size());
+		assertEquals(33, componentList.size());
 	}
 	
 	@Test

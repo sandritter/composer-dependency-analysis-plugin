@@ -4,10 +4,10 @@ import java.io.File;
 
 import org.codehaus.jackson.map.ObjectMapper;
 
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Mapping.Interface.DependencyReflectionMapable;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.DependencyReflection.DependencyReflectionCollection;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.DependencyReflection.JsonDataImage;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Exception.DataMappingFailedException;
-import de.sandritter.version_analysis_of_build_dependencies.Mapping.Mapper.Interface.DependencyReflectionMapable;
 
 /**
  * JsonMapper.java

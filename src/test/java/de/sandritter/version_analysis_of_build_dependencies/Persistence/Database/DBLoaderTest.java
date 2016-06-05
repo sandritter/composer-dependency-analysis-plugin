@@ -11,15 +11,14 @@ import org.junit.Test;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Interface.DataLoader;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Module.PersistenceModule;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Database.BuildSummary;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Database.ComponentSummary;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Database.DependentComponent;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Interface.Transferable;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Enum.DependencyType;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Enum.Field;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Factory.DataLoaderFactory;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataLoader;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Module.PersistenceModule;
 
 public class DBLoaderTest {
 

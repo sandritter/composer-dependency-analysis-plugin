@@ -17,6 +17,12 @@ import org.kohsuke.stapler.StaplerRequest;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Mapping.Module.MappingModule;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Interface.DataLoader;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Interface.DataStorage;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Module.PersistenceModule;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.IO.Interface.IOAccess;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.IO.Module.FileLoadModule;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.BuildData;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Interface.Transferable;
 import de.sandritter.version_analysis_of_build_dependencies.Exception.PluginConfigurationException;
@@ -25,15 +31,9 @@ import de.sandritter.version_analysis_of_build_dependencies.Mapping.Enum.FileTyp
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Enum.SourceType;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Exception.DataMappingFailedException;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Facade.MappingFacade;
-import de.sandritter.version_analysis_of_build_dependencies.Mapping.Module.MappingModule;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Factory.DataLoaderFactory;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Factory.DataStorageFactory;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataLoader;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataStorage;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.IO.Exception.FileDoesNotExistException;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.IO.Interface.IOAccess;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Module.FileLoadModule;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Module.PersistenceModule;
 import de.sandritter.version_analysis_of_build_dependencies.Util.ListItemProvider;
 import de.sandritter.version_analysis_of_build_dependencies.Util.Logger;
 import de.sandritter.version_analysis_of_build_dependencies.Util.PathResolver;

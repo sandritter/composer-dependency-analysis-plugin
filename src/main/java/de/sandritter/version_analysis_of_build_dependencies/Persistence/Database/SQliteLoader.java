@@ -9,13 +9,13 @@ import java.sql.SQLException;
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
 
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Mapping.Interface.DatabaseMapper;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Interface.DataLoader;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Database.BuildSummary;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Database.ComponentSummary;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Database.DependentComponent;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Interface.Transferable;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Enum.DependencyType;
-import de.sandritter.version_analysis_of_build_dependencies.Mapping.Mapper.Interface.DatabaseMapper;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataLoader;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Queries.SelectQueries;
 
 /**

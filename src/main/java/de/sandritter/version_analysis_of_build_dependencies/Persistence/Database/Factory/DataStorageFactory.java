@@ -1,6 +1,6 @@
 package de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Factory;
 
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataStorage;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Interface.DataStorage;
 
 /**
  * DataStorageFactory.java

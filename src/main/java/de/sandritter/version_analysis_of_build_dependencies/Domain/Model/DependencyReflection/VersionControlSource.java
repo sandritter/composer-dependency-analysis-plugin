@@ -70,7 +70,7 @@ public class VersionControlSource {
 	}
 	
 	public boolean hasReference() {
-		if (!reference.equals("")) {
+		if (reference != null && !reference.equals("")) {
 			return true;
 		}
 		return false;

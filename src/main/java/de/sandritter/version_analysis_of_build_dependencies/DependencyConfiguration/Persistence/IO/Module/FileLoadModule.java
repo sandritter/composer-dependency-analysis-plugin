@@ -1,9 +1,9 @@
-package de.sandritter.version_analysis_of_build_dependencies.Persistence.Module;
+package de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.IO.Module;
 
 import com.google.inject.AbstractModule;
 
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.IO.Interface.IOAccess;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.IO.FileLoader;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.IO.Interface.IOAccess;
 
 /**
  * FileLoadModule.java 

@@ -8,14 +8,14 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 import de.sandritter.version_analysis_of_build_dependencies.IntegrationAnalyser;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Interface.DataLoader;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Module.PersistenceModule;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Analyse.AnalyseResult;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Analyse.DependencyResult;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Analyse.Disparity;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.BuildData;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.BuildDataBuilder;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Factory.DataLoaderFactory;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataLoader;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Module.PersistenceModule;
 
 public class IntegrationAnalyserTest {
 

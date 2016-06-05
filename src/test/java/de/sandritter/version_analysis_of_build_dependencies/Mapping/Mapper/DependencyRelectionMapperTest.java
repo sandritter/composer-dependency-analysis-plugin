@@ -105,7 +105,7 @@ public class DependencyRelectionMapperTest{
 		DependencyReflectionCollection lock;
 		try {
 			lock = (DependencyReflectionCollection) mapper.mapData(composerLockExtended, DependencyReflectionCollection.class);
-			assertEquals(34, lock.getPackages().size());
+			assertEquals(33, lock.getPackages().size());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -1,4 +1,4 @@
-package de.sandritter.version_analysis_of_build_dependencies.Persistence.IO.Interface;
+package de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.IO.Interface;
 
 import java.io.File;
 import java.io.IOException;

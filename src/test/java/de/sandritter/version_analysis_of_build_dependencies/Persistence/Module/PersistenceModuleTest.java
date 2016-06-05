@@ -5,11 +5,11 @@ import org.junit.Test;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Interface.DataLoader;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Interface.DataStorage;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Module.PersistenceModule;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Factory.DataLoaderFactory;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Factory.DataStorageFactory;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataLoader;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataStorage;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Module.PersistenceModule;
 
 public class PersistenceModuleTest {
 

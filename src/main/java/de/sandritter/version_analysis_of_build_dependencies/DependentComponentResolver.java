@@ -5,11 +5,11 @@ import java.util.Map;
 
 import org.kohsuke.stapler.StaplerProxy;
 
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Interface.DataLoader;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Database.ComponentSummary;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Database.DependentComponent;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.BuildData;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Interface.Transferable;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataLoader;
 import de.sandritter.version_analysis_of_build_dependencies.Util.PropertyReader;
 import hudson.PluginWrapper;
 import hudson.model.Action;

@@ -9,12 +9,12 @@ import java.util.List;
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
 
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Interface.DataStorage;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.DAO.Build;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.DAO.Component;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.DAO.Dependency;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.DAO.Stand;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Interface.Transferable;
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface.DataStorage;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Queries.InsertQueries;
 import de.sandritter.version_analysis_of_build_dependencies.Util.Logger;
 import hudson.model.AbstractBuild;

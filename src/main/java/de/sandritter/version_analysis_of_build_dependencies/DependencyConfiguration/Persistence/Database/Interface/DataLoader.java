@@ -1,4 +1,4 @@
-package de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Interface;
+package de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Interface;
 
 import java.sql.SQLException;
 

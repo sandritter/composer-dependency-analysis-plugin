@@ -6,13 +6,13 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Mapping.Interface.DatabaseMapper;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Mapping.Interface.FutureImplementation;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Database.BuildSummary;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Database.ComponentSummary;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Result.Database.DependentComponent;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Transport;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Interface.Transferable;
-import de.sandritter.version_analysis_of_build_dependencies.Mapping.Mapper.Interface.DatabaseMapper;
-import de.sandritter.version_analysis_of_build_dependencies.Mapping.Mapper.Interface.FutureImplementation;
 import de.sandritter.version_analysis_of_build_dependencies.Persistence.Database.Enum.Field;
 
 /**

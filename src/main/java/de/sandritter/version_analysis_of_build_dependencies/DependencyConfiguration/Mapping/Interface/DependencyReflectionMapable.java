@@ -1,4 +1,4 @@
-package de.sandritter.version_analysis_of_build_dependencies.Mapping.Mapper.Interface;
+package de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Mapping.Interface;
 
 import java.io.File;
 

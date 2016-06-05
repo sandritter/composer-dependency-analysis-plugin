@@ -3,7 +3,7 @@ package de.sandritter.version_analysis_of_build_dependencies.Persistence.IO;
 import java.io.File;
 import java.io.IOException;
 
-import de.sandritter.version_analysis_of_build_dependencies.Persistence.IO.Interface.IOAccess;
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.IO.Interface.IOAccess;
 
 /**
  * ComposerFileRepository.java 

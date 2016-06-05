@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.google.inject.Inject;
 
+import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Mapping.Interface.RowDataMapper;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.DAO.Build;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.DAO.Component;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.DAO.Dependency;
@@ -16,7 +17,6 @@ import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfe
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Interface.Transferable;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Enum.DependencyType;
 import de.sandritter.version_analysis_of_build_dependencies.Mapping.Exception.DataMappingFailedException;
-import de.sandritter.version_analysis_of_build_dependencies.Mapping.Mapper.Interface.RowDataMapper;
 
 /**
  * DaoMapper.java
