@@ -11,12 +11,13 @@
 		<version>1.625</version>
 		<relativePath />
 	</parent>
-	<groupId>de.sandritter.michael.jenkins.plugin.vaid</groupId>
-	<artifactId>version-analysis-of-build-dependencies</artifactId>
+	<groupId>com.github.sandritter</groupId>
+	<artifactId>version-analysis-of-composer-dependencies</artifactId>
 	<version>0.1.0</version>
 	<packaging>hpi</packaging>
-
 	<url>https://wiki.jenkins-ci.org/display/JENKINS/TODO+Plugin</url>
+	<description>This plugin is looking for dependencies stored in a composer.lock file and storing them into a sqlite database</description>
+	<name>Version Analysis Of Composer Dependencies</name>
 	<licenses>
 		<license>
 			<name>MIT License</name>
@@ -35,9 +36,14 @@
 			</plugin>
 		</plugins>
 	</build>
-	<!-- If you want this to appear on the wiki page: <developers> <developer> 
-		<id>bhacker</id> <name>Bob Q. Hacker</name> <email>bhacker@nowhere.net</email> 
-		</developer> </developers> -->
+	<!-- If you want this to appear on the wiki page: --> 
+	<developers> 
+		<developer> 
+			<id>michael_sandritter</id> 
+			<name>Michael Sandritter</name> 
+			<email>michael.sandritter@gmx.de</email> 
+		</developer> 
+	</developers> 
 	<!-- Assuming you want to host on @jenkinsci: <scm> <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}-plugin.git</connection> 
 		<developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}-plugin.git</developerConnection> 
 		<url>http://github.com/jenkinsci/${project.artifactId}-plugin</url> </scm> -->
@@ -125,6 +131,4 @@
             <version>1.46</version>
         </dependency>
 	</dependencies>
-	<description>This plugin is looking for dependencies stored in a composer.lock file and storing them into a sqlite database</description>
-	<name>Version Analysis Of Integration Dependencies</name>
 </project>
