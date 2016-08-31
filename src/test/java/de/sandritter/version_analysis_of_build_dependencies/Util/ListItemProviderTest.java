@@ -27,6 +27,13 @@ public class ListItemProviderTest {
 		this.workspacePath = new File(f.getParent()).toPath();
 	}
 	
+	@Test
+	public void shouldCreateListItemProvider()
+	{
+		@SuppressWarnings("unused")
+		ListItemProvider listItemProvider = new ListItemProvider();
+	}
+	
 	@Test 
 	public void shouldFillListWithAllJsonItems()
 	{

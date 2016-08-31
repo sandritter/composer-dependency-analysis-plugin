@@ -32,13 +32,13 @@ public class MappingFacade implements Mapping{
 	/**
 	 * constructor
 	 * @param mapper {@link DependencyReflectionMapable}
-	 * @param orMapper {@link RowDataMapper}
+	 * @param rowDataMapper {@link RowDataMapper}
 	 * @param transport {@link Transferable}
 	 */
 	@Inject
-	MappingFacade(DependencyReflectionMapable mapper, RowDataMapper orMapper, Transferable transport){
+	MappingFacade(DependencyReflectionMapable mapper, RowDataMapper rowDataMapper, Transferable transport){
 		this.composerMapper = mapper;
-		this.rowDataMapper = orMapper;
+		this.rowDataMapper = rowDataMapper;
 		this.transport = transport;
 	}
 	
@@ -52,7 +52,9 @@ public class MappingFacade implements Mapping{
 	 */
 	public Transferable mapRowData(BuildData buildData, Map<FileType, File> files) throws DataMappingFailedException {
 		JsonDataImage jsonDataImage = composerMapper.mapFileToJsonDataImage(files.get(FileType.COMPOSER_JSON));
-		DependencyReflectionCollection lockDataImage = composerMapper.mapFileToDependencyReflectionData(files.get(FileType.COMPOSER_LOCK));
+		DependencyReflectionCollection lockDataImage = composerMapper.mapFileToDependencyReflectionData(
+			files.get(FileType.COMPOSER_LOCK)
+		);
 		transport.setObject(JsonDataImage.class, jsonDataImage);
 		transport.setObject(DependencyReflectionCollection.class, lockDataImage);
 		Transferable t = null;

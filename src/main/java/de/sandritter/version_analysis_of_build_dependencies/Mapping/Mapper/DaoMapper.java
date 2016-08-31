@@ -81,8 +81,13 @@ public class DaoMapper implements RowDataMapper {
 	{
 		try {
 			componentList.add(new Component(jsonDataImage.getName(), buildData.getSourceType(), buildData.getSourceUrl()));
-			standList.add(new Stand(buildData.getVersion(), buildData.getRevision(), jsonDataImage.getName()));
-			dependencyList.add(new Dependency(buildData.getRevision(), buildData.getBuildId(), DependencyType.MAIN.toString()));
+			String revision = buildData.getRevision();
+			//TODO 
+			if (revision == null){
+				revision = "testRevision";
+			}
+			standList.add(new Stand(buildData.getVersion(), revision, jsonDataImage.getName()));
+			dependencyList.add(new Dependency(revision, buildData.getBuildId(), DependencyType.MAIN.toString()));
 		} catch (Exception e) {
 			throw new Exception("JsonDataImage", e);
 		}
@@ -111,15 +116,13 @@ public class DaoMapper implements RowDataMapper {
 		try {
 			for (int i = 0; i < lst.size() -1; i++) {
 				DependencyReflection pkg = lst.get(i);
-				String reference = "";
-				try {
-					reference = pkg.getSource().getReference();
-				} catch (NullPointerException e) {
-					System.out.println(pkg.getName());
+				String reference = pkg.getSource().getReference();
+				String name = pkg.getName();
+				if(reference != null && name != null) {
+					dependencyList.add(new Dependency(pkg.getSource().getReference(), buildId, type.toString()));
+					componentList.add(new Component(name, pkg.getSource().getType(), pkg.getSource().getUrl()));
+					standList.add(new Stand(pkg.getVersion(), reference, name));
 				}
-				dependencyList.add(new Dependency(reference, buildId, type.toString()));
-				componentList.add(new Component(pkg.getName(), pkg.getSource().getType(), pkg.getSource().getUrl()));
-				standList.add(new Stand(pkg.getVersion(), reference, pkg.getName()));
 			}
 		} catch (Exception e) {
 			throw new Exception("generateOrLists", e);

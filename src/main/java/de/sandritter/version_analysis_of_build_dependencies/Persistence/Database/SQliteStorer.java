@@ -84,7 +84,6 @@ public class SQliteStorer implements DataStorage {
 			storeComponents((List<Component>) transport.getList(Component.class));
 			storeStands((List<Stand>) transport.getList(Stand.class));
 			storeDependencies((List<Dependency>) transport.getList(Dependency.class));
-
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
@@ -136,7 +135,7 @@ public class SQliteStorer implements DataStorage {
 			c = establishConnection();
 			String sql = InsertQueries.componentInsertQuery;
 			stmt = c.prepareStatement(sql);
-			for (int i = 0; i < lst.size(); i++) {
+			for (int i = 0; i < lst.size() - 1; i++) {
 				Component component = lst.get(i);
 				stmt.setString(1, component.getName());
 				stmt.setString(2, component.getSourceUrl());
@@ -207,7 +206,7 @@ public class SQliteStorer implements DataStorage {
 			String sql = InsertQueries.dependencyInsertQuery;
 			stmt = c.prepareStatement(sql);
 			for (int i = 0; i < lst.size(); i++) {
-				Dependency d = lst.get(0);
+				Dependency d = lst.get(i);
 				stmt.setString(1, d.getReference());
 				stmt.setString(2, d.getBuildId());
 				stmt.setString(3, d.getType());

@@ -57,13 +57,6 @@ public class ComponentSummary implements Cloneable {
 	 */
 	private long timestamp = -1;
 
-	@Override
-	public ComponentSummary clone() throws CloneNotSupportedException
-	{
-		ComponentSummary cloned = (ComponentSummary) super.clone();
-		return cloned;
-	}
-
 	public String getComponentName()
 	{
 		return componentName;

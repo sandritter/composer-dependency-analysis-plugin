@@ -41,6 +41,7 @@ public class DependentComponentResolver implements Action, StaplerProxy {
 		this.dataLoader = dataLoader;
 		this.buildData = buildData;
 		this.propertyReader = PropertyReader.getInstance();
+		
 		resolveDependentComponents(buildData);
 	}
 

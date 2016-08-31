@@ -34,6 +34,14 @@ public class PathResolverTest {
 	}
 	
 	@Test
+	public void shouldGetAbsolutePathOfAFileByUsingAbsolutePath()
+	{
+		String absolutePath = getClass().getClassLoader().getResource("composer.json").getPath();
+		String path = pathResolver.resolveAbsolutePath(FileType.COMPOSER_JSON, testWorkspacePath, absolutePath);
+		assertEquals(absolutePath, path);
+	}
+	
+	@Test
 	public void shouldGetAbsolutePathOfAComposerLockFile()
 	{
 		String relativePath = "/test/composer.lock";

@@ -22,4 +22,11 @@ public class DateFormatterTest {
 		String date = DateFormatter.getFormattedTime(timestamp);
 		assertEquals("no date available", date);
 	}
+	
+	@Test
+	public void shouldCreateDateFormatter()
+	{
+		@SuppressWarnings({ "unused"})
+		DateFormatter dateFormatter = new DateFormatter();
+	}
 }

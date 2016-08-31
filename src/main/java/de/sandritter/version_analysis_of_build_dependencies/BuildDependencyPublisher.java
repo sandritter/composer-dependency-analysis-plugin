@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
@@ -23,6 +24,8 @@ import de.sandritter.version_analysis_of_build_dependencies.DependencyConfigurat
 import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Module.PersistenceModule;
 import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.IO.Interface.IOAccess;
 import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.IO.Module.FileLoadModule;
+import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.DAO.Component;
+import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.DAO.Stand;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.BuildData;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Interface.Transferable;
 import de.sandritter.version_analysis_of_build_dependencies.Exception.PluginConfigurationException;
@@ -173,8 +176,6 @@ public class BuildDependencyPublisher extends Recorder {
 		PathResolver pathResolver = new PathResolver();
 		String finalLockPath = pathResolver.resolveAbsolutePath(FileType.COMPOSER_LOCK, workspacePath, lockPath);
 		String finalJsonPath = pathResolver.resolveAbsolutePath(FileType.COMPOSER_JSON, workspacePath, jsonPath);
-		logger.log(finalJsonPath);
-		logger.log(finalLockPath);
 		
 		Map<FileType, File> files = new HashMap<FileType, File>();
 		files.put(FileType.COMPOSER_JSON, loadFile(finalJsonPath));
@@ -305,11 +306,6 @@ public class BuildDependencyPublisher extends Recorder {
 		EnvVars env = null;
 		try {
 			env = build.getEnvironment(l);
-			logger.println();
-			for (String s : env.keySet()) {
-				logger.log(s + ": " + env.get(s));
-			}
-			logger.println();
 			data = readEnvironment(build, data, env);
 		} catch (IOException e) {
 			logger.logFailure(e, "LOADING ENVIRONMENT OF BUILD FAILED");
@@ -329,7 +325,7 @@ public class BuildDependencyPublisher extends Recorder {
 		data.setJobName(getStringEnvVar(env, BuildEnvVars.JOB_NAME));
 		data.setJenkinsUrl(getStringEnvVar(env, BuildEnvVars.JENKINS_URL));
 		data.setJobUrl(getStringEnvVar(env, BuildEnvVars.JOB_URL));
-		data.setBuildId(build.getId() + Long.toString(build.getTimeInMillis()));
+		data.setBuildId(build.getId() + getStringEnvVar(env, BuildEnvVars.JOB_NAME));
 		data.setNumber(build.getNumber());
 		data.setTimestamp(build.getTimeInMillis());
 		data.setDbPath(getDescriptor().getDbPath());
