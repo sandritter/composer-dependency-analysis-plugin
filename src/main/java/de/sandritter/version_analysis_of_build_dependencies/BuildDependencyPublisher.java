@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
@@ -24,8 +23,6 @@ import de.sandritter.version_analysis_of_build_dependencies.DependencyConfigurat
 import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Module.PersistenceModule;
 import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.IO.Interface.IOAccess;
 import de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.IO.Module.FileLoadModule;
-import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.DAO.Component;
-import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.DAO.Stand;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.BuildData;
 import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfer.Interface.Transferable;
 import de.sandritter.version_analysis_of_build_dependencies.Exception.PluginConfigurationException;
@@ -139,6 +136,7 @@ public class BuildDependencyPublisher extends Recorder {
 		analyseBuild(build, buildData);
 		resolveDependencies(build, buildData);
 		logger.logFinalProcessStatus();
+	
 		
 		return true;
 	}

@@ -15,8 +15,8 @@ public class DSLExtension  extends ContextExtensionPoint {
     	DSLContext context = new DSLContext();
     	executeInContext(closure, context);
         return new BuildDependencyPublisher(
-        		context.jsonPath, 
-        		context.lockPath
-        		);
+        	context.jsonPath, 
+        	context.lockPath
+        );
     }
 }
