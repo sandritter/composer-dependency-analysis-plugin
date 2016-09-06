@@ -12,10 +12,10 @@
 		<relativePath />
 	</parent>
 	<groupId>com.github.sandritter</groupId>
-	<artifactId>version-analysis-of-composer-dependencies</artifactId>
+	<artifactId>composer-dependency-analysis</artifactId>
 	<version>1.0.0</version>
-	<packaging>jar</packaging>
-	<url>https://wiki.jenkins-ci.org/display/JENKINS/TODO+Plugin</url>
+	<packaging>hpi</packaging>
+	<url>https://github.com/sandritter/Version-Analysis-Of-Composer-Dependencies</url>
 	<description>This plugin can be used for build jobs which install dependencies via composer followed by testing those dependencies e.g through unit tests. This plugin reads out the resulting composer.lock file which is located inside the particular workspace of a build job. The composer.lock file includes all dependencies together with their installed versions. The dependencies and their versions will be stored related to the specific build to a sqlite database. Hence, the database keeps track of the dependencies and their versions which are tested during a specific build.</description>
 	<name>Version Analysis Of Composer Dependencies</name>
 	<licenses>
@@ -128,7 +128,8 @@
 		<dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>job-dsl</artifactId>
-            <version>1.46</version>
+            <version>1.48</version>
+            <optional>true</optional>
         </dependency>
 	</dependencies>
 </project>
