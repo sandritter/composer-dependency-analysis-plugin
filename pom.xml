@@ -8,14 +8,13 @@
 		<artifactId>plugin</artifactId>
 		<!-- Baseline Jenkins version you use to build and test the plugin. Users 
 			must have this version or newer to run. -->
-		<version>1.625</version>
-		<relativePath />
+		<version>2.5</version>
 	</parent>
 	<groupId>com.github.sandritter</groupId>
 	<artifactId>composer-dependency-analysis</artifactId>
 	<version>1.0.0</version>
 	<packaging>hpi</packaging>
-	<url>https://github.com/sandritter/Version-Analysis-Of-Composer-Dependencies</url>
+	<url>http://github.com/jenkinsci/composer-dependency-analysis-plugin</url>
 	<description>This plugin can be used for build jobs which install dependencies via composer followed by testing those dependencies e.g through unit tests. This plugin reads out the resulting composer.lock file which is located inside the particular workspace of a build job. The composer.lock file includes all dependencies together with their installed versions. The dependencies and their versions will be stored related to the specific build to a sqlite database. Hence, the database keeps track of the dependencies and their versions which are tested during a specific build.</description>
 	<name>Version Analysis Of Composer Dependencies</name>
 	<licenses>
@@ -44,9 +43,12 @@
 			<email>michael.sandritter@gmx.de</email> 
 		</developer> 
 	</developers> 
-	<!-- Assuming you want to host on @jenkinsci: <scm> <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}-plugin.git</connection> 
-		<developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}-plugin.git</developerConnection> 
-		<url>http://github.com/jenkinsci/${project.artifactId}-plugin</url> </scm> -->
+	<!-- Assuming you want to host on @jenkinsci: -->
+	<scm> 
+		<connection>scm:git:git://github.com/jenkinsci/composer-dependency-analysis-plugin.git</connection> 
+		<developerConnection>scm:git:git@github.com:jenkinsci/composer-dependency-analysis-plugin.git</developerConnection> 
+		<url>http://github.com/jenkinsci/composer-dependency-analysis-plugin</url> 
+	</scm> 
 	<repositories>
 		<repository>
 			<id>repo.jenkins-ci.org</id>
@@ -84,6 +86,7 @@
 			<groupId>org.easymock</groupId>
 			<artifactId>easymock</artifactId>
 			<version>3.4</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>cglib</groupId>
@@ -94,16 +97,19 @@
 			<groupId>org.powermock</groupId>
 			<artifactId>powermock-module-junit4</artifactId>
 			<version>1.6.5</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
 			<version>1.10.19</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.powermock</groupId>
 			<artifactId>powermock-api-easymock</artifactId>
 			<version>1.6.5</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
@@ -114,6 +120,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.xerial</groupId>
