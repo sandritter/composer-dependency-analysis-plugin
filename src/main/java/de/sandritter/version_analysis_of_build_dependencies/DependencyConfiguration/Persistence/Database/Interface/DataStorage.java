@@ -16,7 +16,7 @@ public interface DataStorage {
 	 * is storing data to database
 	 * @param transport {@link Transferable}
 	 * @throws SQLException 
-	 * @throws Exception 
+	 * @throws Exception in case the storage process failed
 	 */
 	public void storeData(Transferable transport) throws Exception;
 

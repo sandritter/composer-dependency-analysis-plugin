@@ -18,7 +18,7 @@ public interface DataLoader {
 	 * @param value table identifier
 	 * @param type {@link DependencyType}
 	 * @return {@link Transferable}
-	 * @throws Exception 
+	 * @throws Exception in case the database fetch of dependencies failed
 	 */
 	public Transferable loadDependencies(String value, DependencyType type) throws Exception;
 
@@ -26,7 +26,7 @@ public interface DataLoader {
 	 * is loading build-specific information from database
 	 * @param reference
 	 * @return {@link Transferable}
-	 * @throws Exception 
+	 * @throws Exception in case the database fetch of build information failed
 	 */
 	public Transferable loadBuild(String reference) throws Exception;
 
@@ -35,7 +35,7 @@ public interface DataLoader {
 	 * @param value table identifier
 	 * @return {@link Transferable}
 	 * @throws SQLException
-	 * @throws Exception 
+	 * @throws Exception in case the database fetch of the main component failed
 	 */
 	public Transferable loadMainComponent(String value) throws Exception;
 	
@@ -43,7 +43,7 @@ public interface DataLoader {
 	 * is loading information about dependent components of a builded component
 	 * @param dependencyName
 	 * @return {@link Transferable}
-	 * @throws Exception
+	 * @throws Exception in case the database fetch of dependent components failed
 	 */
 	public Transferable loadDependentComponents(String dependencyName) throws Exception;
 

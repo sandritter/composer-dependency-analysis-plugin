@@ -16,12 +16,12 @@ import de.sandritter.version_analysis_of_build_dependencies.Domain.Model.Transfe
 public interface DatabaseMapper {
 
 	/**
-	 * is mapping the ResultSet from the database to a Map<String, {@link ComponentSummary}>.
+	 * is mapping the ResultSet from the database to a map of String, {@link ComponentSummary}.
 	 * the key value of the map must be the reference of the loaded {@link ComponentSummary}
 	 * 
 	 * @param result {@link ResultSet}
 	 * @return {@link Transferable}
-	 * @throws SQLException
+	 * @throws SQLException in case mapping of component results fails
 	 */
 	public Transferable mapComponentResults(ResultSet result) throws SQLException;
 	
@@ -31,7 +31,7 @@ public interface DatabaseMapper {
 	 * @param result {@link ResultSet}
 	 * @param cls {@link Class}
 	 * @return {@link Transferable}
-	 * @throws SQLException
+	 * @throws SQLException in case the mapping of the analysis result fails
 	 */
 	public Transferable mapResult(ResultSet result, Class<?> cls) throws SQLException;
 }

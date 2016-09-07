@@ -1,4 +1,4 @@
-package de.sandritter.version_analysis_of_build_dependencies.Persistence.Module;
+package de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Persistence.Database.Module;
 
 import org.junit.Test;
 

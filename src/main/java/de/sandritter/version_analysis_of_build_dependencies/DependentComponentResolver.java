@@ -51,7 +51,7 @@ public class DependentComponentResolver implements Action, StaplerProxy {
 		String componentName = loadComponentNameOfMainComponent(buildData.getBuildId());
 		Transferable t = dataLoader.loadDependentComponents(componentName);
 		map = (Map<String, DependentComponent>) t.getMap(DependentComponent.class);
-		String apiToken = propertyReader.getConfig().getProperty("api-token");
+		String apiToken = propertyReader.getConfig("/config.properties").getProperty("api-token");
 		for (DependentComponent c : map.values()) {
 			String url =  c.getLink() + "build?token=" + apiToken;
 			c.setLink(url);
@@ -60,7 +60,7 @@ public class DependentComponentResolver implements Action, StaplerProxy {
 
 	/**
 	 * 
-	 * @return
+	 * @return url
 	 */
 	public String getAnalysisUrl()
 	{
@@ -73,7 +73,7 @@ public class DependentComponentResolver implements Action, StaplerProxy {
 	/**
 	 * 
 	 * @param buildId
-	 * @return
+	 * @return 
 	 * @throws Exception
 	 */
 	private String loadComponentNameOfMainComponent(String buildId) throws Exception

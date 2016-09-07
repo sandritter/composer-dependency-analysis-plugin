@@ -19,7 +19,7 @@ public interface DependencyReflectionMapable{
 	 * 
 	 * @param f {@link File}
 	 * @return {@link DependencyReflectionCollection}
-	 * @throws DataMappingFailedException
+	 * @throws DataMappingFailedException in case the mapping of dependency reflection data fails
 	 */
 	public DependencyReflectionCollection mapFileToDependencyReflectionData(File f) throws DataMappingFailedException;
 	
@@ -28,7 +28,7 @@ public interface DependencyReflectionMapable{
 	 * 
 	 * @param f {@link File}
 	 * @return {@link JsonDataImage}
-	 * @throws DataMappingFailedException
+	 * @throws DataMappingFailedException in case the mapping of json data fails
 	 */
 	public JsonDataImage mapFileToJsonDataImage(File f) throws DataMappingFailedException;
 	

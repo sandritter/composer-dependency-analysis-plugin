@@ -1,4 +1,4 @@
-package de.sandritter.version_analysis_of_build_dependencies.Mapping.Facade.Module;
+package de.sandritter.version_analysis_of_build_dependencies.DependencyConfiguration.Mapping.Module;
 
 import org.junit.Test;
 

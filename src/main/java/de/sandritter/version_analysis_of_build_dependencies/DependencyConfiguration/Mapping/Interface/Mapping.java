@@ -21,7 +21,7 @@ public interface Mapping {
 	 * @param buildData build specific information
 	 * @param files depedency reflection files
 	 * @return {@link Transferable}
-	 * @throws DataMappingFailedException
+	 * @throws DataMappingFailedException in case the mapping row data fails
 	 */
 	public Transferable mapRowData(BuildData buildData, Map<FileType, File> files) throws DataMappingFailedException;
 }

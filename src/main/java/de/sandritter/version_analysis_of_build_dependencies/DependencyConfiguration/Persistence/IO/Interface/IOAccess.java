@@ -16,7 +16,7 @@ public interface IOAccess {
 	 * is loading a File from the file system by given file path
 	 * 
 	 * @return {@link File}
-	 * @throws IOException
+	 * @throws IOException in case loading process of a file failed
 	 */
 	public File load(String path) throws IOException;
 }
